@@ -1,4 +1,4 @@
-<%@ page language="java"  import="java.sql.*, prestacion_servicio.academicos.dual.*, java.lang.*, java.util.*, comun.*" errorPage="../../../../../error.jsp"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"  import="java.sql.*, prestacion_servicio.academicos.dual.*, java.lang.*, java.util.*, comun.*" errorPage="../../../../../error.jsp"%>
 <%
 if (session.getAttribute("usuario") != null)
 {
@@ -15,7 +15,7 @@ if (session.getAttribute("usuario") != null)
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
-    <title>Registro de calificacion psicopedagogica</title>
+    <title>Registro de calificación psicopedagógica</title>
 
     <link rel="stylesheet" href="../../../../../estilos/sic.css">
     <link rel="stylesheet" href="../../../../../estilos/normalize.css">
@@ -40,7 +40,7 @@ if (session.getAttribute("usuario") != null)
                         <td class="usuario"><%=usuario%></td>
                     </tr>
                     <tr align="center">
-                        <td class="encabezado">Registro de calificacion psicopedagogica(Psicologa)</td>
+                        <td class="encabezado">Registro de calificación psicopedagógica(Psicologa)</td>
                     </tr>
                 </table>
                 <br>
@@ -75,9 +75,9 @@ if (session.getAttribute("usuario") != null)
                                     <th class="align-middle text-center" scope="col">Expediente</th>
                                     <th class="align-middle text-center" scope="col">Nombre</th>
                                     <th class="align-middle text-center" scope="col">Empresa</th>
-                                    <th class="align-middle text-center" scope="col">Nom. Plan de rotacion</th>
+                                    <th class="align-middle text-center" scope="col">Nom. Plan de rotación</th>
                                     <th class="align-middle text-center" scope="col">Fecha del examen</th>
-                                    <th class="align-middle text-center" scope="col">Calificacion psicologica</th>
+                                    <th class="align-middle text-center" scope="col">Calificacion psicológica</th>
                                     <th class="align-middle text-center" scope="col">Observaciones</th>
                                     <th class="align-middle text-center" scope="col">Fecha</th>
                                     <th class="align-middle text-center" scope="col">Guardar</th>

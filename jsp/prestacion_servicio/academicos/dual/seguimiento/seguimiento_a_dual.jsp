@@ -1,4 +1,4 @@
-<%@ page language="java"  import="java.sql.*, java.lang.*, java.util.*, comun.*, prestacion_servicio.academicos.dual.*" errorPage="/../../error.jsp"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.sql.*, java.lang.*, java.util.*, comun.*, prestacion_servicio.academicos.dual.*" errorPage="/../../error.jsp"%>
 <%
 if (session.getAttribute("usuario") != null)
     {
@@ -10,7 +10,7 @@ if (session.getAttribute("usuario") != null)
         String consultas="",nombre_periodo="",mes1="",mes2="",mes3="",mes4="",nombre_empresa="";
         int meses=0,numero_periodo=0,cve_alumno=0,cve_puesto_aprendizaje=0,cve_empresa=0;     
         int cve_periodo=Integer.parseInt(request.getParameter("cve_periodo"));
-        http://localhost:8080/dual/jsp/prestacion_servicio/academicos/dual/seguimiento/seguimiento_a_dual.jsp?cve_periodo=69
+        //http://localhost:8080/dual/jsp/prestacion_servicio/academicos/dual/seguimiento/seguimiento_a_dual.jsp?cve_periodo=69
     %>
     <html>
     <head>
@@ -85,9 +85,9 @@ if (session.getAttribute("usuario") != null)
     </div>       
     <br>
 
-    <div class="container-fluid">  
+    <div class="container">  
         <div class="row SoloTexto2">
-            <div class="col-md-2">&nbsp;</div>
+        
             <div class="col-md-2">
                 Nombre de la empresa
                 <br>
@@ -110,30 +110,52 @@ if (session.getAttribute("usuario") != null)
                     %>
                 </select>     
             </div>
-        <div class="col-md-2">
-            Nombre de Plan de rotacion
+        
+        <div class="col-md-3">
+            Nombre de Plan de rotación
             <br>
             <input type="text" id="TNomRotacion" name="TNomRotacion" class="captura_obligada combo200" value="?">    
         </div>
-        <div class="col-md-2">
+        <div class="col-md-3">
             Nombre del instructor de empresa
             <br>
             <input type="text" id="TNomInst" name="TNomInst" class="captura_obligada combo200" value="?">
         </div>
-        <!--<div class="col-md-1">
-            Número
-        </div>-->
-        <div class="col-md-1" align="center">
-            <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guargar" onClick="">
-            <br>Guardar
-        </div> 
-        <div class="col-md-2">&nbsp;</div>
+    
+        <div class="col-md-2">
+            Ap. paterno
+            <br>
+            <input type="text" id="TPatInst" name="TPatInst" class="captura_obligada combo150" value="?">
+        </div>
+        <div class="col-md-2">
+            Ap. materno
+            <br>
+            <input type="text" id="TMatInst" name="TMatInst" class="captura_obligada combo150" value="?">
+        </div>     
     </div>
-</div> 
+</div>
+<div class="row SoloTexto2">
+    <div class="col-md-1">&nbsp;</div>
+    <div class="col-md-2">
+            Número
+            <br>
+            <input type="text" name="TNumeroInst" class="captura_obligada combo100">
+        </div>
+        <div class="col-md-2">
+            Correo
+            <br>
+            <input type="text" name="TCorreoInst" class="captura_obligada combo100">
+        </div>
+        <div class="col-md-2" align="center">
+            <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar" onClick="">
+            <br>Guardar
+        </div>
+    <div class="col-md-5">&nbsp;</div>
+</div>
 
     <table width="80%" cellpadding="0" cellspacing="0" border="0" align="center">
         <tr align="center">
-            <td class="encabezado">Plan de rotacion de puestos de aprendizaje
+            <td class="encabezado">Plan de rotación de puestos de aprendizaje
             </td>
         </tr>
     </table>
@@ -152,7 +174,7 @@ if (session.getAttribute("usuario") != null)
                 <table style="margin: auto;" align="" class="table table-hover table-sm border border-info " cellpadding="0" cellspacing="0">
                     <thead class="table-dark SoloTexto2">
                         <tr class="bg-info">
-                            <th class="align-middle text-center" colspan="6" scope="col"><P>Dias</P></th>
+                            <th class="align-middle text-center" colspan="6" scope="col"><P>Días</P></th>
                         </tr>
                         <tr class="bg-secondary">
                             <th class="align-middle text-center" scope="col">L</th>
@@ -179,8 +201,8 @@ if (session.getAttribute("usuario") != null)
                 </table>   
                         <br>
                         <div class="col-md-12" align="center">
-                            <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guargar dias" onClick="">
-                                <br>Guargar dias
+                            <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar dias" onClick="">
+                                <br>Guardar dias
                         </div> 
                         <br>
             </div>
@@ -192,7 +214,7 @@ if (session.getAttribute("usuario") != null)
                                 <th class="align-middle text-center" colspan="17" scope="col"><P>Semanas en UTSJR</P></th>
                             </tr>
                             <tr class="bg-secondary">
-                                <th class="align-middle text-center" scope="col">Institucion</th>
+                                <th class="align-middle text-center" scope="col">Institución</th>
                                 <th class="align-middle text-center" scope="col">1</th>
                                 <th class="align-middle text-center" scope="col">2</th>
                                 <th class="align-middle text-center" scope="col">3</th>
@@ -321,8 +343,8 @@ if (session.getAttribute("usuario") != null)
                                     </table>
                                     <br>
                                     <div class="col-md-12" align="center">
-                                        <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guargar semanas" onClick="">
-                                        <br>Guargar semanas
+                                        <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar semanas" onClick="">
+                                        <br>Guardar semanas
                                     </div>
                                 </div>
                                 <br>
@@ -408,8 +430,8 @@ if (session.getAttribute("usuario") != null)
             </table>
             <br>
             <div class="col-md-12" align="center">
-                <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guargar meses" onClick="">
-                    <br>Guargar meses
+                <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar meses" onClick="">
+                    <br>Guardar meses
             </div>
         </div>
             <br>
@@ -602,7 +624,7 @@ if (session.getAttribute("usuario") != null)
                                 <br>Limpiar/Nuevo
                             </div>
                             <div class="col-md-3">
-                                <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guargar" onClick="">
+                                <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar" onClick="">
                                 <br>Guardar
                             </div>
                             <div class="col-md-3">
@@ -639,6 +661,86 @@ if (session.getAttribute("usuario") != null)
         location.href="./../../../../../menuDual.jsp";
     }
 
+    function FGuardarDatos(cve_alumno,cve_periodo,cve_puesto_aprendizaje)
+    {
+        var valida=0;
+        if($('#SEmpresa'+cve_alumno).val()==-1||$('#SEmpresa').val()==null)
+        {
+             alert('Seleccione una empresa primero.');valida++;
+            $('#SEmpresa'+cve_alumno).focus();
+        }
+        else
+        {
+           if ($('#TNomRotacion'+cve_alumno).val()==""||$('#TNomRotacion'+cve_alumno).val()==null) 
+           {
+                alert('Introduzca el nombre del plan de rotacion.');
+                valida++;
+                $('#TNomRotacion').focus();
+           }
+           else
+           {
+            if($('#TNomInst'+cve_alumno).val()==""||$('#TNomInst'+cve_alumno).val()==null)
+            {
+                alert('Introduzca el nombre del instructor.');
+                valida++;
+                $('#TNomInst'+cve_alumno).focus();
+            }
+            else
+            {
+                if ($('#TPatInst'+cve_alumno).val()==""||$('#TPatInst'+cve_alumno).val()==null)
+                {
+                    alert('Introduzca el apellido paterno.');
+                    valida++;
+                    $('#TPatInst'+cve_alumno).focus();
+                }
+                else
+                {
+                    if ($('#TMatInst'+cve_alumno).val()==""||$('#TMatInst'+cve_alumno).val()==null) 
+                    {
+                        alert('Introduzca el apellido materno');
+                        valida++;
+                        $('#TMatInst'+cve_alumno).focus();
+                    }
+                    else
+                    {
+                        if ($('#TNumeroInst'+cve_alumno).val()==""||$('#TNumeroInst'+cve_alumno).val()==null)
+                        {
+                           alert('Introduzca el teléfono del instructor');
+                           valida++;
+                           $('#TNumeroInst'+cve_alumno).focus(); 
+                        }
+                        else
+                        {
+                            if ($('#TCorreoInst'+cve_alumno).val()==""||$('#TCorreoInst'+cve_alumno).val()==null) 
+                            {
+                                alert('Introduzca la dirección de correo electrónico del instructor');
+                                valida++;
+                                $('#TCorreoInst'+cve_alumno
+                                    ).focus();
+                            }
+                        } 
+                    }
+                }    
+            }
+           }
+        }
+        if (valida==0) 
+        {
+            FCargando();
+            var par=
+            {
+                "p_SEmpresa":$('#SEmpresa').val(),
+                "p_TNomRotacion":$('#TNomRotacion').val(),
+                "p_TNomInst":$('#TNomInst').val(),
+                "p_TPatInst":$('#p_TPatInst').val(),
+                "p_TMatInst":$('#TPatInst').val(),
+                "p_TNumeroInst":$('#TNumeroInst').val(),
+                "p_TNumeroInst":$('#TNumeroInst').val(),
+
+            }
+        }
+    }
+//Actualizacon.................................................
 </script>
 </html>
 <%

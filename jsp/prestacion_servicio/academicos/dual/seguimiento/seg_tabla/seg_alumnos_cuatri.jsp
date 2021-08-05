@@ -1,4 +1,4 @@
-<%@ page language="java"  import="java.sql.*, java.lang.*, java.util.*, comun.*, prestacion_servicio.academicos.dual.*" errorPage="../../error.jsp"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.sql.*, java.lang.*, java.util.*, comun.*, prestacion_servicio.academicos.dual.*" errorPage="../../error.jsp"%>
 <%
 try
 {
@@ -9,20 +9,21 @@ try
 	String consultas="",expediente="",nombre_alumno="",nombre_empresa="",nombre_puesto_aprendizaje="",fecha_exa_conoc="",obser_exa_conoc="";
 	int cve_periodo=Integer.parseInt(request.getParameter("p_TCuatri"));
 %>
-<table tyle="margin: auto;" class="table table-hover table-sm border border-info" cellpadding="0" cellspacing="0" id="">
+<table width="100%" border="1" cellspacing="0" cellpadding="0" align="center" class="table-hover border border-info">
     <thead class="table-dark SoloTexto2">
-        <tr class="bg-info">
-            <th class="align-middle text-center" colspan="10" scope="col">Seguimiento</th>
+        <tr class="bg-info border-info">
+            <th class="align-middle text-center" colspan="11" scope="col">Seguimiento</th>
             <tr class="bg-secondary">
-                <th class="align-middle text-center" scope="col">Expediente</th>
-                <th class="align-middle text-center" scope="col">Nombre</th>
-                <th class="align-middle text-center" scope="col">Empresa</th>
-                <th class="align-middle text-center" scope="col">Plan de rotacion</th>
-                <th class="align-middle text-center" scope="col">Calif. examen conocimientos</th>
-                <th class="align-middle text-center" scope="col">Observaciones</th>
+                <th class="align-middle text-center">Expediente</th>
+                <th class="align-middle text-center">Nombre</th>
+                <th class="align-middle text-center">Empresa</th>
+                <th class="align-middle text-center">Plan de rotación</th>
+                <th class="align-middle text-center">Calif. examen conocimientos</th>
+                <th class="align-middle text-center">Observaciones</th>
                 <th class="align-middle text-center">Fecha</th>
                 <th class="align-middle text-center">Guardar</th>
-                <th class="align-middle text-center">Evidencia de evaluacion</th>
+                <th class="align-middle text-center">Evidencia de evaluación</th>
+                <th class="align-middle text-center">Ver Seguimiento</th>
                 <th class="align-middle text-center">Ver PDF</th>
             </tr>
         </tr>
@@ -88,14 +89,16 @@ consultas="SELECT ISNULL(direc_empresas.nombre,'Pendiente') AS Empresa, personas
             </td>
             <td class="align-middle text-center"><%=fecha_exa_conoc%></td>
             <td class="align-middle text-center">
-                <input type="button" value="Guardar calificacion" class="liga" name="Guardar" title="Guardar" onClick="FGuardarCalif(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_puesto_aprendizaje%>)">
+                <input type="button" value="Calificación" class="liga" name="Guardar" title="Guardar" onClick="FGuardarCalif(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_puesto_aprendizaje%>)">
             </td>
             <td class="align-middle text-center">
-                <img src="../../../../../imagenes/ikonoz/subir_docto.png" class="iconsButtons" title="Subir">
-                <br>Cargar PDF
+                <input type="button" value="Cargar PDF" class="liga" name="GuardarPDF" title="Guardar" onClick="">
             </td>
             <td class="align-middle text-center">
-                <a href="seguimiento_a_dual.jsp?cve_periodo=<%=cve_periodo%>" target="popup" onClick="window.open(this.href, this.target, 'width=700,height=400'); return false;">Ver PDF</a>
+                <a href="seguimiento_a_dual.jsp?cve_periodo=<%=cve_periodo%>" target="popup" onClick="window.open(this.href, this.target, 'width=700,height=400'); return false;">Ver</a>
+            </td>
+            <td class="align-middle text-center">
+                <a href="seguimiento_a_dual.jsp?cve_periodo=<%=cve_periodo%>" target="popup" onClick="window.open(this.href, this.target, 'width=700,height=400'); return false;">PDF</a>
             </td>
         </tr>
         <%

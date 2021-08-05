@@ -1,4 +1,4 @@
-<%@ page language="java"  import="java.sql.*, java.lang.*, java.util.*, comun.*, prestacion_servicio.academicos.dual.*" errorPage="../../error.jsp"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.sql.*, java.lang.*, java.util.*, comun.*, prestacion_servicio.academicos.dual.*" errorPage="../../error.jsp"%>
 <%
 try
 {
@@ -24,7 +24,7 @@ try
 				<th scope="col">Tutor</th>
 				<th scope="col">Grupo</th>
 				<th scope="col">Convocatoria</th>
-				<th scope="col">Nom. Plan de rotacion</th>
+				<th scope="col">Nom. Plan de rotación</th>
 				<th scope="col">Asesor Dual</th>
 				<th scope="col">Guardar asesor</th>
 				<th scope="col">Notificar</th>            

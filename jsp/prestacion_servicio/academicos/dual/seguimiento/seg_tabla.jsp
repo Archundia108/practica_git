@@ -1,4 +1,4 @@
-<%@ page language="java"  import="java.sql.*, java.lang.*, java.util.*, comun.*" errorPage="../../../../../../error.jsp"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.sql.*, java.lang.*, java.util.*, comun.*" errorPage="../../../../../../error.jsp"%>
 <%
 if (session.getAttribute("usuario") != null)
 {
@@ -11,10 +11,11 @@ if (session.getAttribute("usuario") != null)
     int cve_periodo=0;
 %>
 
-<html>
+<html lang="es">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
-
+    <meta charset="utf-8">
+    <!--<meta meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>-->
+    <!--<meta meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>-->
     <title>Seguimiento</title>
 
     <link rel="stylesheet" href="../../../../../estilos/sic.css">
@@ -69,21 +70,22 @@ if (session.getAttribute("usuario") != null)
         <br>
     <div id="ListadoAlumnos" class="col-md-12">
         <div class="col-md-2">&nbsp;</div>
-        <table tyle="margin: auto;" class="table table-hover table-sm border border-info" cellpadding="0" cellspacing="0" id="">
+        <table width="80%"  cellspacing="0" cellpadding="0" align="center" class="table-hover border border-info">
             <thead class="table-dark SoloTexto2">
                 <tr class="bg-info">
-                    <th class="align-middle text-center" colspan="10" scope="col">Seguimiento</th>
+                    <th class="align-middle text-center" colspan="11" scope="col">Seguimiento</th>
                     <tr class="bg-secondary">
                         <th class="align-middle text-center" scope="col">Expediente</th>
                         <th class="align-middle text-center" scope="col">Nombre</th>
                         <th class="align-middle text-center" scope="col">Empresa</th>
-                        <th class="align-middle text-center" scope="col">Plan de rotacion</th>
+                        <th class="align-middle text-center" scope="col">Plan de rotación</th>
                         <th class="align-middle text-center" scope="col">Calif. examen conocimientos</th>
                         <th class="align-middle text-center" scope="col">Observaciones</th>
                         <th class="align-middle text-center">Fecha</th>
                         <th class="align-middle text-center">Guardar</th>
-                        <th class="align-middle text-center">Evidencia de evaluacion</th>
+                        <th class="align-middle text-center">Evidencia de evaluación</th>
                         <th class="align-middle text-center">Ver PDF</th>
+                        <th class="align-middle text-center">Ver Seguimiento</th>
                     </tr>
                 </tr>
             </thead>
