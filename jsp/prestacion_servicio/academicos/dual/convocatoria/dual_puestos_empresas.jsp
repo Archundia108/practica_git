@@ -123,8 +123,8 @@
                         <div class="col-md-12">
                             Universidad Tecnológica de San Juan del Río <br>
                             Departamento de Tecnologías de la Información <br>
-                            <a href="mailto:ncruzs@utsjr.edu.mx" class="liga" title="Neftali Cruz Soriano">
-                                Coordinador de sistemas
+                            <a href="mailto:ncruzs@utsjr.edu.mx" class="liga" title="Edgar Gabriel Arteaga Archundia">
+                                Desarrollo-Estadias
                             </a>
                         </div>
                     </div>

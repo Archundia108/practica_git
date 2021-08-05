@@ -6,7 +6,6 @@ if (session.getAttribute("usuario") != null)
     String usuario = String.valueOf(session.getAttribute("usuario"));
     //int cve_usuario = Integer.parseInt(String.valueOf(session.getAttribute("cve_usuario")));
     int cve_usuario = 30824;
-
     %>
         <!DOCTYPE html>
         <html>
@@ -98,8 +97,8 @@ if (session.getAttribute("usuario") != null)
                     <div class="col-md-12">
                         Universidad Tecnológica de San Juan del Río <br>
                         Departamento de Tecnologías de la Información <br>
-                        <a href="mailto:ncruzs@utsjr.edu.mx" class="liga" title="Neftali Cruz Soriano">
-                            Coordinador de sistemas
+                        <a href="mailto:ncruzs@utsjr.edu.mx" class="liga" title="Edgar Gabriel Arteaga Archundia">
+                            Desarrollo-Estadias
                         </a>
                     </div>
                 </div>

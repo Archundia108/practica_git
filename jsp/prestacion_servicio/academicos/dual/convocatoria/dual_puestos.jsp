@@ -1,43 +1,48 @@
-<%@ page language="java" import="java.sql.*, java.lang.*, java.util.*, comun.*" errorPage="../../../../../error.jsp" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%> 
+<%@
+    page language="java"
+    import="java.sql.*, java.lang.*, java.util.*, comun.*"
+    contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"
+    errorPage="../../../../../error.jsp"
+%>
+
 <%
     if (session.getAttribute("usuario") != null)
     {
         BD SMBD = new BD();
         ResultSet rs;
+
         String usuario = String.valueOf(session.getAttribute("usuario"));
         int cve_usuario = Integer.parseInt(String.valueOf(session.getAttribute("cve_usuario")));
         
         String consultas = "", error = "", nombre_puesto_aprendizaje = "";
         int cve_puesto_aprendizaje = 0;
+
         %>
-            <!DOCTYPE html>
             <html>
                 <head>
-                    <title>Registro de puestos</title>
+                    <title>Registro de puestos</title>                    
                     <link rel="stylesheet" href="../../../../../estilos/sic.css">
                     <link rel="stylesheet" href="../../../../../estilos/bootstrap4.2.1.min.css"> 
                     <script type="text/javascript" src="../../../../../js/jquery-2.2.4.min.js"></script>
                     <script type="text/javascript" src="../../../../../js/bootstrap4.1.3.min.js"></script>
                 </head>
+                
                 <body>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <table width="80%" cellpadding="0" cellspacing="0" border="0" align="center">
-                                <tr align="center">
-                                    <td><img src="../../../../../imagenes/banner.jpg" width="751" height="80"></td>
-                                </tr>
-                                <tr align="center">
-                                    <td class="titulo">PROYECTO DUAL</td>
-                                </tr>
-                                <tr align="center">
-                                    <td class="usuario"><%=usuario%></td>
-                                </tr>
-                                <tr align="center">
-                                    <td class="encabezado">Registro de puestos</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
+                    <table width="80%" cellpadding="0" cellspacing="0" border="0" align="center">
+                        <tr align="center">
+                            <td><img src="../../../../../imagenes/banner.jpg" width="751" height="80"></td>
+                        </tr>
+                        <tr align="center">
+                            <td class="titulo">PROYECTO DUAL</td>
+                        </tr>
+                        <tr align="center">
+                            <td class="usuario"><%=usuario%></td>
+                        </tr>
+                        <tr align="center">
+                            <td class="encabezado">Registro de puestos</td>
+                        </tr>
+                    </table> 
                     
                     <br>
                     <div class="row SoloTexto2">
@@ -59,9 +64,9 @@
                                 <option value="-1">...selecciona...</option>
                                 <%
                                     consultas = "SELECT p.nombre_puesto_aprendizaje, p.cve_puesto_aprendizaje "
-                                            + "FROM dual_puestos_aprendizaje p "
-                                            + "INNER JOIN carreras_universidad c ON c.cve_carrera = p.cve_carrera "
-                                            + "WHERE c.cve_director = "+cve_usuario+"";
+                                              + "FROM dual_puestos_aprendizaje p "
+                                              + "INNER JOIN carreras_universidad c ON c.cve_carrera = p.cve_carrera "
+                                              + "WHERE c.cve_director = "+cve_usuario+"";
                                     rs = SMBD.SQLBD(consultas);
                                     while (rs.next()) 
                                     {
@@ -94,15 +99,12 @@
                     </div>
 
                     <br>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <table width="80%" cellpadding="0" cellspacing="0" border="0" align="center">
-                                <tr align="center">
-                                    <td class="encabezado">Conocimientos previos necesarios para el puesto de aprendizaje</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
+                    <table width="80%" cellpadding="0" cellspacing="0" border="0" align="center">
+                        <tr align="center">
+                            <td class="encabezado">Conocimientos previos necesarios para el puesto de aprendizaje</td>
+                        </tr>
+                    </table>
+                        
 
                     <br>
                     <div class="row SoloTexto2">
@@ -187,35 +189,11 @@
                     </div>
 
                     <br>
-                    <div class="row SoloTexto2">
+                    <div class="row">
                         <div class="col-md-1">&nbsp;</div>
                         <div class="col-md-10">
                             <table class="table table-hover table-sm border border-info SoloTexto2" cellpading="0" cellspacing="0" id="TblPuestos">
-                                <thead class="table-dark SoloTexto2">
-                                    <tr class="bg-info">
-                                        <th class="aling-middle text-center" colspan="7" scope="col">Puestos registrados</th>
-                                    </tr>
-                                    <tr class="bg-secondary">
-                                        <th class="aling-middle text-center" scope="col">Folio</th>
-                                        <th class="aling-middle text-center" scope="col">Nombre de puesto</th>
-                                        <th class="aling-middle text-center" scope="col">Puesto de aprendizaje</th>
-                                        <th class="aling-middle text-center" scope="col">Objetivo general</th>
-                                        <th class="aling-middle text-center" scope="col">Requerimientos generales</th>
-                                        <th class="aling-middle text-center" scope="col">Fecha de registro</th>
-                                        <th class="aling-middle text-center" scope="col">Vigente</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th class="aling-middle text-center" scope="col">--</th>
-                                        <td class="aling-middle text-center">--</td>
-                                        <td class="aling-middle text-center">--</td>
-                                        <td class="aling-middle text-center">--</td>
-                                        <td class="aling-middle text-center">--</td>
-                                        <td class="aling-middle text-center">--</td>
-                                        <td class="aling-middle text-center">--</td>
-                                    </tr>
-                                </tbody>
+                                <!--Tabla-->
                             </table>
                         </div>
                         <div class="col-md-1">&nbsp;</div>
@@ -226,24 +204,27 @@
                         <div class="col-md-12">
                             Universidad Tecnológica de San Juan del Río <br>
                             Departamento de Tecnologías de la Información <br>
-                            <a href="mailto:ncruzs@utsjr.edu.mx" class="liga" title="Neftali Cruz Soriano">
-                                Coordinador de sistemas
+                            <a href="mailto:ncruzs@utsjr.edu.mx" class="liga" title="Edgar Gabriel Arteaga Archundia">
+                                Desarrollo-Estadias
                             </a>
                         </div>
                     </div>
                 </body>
+
                 <script type="text/JavaScript" language="JavaScript">
                     function FSalir() 
                     {
                         location.href = "../../../../../menuDual.jsp";
                     }
 
-                    function FCargando() {
-                        $('#gif_espera').html('<img src="../../../../../imagenes/ajax-loader.gif" width="50">')
+                    function FCargando() 
+                    {
+                        $('#gif_espera').html('<img src="../../../../../imagenes/ajax-loader.gif" width="50">');
                     }
 
-                    function FTerminado() {
-                        $('#gif_espera').html('&nbsp;')
+                    function FTerminado() 
+                    {
+                        $('#gif_espera').html('&nbsp;');
                     }
 
                     function FVentanaPuestosAprendizaje()
@@ -325,10 +306,11 @@
                     function FTabla_puestos()
                     {
                         FCargando();
-                        var par =
+                        var par = 
                         {
                             "p_cve_usuario" : <%=cve_usuario%>
                         }
+
                         $.post
                         (
                             "dual_puestos/tabla_puestos.jsp", par,
@@ -337,9 +319,9 @@
                                 $('#TblPuestos').html(htmlExterno);
                                 FTerminado();
                             }
-                        )
+                        );
                     }
-                    FTabla_puestos()
+                    FTabla_puestos();
 
                     function FAnioActual() 
                     {
@@ -438,23 +420,25 @@
                                 }
                             }
                         }
+
                         if (valida == 0) 
                         {
                             FCargando();
-                            var par =
+                            var par = 
                             {
-                                "p_cve_dual_puesto"     : $('#TCvePuesto').val(),
-                                "p_NomPuesto"           : $('#TNomPuesto').val(),
-                                "p_ObjetivoGral"        : $('#TObjetivoGral').val(),
-                                "p_RequerimientosGral"  : $('#TRequerimientosGral').val(),
-                                "p_Teoricos"            : $('#TTeoricos').val(),
-                                "p_Procedimentales"     : $('#TProcedimentales').val(),
-                                "p_Actitudinales"       : $('#TActitudinales').val(),
-                                "p_ActvdDesarrollo"     : $('#TActvdDesarrollo').val(),
-                                "p_Vigente"             : $('#SVigente').val(),
-                                "p_CvePuestoAprendizaje": $('#SCvePuestoAprendizaje').val(),
-                                "p_cve_usuario"         : <%=cve_usuario%>
+                                "p_cve_dual_puesto"      : $('#TCvePuesto').val(),
+                                "p_NomPuesto"            : $('#TNomPuesto').val(),
+                                "p_ObjetivoGral"         : $('#TObjetivoGral').val(),
+                                "p_RequerimientosGral"   : $('#TRequerimientosGral').val(),
+                                "p_Teoricos"             : $('#TTeoricos').val(),
+                                "p_Procedimentales"      : $('#TProcedimentales').val(),
+                                "p_Actitudinales"        : $('#TActitudinales').val(),
+                                "p_ActvdDesarrollo"      : $('#TActvdDesarrollo').val(),
+                                "p_Vigente"              : $('#SVigente').val(),
+                                "p_CvePuestoAprendizaje" : $('#SCvePuestoAprendizaje').val(),
+                                "p_cve_usuario"          : <%=cve_usuario%>
                             }
+
                             $.ajax
                             (
                                 {
@@ -470,7 +454,7 @@
                                                     FTabla_puestos();
                                                 }
                                 }
-                            )
+                            );
                         }
                     }
 
@@ -478,6 +462,7 @@
                     {
                         var today = new Date();
                         var anio = today.getFullYear();
+
                         $('#TCvePuesto').val(0);
                         $('#TAnio').val(anio);
                         $('#SCvePuestoAprendizaje').val(-1);
@@ -498,6 +483,7 @@
                         {
                             "p_TCvePuesto" : cve_dual_puesto
                         }
+
                         $.ajax
                         (
                             {
@@ -506,22 +492,22 @@
                                 type        : "POST",
                                 dataType    : "JSON",
                                 success     : function (res)
-                                            {
-                                                $('#TCvePuesto').val(res.cve_dual_puesto);
-                                                $('#TAnio').val(res.anio);
-                                                $('#SCvePuestoAprendizaje').val(res.cve_puesto_aprendizaje);
-                                                $('#TNomPuesto').val(res.nombre_dual_puesto);
-                                                $('#TObjetivoGral').val(res.objetivo_gral);
-                                                $('#TRequerimientosGral').val(res.requerimientos_gral);
-                                                $('#TTeoricos').val(res.con_teoricos);
-                                                $('#TProcedimentales').val(res.con_procedimentales);
-                                                $('#TActitudinales').val(res.con_actitudinales);
-                                                $('#TActvdDesarrollo').val(res.actvd_desarrollo);
-                                                $('#SVigente').val(res.vigente);
-                                                FTerminado();
-                                            }
+                                              {
+                                                  $('#TCvePuesto').val(res.cve_dual_puesto);
+                                                  $('#TAnio').val(res.anio);
+                                                  $('#SCvePuestoAprendizaje').val(res.cve_puesto_aprendizaje);
+                                                  $('#TNomPuesto').val(res.nombre_dual_puesto);
+                                                  $('#TObjetivoGral').val(res.objetivo_gral);
+                                                  $('#TRequerimientosGral').val(res.requerimientos_gral);
+                                                  $('#TTeoricos').val(res.con_teoricos);
+                                                  $('#TProcedimentales').val(res.con_procedimentales);
+                                                  $('#TActitudinales').val(res.con_actitudinales);
+                                                  $('#TActvdDesarrollo').val(res.actvd_desarrollo);
+                                                  $('#SVigente').val(res.vigente);
+                                                  FTerminado();
+                                              }
                             }
-                        )
+                        );
                     }
 
                     function FActualizar_puestos() 
@@ -541,6 +527,7 @@
                             "p_CvePuestoAprendizaje": $('#SCvePuestoAprendizaje').val(),
                             "p_cve_usuario"         : <%=cve_usuario%>
                         }
+
                         $.ajax
                         (
                             {
@@ -597,6 +584,7 @@
                         {
                             "p_cve_usuario" : <%=cve_usuario%>
                         }
+
                         $.post
                         (
                             "dual_puestos/actualizar_select_puestos.jsp", par,
@@ -605,7 +593,7 @@
                                 $('#divCvePuestoAprendizaje').html(htmlExterno);
                                 FTerminado();
                             }
-                        )
+                        );
                     }
                 </script>
             </html>
@@ -613,6 +601,6 @@
     }
     else
     {
-        out.print("Inicia sesi&oacute;n");
+        out.print("Inicia sesión");
     }
 %>
