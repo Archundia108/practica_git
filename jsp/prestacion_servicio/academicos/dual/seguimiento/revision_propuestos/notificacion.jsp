@@ -1,0 +1,25 @@
+<%@ page language="java" pageEncoding="UTF-8" import="java.sql.*, java.lang.*, java.util.*, prestacion_servicio.academicos.dual.*" errorPage="../../error.jsp" import="org.json.simple.JSONObject"%>
+<%
+try
+{
+	revision_propuestos EBD=new revision_propuestos();
+	
+	EBD.cve_periodo=Integer.parseInt(request.getParameter("p_cve_periodo"));
+	EBD.cve_alumno=Integer.parseInt(request.getParameter("p_cve_alumno"));
+	EBD.cve_puesto_aprendizaje=Integer.parseInt(request.getParameter("p_cve_puesto_aprendizaje"));
+	
+	EBD.FFechaNotificacion();
+	
+	
+	JSONObject json=new JSONObject();
+	json.put("error",EBD.error);
+	
+
+	out.print(json);
+	out.flush();
+}
+catch(Exception e)
+{
+	out.print("error: "+e);
+}
+%>

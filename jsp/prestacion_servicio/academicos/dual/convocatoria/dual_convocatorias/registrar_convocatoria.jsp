@@ -1,0 +1,32 @@
+<%@ page language="java" 
+    contentType="application/json; charset=UTF-8" 
+    pageEncoding="UTF-8"
+    import="java.sql.*, java.lang.*, java.util.*, prestacion_servicio.academicos.dual.*" 
+    errorPage="../../../../../../error.jsp"
+    import="org.json.simple.JSONObject"
+%> 
+
+<%
+    try 
+    {
+        Dual_convocatorias co = new Dual_convocatorias();
+
+        co.fecha_inicio = request.getParameter("p_fecha_inicio");
+        co.fecha_termino = request.getParameter("p_fecha_termino");
+        co.descripcion = request.getParameter("p_descripcion");
+        co.vigente = Integer.parseInt(request.getParameter("p_vigente"));
+        co.cve_puesto_aprendizaje = Integer.parseInt(request.getParameter("p_cve_puesto_aprendizaje"));
+
+        co.registra_convocatoria();
+
+        JSONObject json = new JSONObject();
+        json.put("error", co.error);
+        json.put("cve_convocatoria", co.cve_convocatoria);
+        out.print(json);
+        out.flush();
+    } 
+    catch (Exception e)
+    {
+        out.print("Wacha el error: " +e);
+    }
+%>

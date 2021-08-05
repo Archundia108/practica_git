@@ -1,0 +1,407 @@
+.captura
+{
+	color: #000000;
+	border: 1px solid #002D73;
+	background-color: #ddeeee;
+	margin: 1pt;
+	font-family: Arial, Helvetica, sans-serif;
+	FONT-SIZE: 10px;
+	FONT-WEIGHT: bold;
+	TEXT-DECORATION: none
+	text-align: left;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	padding-left: 3px;
+}
+.captura_obligada
+{
+	color: #990000;
+	border: 1px solid #002D73;
+/*	background-color: #66C4BF;*/
+	background-color:#99CCFF;
+	margin: 1pt;
+	font-family: Arial, Helvetica, sans-serif;
+	FONT-SIZE: 10px;
+	FONT-WEIGHT: bold;
+	TEXT-DECORATION: none
+	text-align: left;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	padding-left: 3px;
+}
+.SoloTexto
+{
+	color: #000000;
+	background-color: #CCCCCC;
+	margin: 2pt;
+	font-family: Arial, Helvetica, sans-serif;
+	FONT-SIZE: 12px;
+	FONT-WEIGHT: bold;
+
+	TEXT-DECORATION: none
+	text-align: right;
+	text-align: center;
+}
+.SoloTexto2
+{
+	color: #000000;
+	/*	background-color: #cccccc;*/
+	margin: 2pt;
+	font-family: Arial, Helvetica, sans-serif;
+	FONT-SIZE: 12px;
+	FONT-WEIGHT: normal;
+
+	TEXT-DECORATION: none
+	text-align: right;
+	text-align: center;
+}
+.SoloTextoVerde
+{
+	color: #000000;
+	background-color: #58D68D;
+	margin: 2pt;
+	font-family: Arial, Helvetica, sans-serif;
+	FONT-SIZE: 11px;
+	FONT-WEIGHT: normal;
+
+	TEXT-DECORATION: none
+	text-align: right;
+	text-align: center;
+}
+.Textocodigos
+{
+	color: #ff6600;
+	background-color: #cccccc;
+	margin: 2pt;
+	font-family: Arial, Helvetica, sans-serif;
+	FONT-SIZE: 11px;
+	FONT-WEIGHT: bold;
+	TEXT-DECORATION: none
+	text-align: right;
+}
+.encabezado
+{
+	color: #ffffff;
+	background-color: #91a9c9;
+	margin: 1pt;
+	font-family: Arial, Helvetica, sans-serif;
+	FONT-SIZE: 14px;
+	FONT-WEIGHT: bold;
+	LETTER-SPACING: 1px;
+	LINE-HEIGHT: 100%;
+
+
+
+	TEXT-DECORATION: none
+	text-align: center;
+	text-align: center;
+	padding-bottom: 7px;
+	padding-top: 7px;
+}
+.titulo
+{
+	color: #ffffff;
+    background-color: #002D73;
+	margin: 3pt;
+	font-family: Arial, Monotype Corsiva,Arial;
+	FONT-SIZE: 20px;
+	FONT-WEIGHT: bold;
+	LETTER-SPACING: 1px;
+	LINE-HEIGHT: 130%;
+	TEXT-DECORATION: none
+	text-align: center;
+}
+.secciones
+{
+	color: #ffffff;
+    background-color: #002D73;
+	margin: 3pt;
+	font-family: Arial, Monotype Corsiva,Arial;
+	FONT-SIZE: 14px;
+	FONT-WEIGHT: bold;
+	LETTER-SPACING: 1px;
+	LINE-HEIGHT: 130%;
+	TEXT-DECORATION: none
+	text-align: center;
+}
+.letra_roja
+{
+color: #FF0000;
+}
+.usuario
+{
+	color: #ffffff;
+	background-color: #00A688;	/*VERDE LETRAS UT LOGO*/
+	/*background-color: #990000; ROJO */
+	/*background-color: #C6D420;	VERDE OLIVO */ 	
+	margin: 3pt;
+	font-family: Arial, Monotype Corsiva,Arial;
+	FONT-SIZE: 15px;
+	LETTER-SPACING: 1px;
+	LINE-HEIGHT: 130%;
+	TEXT-DECORATION: none
+	text-align: center;
+}
+.sepTabla
+{
+  background-color: #002D73;
+  LINE-HEIGHT: 5%;
+}
+.tabla_opciones
+{
+    border: 0 pt;
+    cellpading: 4 pt;
+    cellspacing: 0 pt;
+    border-collapse: separate;
+    background-color: #CCCCCC;
+	margin: 0pt;
+	font-family: Arial, Helvetica, sans-serif;
+	FONT-SIZE: 12px;
+	LETTER-SPACING: 1px;
+	TEXT-DECORATION: none: center;
+}
+.tabla
+{
+    border: 0 pt;
+    cellpading: 0 pt;
+    cellspacing: 0 pt;
+    border-collapse: separate;
+	margin: 0pt;
+	font-family: Arial, Helvetica, sans-serif;
+	FONT-SIZE: 9px;
+	LETTER-SPACING: 1px;
+	TEXT-DECORATION: none: center;
+}
+
+.tablaazul
+{
+	border: 0 pt;
+    cellpadding: 6 pt;
+    cellspacing: 16 pt;
+    background-color: #cccccc;
+}
+.body
+{
+	background-color: #ffffff;
+	background-image: url(../imagenes/fondo_siisc_2.gif);
+}
+.linea
+{
+  color: #333333;
+  background-color: #333333;
+}
+.liga
+{
+  color: #0000dd; 
+/*  color: #000000;*/
+  text-decoration: none;
+}
+.liga2
+{
+  color: #ffffff; 
+  text-decoration: none;
+}
+.liga_naranja
+{
+  color:#33FF33;
+  text-decoration:none;
+}
+.home
+{
+	margin: 0pt;
+	LINE-HEIGHT: 70%;
+}
+.ajustaTabla
+{
+  background-color: #002D73;
+  LINE-HEIGHT: 0%;
+}
+.celdaListado
+{
+	color: #000000;
+	background-color: #999999;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	FONT-SIZE: 9px;
+	FONT-WEIGHT: normal;
+	TEXT-DECORATION: none;
+	text-align: left;
+	font-style: normal;
+}
+.boton
+{
+	color: #003366;	/* color de la letra	*/
+	background-color:#99CC66;	/* color del boton */
+}
+
+.selBoton
+{
+	color: #ffffff;
+	background-color: #002D73;
+	border: 0px outset;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	FONT-SIZE: 14px;
+	FONT-WEIGHT: bold;
+	TEXT-DECORATION: none
+}
+.botones{ 
+	border:1px solid #aaa;
+	box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+	border-radius:2px;
+	border: 2px solid #4599e7;
+	color: #000;
+	font-size: 12px;
+	padding-right:3px;
+	-moz-transition: padding .25s; 
+	-webkit-transition: padding .25s; 
+	-o-transition: padding .25s;
+	transition: padding .25s;
+	font-family: sansation;
+}
+
+
+/*MODIFICACIÓN CESAR LM - 014 MAYO 21*/
+.iconsButtons
+{
+	-moz-transition: all 1s ease; -o-transition: all 1s ease; -ms-transition: all 1s ease; -webkit-transition: all 1s ease; height: 35px; width: 40px;
+}
+
+.iconsButtons:hover
+{
+	-moz-transform: scale(1.2) rotate(-15deg); -o-transform: scale(1.2) rotate(-15deg); -webkit-transform: scale(1.2) rotate(-15deg); -ms-transform: scale(1.2) rotate(-15deg);
+}
+
+.combo100
+{
+	width: 100px;
+}
+
+.combo150
+{
+	width: 150px;
+}
+
+.combo200
+{
+	width: 200px;
+}
+
+.combo250
+{
+	width: 250px;
+}
+
+.combo300
+{
+	width: 300px;
+}
+.combo350
+{
+	width: 350px;
+}
+
+.combo400
+{
+	width: 400px;
+}
+.combo450
+{
+	width: 450px;
+}
+
+.combo500
+{
+	width: 500px;
+}
+
+.combo800
+{
+	width: 700px;
+}
+/*PARA LOS BOTONES DE ICONOS QUE NO ESTEN EN UNA TABLA SINO EN UN DIV SE USA ESTA CLASE COMO EN VOBO Y GENERACIÓN DE OP DE SOL PAGO*/
+.botonera{ display: inline-block; }
+
+/*BOTÓN GRABAR PRODUCTO ZOL_PAGO*/
+#Grabarproducto{ -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3),0 0 40px rgba(0, 0, 0, 0.1); -o-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3),0 0 40px rgba(0, 0, 0, 0.1); -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1); -ms-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3),0 0 40px rgba(0, 0, 0, 0.1); box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1); }
+
+.checkGigante
+{
+	width:20px;
+	height:20px;
+}
+
+.SoloTextoNegrito
+{
+	color: #000000;
+	margin: 2pt;
+	font-family: Arial, Helvetica, sans-serif;
+	FONT-SIZE: 12px;
+	FONT-WEIGHT: bold;
+
+	TEXT-DECORATION: none
+	text-align: right;
+	text-align: center;
+}
+
+
+
+.row input[type="radio"],
+.row input[type="checkbox"]
+{
+    display: none;
+}
+
+.row .radio label,
+.row .checkbox label
+{
+    color: #000000;
+    padding: 5px 15px 5px 51px;
+    display: inline-block;
+    position: relative;
+    font-size: 1em;
+    border-radius: 3px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.row .radio label:hover,
+.row .checkbox label:hover
+{
+    background: rgba(0,116,217,0.1);
+}
+
+.row .radio label:before,
+.row .checkbox label:before
+{
+    content: "";
+    width:  17px;
+    height: 17px;
+    display: inline-block;
+    background: none;
+    border: 3px solid #0074D9;
+    border-radius: 50%;
+    position: absolute;
+    left: 17px;
+    top: 4px;
+}
+
+.row .checkbox label:before
+{
+    border-radius: 3px;
+}
+
+.row input[type="radio"]:checked + label,
+.row input[type="checkbox"]:checked + label
+{
+    padding: 5px 15px;
+    background: #0074D9;
+    border-radius: 2px;
+    color: #fff;
+}
+
+.row input[type="radio"]:checked + label:before,
+.row input[type="checkbox"]:checked + label:before
+{
+    display: none;
+}
