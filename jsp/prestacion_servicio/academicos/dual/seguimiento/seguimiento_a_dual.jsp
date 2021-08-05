@@ -147,7 +147,7 @@ if (session.getAttribute("usuario") != null)
             <input type="text" name="TCorreoInst" class="captura_obligada combo100">
         </div>
         <div class="col-md-2" align="center">
-            <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar" onClick="">
+            <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar" onClick="FGuardarDatosInst(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_puesto_aprendizaje%>);">
             <br>Guardar
         </div>
     <div class="col-md-5">&nbsp;</div>
@@ -661,7 +661,7 @@ if (session.getAttribute("usuario") != null)
         location.href="./../../../../../menuDual.jsp";
     }
 
-    function FGuardarDatos(cve_alumno,cve_periodo,cve_puesto_aprendizaje)
+    function FGuardarDatosInst(cve_alumno,cve_periodo,cve_puesto_aprendizaje)
     {
         var valida=0;
         if($('#SEmpresa'+cve_alumno).val()==-1||$('#SEmpresa').val()==null)
@@ -671,57 +671,57 @@ if (session.getAttribute("usuario") != null)
         }
         else
         {
-           if ($('#TNomRotacion'+cve_alumno).val()==""||$('#TNomRotacion'+cve_alumno).val()==null) 
+           if ($('#TNomRotacion'+cve_alumno).val()==""||$('#TNomRotacion'+cve_alumno).val()==null)
            {
                 alert('Introduzca el nombre del plan de rotacion.');
                 valida++;
-                $('#TNomRotacion').focus();
+                $('#TNomRotacion'+cve_alumno).focus();
            }
            else
            {
-            if($('#TNomInst'+cve_alumno).val()==""||$('#TNomInst'+cve_alumno).val()==null)
-            {
-                alert('Introduzca el nombre del instructor.');
-                valida++;
-                $('#TNomInst'+cve_alumno).focus();
-            }
-            else
-            {
-                if ($('#TPatInst'+cve_alumno).val()==""||$('#TPatInst'+cve_alumno).val()==null)
+                if($('#TNomInst'+cve_alumno).val()==""||$('#TNomInst'+cve_alumno).val()==null)
                 {
-                    alert('Introduzca el apellido paterno.');
+                    alert('Introduzca el nombre del instructor.');
                     valida++;
-                    $('#TPatInst'+cve_alumno).focus();
+                    $('#TNomInst'+cve_alumno).focus();
                 }
                 else
                 {
-                    if ($('#TMatInst'+cve_alumno).val()==""||$('#TMatInst'+cve_alumno).val()==null) 
+                    if ($('#TPatInst'+cve_alumno).val()==""||$('#TPatInst'+cve_alumno).val()==null)
                     {
-                        alert('Introduzca el apellido materno');
+                        alert('Introduzca el apellido paterno.');
                         valida++;
-                        $('#TMatInst'+cve_alumno).focus();
+                        $('#TPatInst'+cve_alumno).focus();
                     }
                     else
                     {
-                        if ($('#TNumeroInst'+cve_alumno).val()==""||$('#TNumeroInst'+cve_alumno).val()==null)
+                        if ($('#TMatInst'+cve_alumno).val()==""||$('#TMatInst'+cve_alumno).val()==null) 
                         {
-                           alert('Introduzca el teléfono del instructor');
-                           valida++;
-                           $('#TNumeroInst'+cve_alumno).focus(); 
+                            alert('Introduzca el apellido materno');
+                            valida++;
+                            $('#TMatInst'+cve_alumno).focus();
                         }
                         else
                         {
-                            if ($('#TCorreoInst'+cve_alumno).val()==""||$('#TCorreoInst'+cve_alumno).val()==null) 
+                            if ($('#TNumeroInst'+cve_alumno).val()==""||$('#TNumeroInst'+cve_alumno).val()==null)
                             {
-                                alert('Introduzca la dirección de correo electrónico del instructor');
+                                alert('Introduzca el teléfono del instructor');
                                 valida++;
-                                $('#TCorreoInst'+cve_alumno
-                                    ).focus();
+                                $('#TNumeroInst'+cve_alumno).focus(); 
                             }
-                        } 
-                    }
-                }    
-            }
+                            else
+                            {
+                                if ($('#TCorreoInst'+cve_alumno).val()==""||$('#TCorreoInst'+cve_alumno).val()==null) 
+                                {
+                                    alert('Introduzca la dirección de correo electrónico del instructor');
+                                    valida++;
+                                    $('#TCorreoInst'+cve_alumno
+                                    ).focus();
+                                }
+                            } 
+                        }
+                    }    
+                }
            }
         }
         if (valida==0) 
@@ -735,9 +735,25 @@ if (session.getAttribute("usuario") != null)
                 "p_TPatInst":$('#p_TPatInst').val(),
                 "p_TMatInst":$('#TPatInst').val(),
                 "p_TNumeroInst":$('#TNumeroInst').val(),
-                "p_TNumeroInst":$('#TNumeroInst').val(),
+                "p_TCorreoInst":$('#TCorreoInst').val(),
+                "p_cve_alumno":cve_alumno,
+                "p_cve_periodo":cve_periodo,
+                "p_cve_puesto_aprendizaje":cve_puesto_aprendizaje
 
-            }
+            };
+            $.ajax
+            ({
+                data:par,
+                url:"seguimiento_a_dual/guardarDatos.jsp"
+                type:"POST",
+                dataType:"JSON",
+                success:function(res)
+                {
+                    data = JSON.parse(res);
+                    alert(res.error);
+                    FTerminaCarga();
+                }
+            });
         }
     }
 //Actualizacon.................................................
