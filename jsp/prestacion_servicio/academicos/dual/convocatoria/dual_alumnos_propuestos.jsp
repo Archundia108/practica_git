@@ -33,6 +33,8 @@ if (session.getAttribute("usuario") != null)
                         <td class="encabezado">Proponer alumnos</td>
                     </tr>
                 </table>
+
+                Git Pull
                 
                 <br>
                 <div class="col-md-12 SoloTexto2">

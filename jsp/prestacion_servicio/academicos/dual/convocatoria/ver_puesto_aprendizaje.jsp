@@ -126,8 +126,6 @@
         </body>
         <script type="text/JavaScript" language="JavaScript">
         </script>
-
-        <!--Actualizacion-->
     </html>
 
     <%
