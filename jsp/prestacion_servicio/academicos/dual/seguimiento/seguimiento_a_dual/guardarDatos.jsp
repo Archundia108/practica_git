@@ -10,9 +10,9 @@ try
     	ebd.ape_pat_inst_empresa=request.getParameter("p_TPatInst");
     	ebd.ape_mat_inst_empresa=request.getParameter("p_TMatInst");
     	ebd.tel_inst_empresa=request.getParameter("p_TNumeroInst");
-    	ebd.cve_alumno=38708;
-    	ebd.cve_periodo=70;
-    	ebd.cve_puesto_aprendizaje=1;
+    	ebd.cve_alumno=Integer.parseInt(request.getParameter("p_cve_alumno"));
+    	ebd.cve_periodo=Integer.parseInt(request.getParameter("p_cve_periodo"));
+    	ebd.cve_puesto_aprendizaje=Integer.parseInt(request.getParameter("p_cve_puesto_aprendizaje"));
 
     	ebd.FGuardarDatos();
     	JSONObject json=new JSONObject();
