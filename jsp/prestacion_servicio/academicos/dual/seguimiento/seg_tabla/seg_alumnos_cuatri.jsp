@@ -95,7 +95,7 @@ consultas="SELECT ISNULL(direc_empresas.nombre,'Pendiente') AS Empresa, personas
                 <input type="button" value="Cargar PDF" class="liga" name="GuardarPDF" title="Guardar" onClick="">
             </td>
             <td class="align-middle text-center">
-                <a href="seguimiento_a_dual.jsp?cve_periodo=<%=cve_periodo%>" target="popup" onClick="window.open(this.href, this.target, 'width=700,height=400'); return false;">Ver</a>
+                <a href="seguimiento_a_dual.jsp?cve_periodo=<%=cve_periodo%>&cve_alumno=<%=cve_alumno%>&cve_puesto_aprendizaje=<%=cve_puesto_aprendizaje%>" target="popup" onClick="openWin();">Ver</a>
             </td>
             <td class="align-middle text-center">
                 <a href="seguimiento_a_dual.jsp?cve_periodo=<%=cve_periodo%>" target="popup" onClick="window.open(this.href, this.target, 'width=700,height=400'); return false;">PDF</a>
@@ -107,6 +107,16 @@ consultas="SELECT ISNULL(direc_empresas.nombre,'Pendiente') AS Empresa, personas
         %>
     </tbody>
 </table>
+
+<script type="text/javascript">
+    function openWin() 
+    {
+    myWindow=window.open("http://localhost:8080/dual/jsp/prestacion_servicio/academicos/dual/seguimiento/seguimiento_a_dual.jsp?cve_periodo=<%=cve_periodo%>&cve_alumno=<%=cve_alumno%>&cve_puesto_aprendizaje=<%=cve_puesto_aprendizaje%>","myWindow","width=800,height=500");  
+    }
+    function closeWin(){
+        myWindow.close();
+    }
+</script>
 <%
 }
 catch(Exception e)

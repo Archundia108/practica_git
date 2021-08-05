@@ -8,9 +8,12 @@ if (session.getAttribute("usuario") != null)
         BD SMBD = new BD();
         ResultSet rs, rs2;
         String consultas="",nombre_periodo="",mes1="",mes2="",mes3="",mes4="",nombre_empresa="";
-        int meses=0,numero_periodo=0,cve_alumno=0,cve_puesto_aprendizaje=0,cve_empresa=0;     
+        int meses=0,numero_periodo=0,cve_empresa=0;     
         int cve_periodo=Integer.parseInt(request.getParameter("cve_periodo"));
-        //http://localhost:8080/dual/jsp/prestacion_servicio/academicos/dual/seguimiento/seguimiento_a_dual.jsp?cve_periodo=69
+        int cve_puesto_aprendizaje=Integer.parseInt(request.getParameter("cve_puesto_aprendizaje"));
+        int cve_alumno=Integer.parseInt(request.getParameter("cve_cve_alumno"));
+
+        
     %>
     <html>
     <head>
@@ -23,10 +26,10 @@ if (session.getAttribute("usuario") != null)
         <link rel="stylesheet" href="../../../../../estilos/bootstrap.min.css">
         <link rel="stylesheet" href="../../../../../estilos/bootstrap4.2.1.min.css">
 
-        <script type="text/javascript" language="JavaScript1.2" src="../../../../jsp/menu/stmenu.js"></script>
-        <script type="text/javascript" language="JavaScript1.2" src="../../../../js/jquery-2.2.4.min.js"></script>
-        <script type="text/javascript" language="JavaScript1.2" src="../../../../js/popcalendar.js"></script>
-        <script type="text/javascript" language="JavaScript1.2" src="../../../../js/bootstrap.min.js"></script>
+        <script type="text/javascript" language="JavaScript1.2" src="../../../../../jsp/menu/stmenu.js"></script>
+        <script type="text/javascript" language="JavaScript1.2" src="../../../../../js/jquery-2.2.4.min.js"></script>
+        <script type="text/javascript" language="JavaScript1.2" src="../../../../../js/popcalendar.js"></script>
+        <script type="text/javascript" language="JavaScript1.2" src="../../../../../js/bootstrap.min.js"></script>
     <style>
         .row input[type="checkbox"] {
             display: block !important;
@@ -139,15 +142,15 @@ if (session.getAttribute("usuario") != null)
     <div class="col-md-2">
             Número
             <br>
-            <input type="text" name="TNumeroInst" class="captura_obligada combo100">
+            <input type="text" name="TNumeroInst" id="TNumeroInst" class="captura_obligada combo100">
         </div>
         <div class="col-md-2">
             Correo
             <br>
-            <input type="text" name="TCorreoInst" class="captura_obligada combo100">
+            <input type="text" name="TCorreoInst" id="TCorreoInst" class="captura_obligada combo100">
         </div>
         <div class="col-md-2" align="center">
-            <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar" onClick="FGuardarDatosInst(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_puesto_aprendizaje%>);">
+            <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar" onClick="FGuardarDatosInst();">
             <br>Guardar
         </div>
     <div class="col-md-5">&nbsp;</div>
@@ -647,24 +650,34 @@ if (session.getAttribute("usuario") != null)
                         <br>
                     </body>
 <script type="text/javascript">
-                        var myWindow;
-                        function openWin() {
-                            myWindow=window.open("observaciones.jsp","myWindow","width=800,height=500");
-
-        // body...
+    var myWindow;
+    function openWin() 
+    {
+    myWindow=window.open("observaciones.jsp","myWindow","width=800,height=500");  
     }
     function closeWin(){
         myWindow.close();
     }
+
     function FSalir()
     {
         location.href="./../../../../../menuDual.jsp";
     }
 
-    function FGuardarDatosInst(cve_alumno,cve_periodo,cve_puesto_aprendizaje)
+    function FTerminaCarga()
+        {
+            $('#gif_espera').html('&nbsp;');
+        }
+
+    function FCargando()
+        {
+          $('#gif_espera').html('<img src="../../../../../imagenes/ajax-loader.gif" width="50">');  
+        }
+
+    function FGuardarDatosInst(cve_alumno)
     {
         var valida=0;
-        if($('#SEmpresa'+cve_alumno).val()==-1||$('#SEmpresa').val()==null)
+        if($('#SEmpresa'+cve_alumno).val()==-1||$('#SEmpresa'+cve_alumno).val()==null)
         {
              alert('Seleccione una empresa primero.');valida++;
             $('#SEmpresa'+cve_alumno).focus();
@@ -724,27 +737,29 @@ if (session.getAttribute("usuario") != null)
                 }
            }
         }
+        alert($('#SEmpresa'+cve_alumno).val()+" "+valida);
         if (valida==0) 
         {
             FCargando();
             var par=
             {
-                "p_SEmpresa":$('#SEmpresa').val(),
-                "p_TNomRotacion":$('#TNomRotacion').val(),
-                "p_TNomInst":$('#TNomInst').val(),
-                "p_TPatInst":$('#p_TPatInst').val(),
-                "p_TMatInst":$('#TPatInst').val(),
-                "p_TNumeroInst":$('#TNumeroInst').val(),
-                "p_TCorreoInst":$('#TCorreoInst').val(),
-                "p_cve_alumno":cve_alumno,
-                "p_cve_periodo":cve_periodo,
+                "p_SEmpresa"              :$('#SEmpresa'+cve_alumno).val(),
+                "p_TNomRotacion"          :$('#TNomRotacion'+cve_alumno).val(),
+                "p_TNomInst"              :$('#TNomInst'+cve_alumno).val(),
+                "p_TPatInst"              :$('#p_TPatInst'+cve_alumno).val(),
+                "p_TMatInst"              :$('#TPatInst'+cve_alumno).val(),
+                "p_TNumeroInst"           :$('#TNumeroInst'+cve_alumno).val(),
+                "p_TCorreoInst"           :$('#TCorreoInst'+cve_alumno).val(),
+                "p_cve_alumno"            :cve_alumno,
+                "p_cve_periodo"           :cve_periodo,
                 "p_cve_puesto_aprendizaje":cve_puesto_aprendizaje
 
             };
+            alert("seguimiento_a_dual/guardarDatos.jsp?p_SEmpresa="+par.p_SEmpresa+"&p_TNomRotacion="+par.p_TNomRotacion+"&p_TNomInst="+par.p_TNomInst+"&p_TPatInst="+par.p_TPatInst+"&p_TMatInst="+par.p_TMatInst+"&p_TNumeroInst"+par.p_TNumeroInst+"&p_TCorreoInst"+par.p_TCorreoInst+"&p_cve_alumno"+par.p_cve_alumno+"&p_cve_periodo"par.p_cve_periodo+"&p_cve_puesto_aprendizaje"+par.p_cve_puesto_aprendizaje);
             $.ajax
             ({
                 data:par,
-                url:"seguimiento_a_dual/guardarDatos.jsp"
+                url:"seguimiento_a_dual/guardarDatos.jsp",
                 type:"POST",
                 dataType:"JSON",
                 success:function(res)
