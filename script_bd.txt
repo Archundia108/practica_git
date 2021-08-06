@@ -148,3 +148,6 @@ CREATE TABLE dual_alumnos_puestos
 	cve_alumno INT NOT NULL
 	PRIMARY KEY (cve_puesto_aprendizaje, anio, cve_alumno)
 )
+
+
+West Coast!!!
