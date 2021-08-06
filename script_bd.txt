@@ -12,6 +12,7 @@ CREATE TABLE dual_puestos_aprendizaje
 (
 	cve_puesto_aprendizaje INT NOT NULL,
 	anio INT NOT NULL,
+	cve_competencia INT NOT NULL,
 	nombre_puesto_aprendizaje VARCHAR(50) NOT NULL,
 	objetivo_gral TEXT NOT NULL,
 	requerimientos_gral TEXT NOT NULL,
@@ -20,8 +21,7 @@ CREATE TABLE dual_puestos_aprendizaje
 	con_actitudinales TEXT NOT NULL, 
 	actvd_desarrollo TEXT NOT NULL,
 	fecha DATE NOT NULL,
-	vigente INT NOT NULL,
-	cve_competencia INT NOT NULL
+	vigente INT NOT NULL
 	PRIMARY KEY (cve_puesto_aprendizaje, anio, cve_competencia)
 )
 
