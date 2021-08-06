@@ -1,27 +1,28 @@
-<%@ 
+<%@
     page language="java"
     import="java.sql.*, java.lang.*, java.util.*, prestacion_servicio.academicos.dual.*"
     import="org.json.simple.JSONObject"
     contentType="application/json; charset=UTF-8"
     pageEncoding="UTF-8"
     errorPage="../../../../../../error.jsp"
-%>
+%> 
 
 <%
     try
     {
-        Dual_puestos p = new Dual_puestos();
+        Dual_competencias p = new Dual_competencias();
 
-        p.cve_dual_puesto = Integer.parseInt(request.getParameter("p_cve_dual_puesto"));
+        p.cve_competencia = Integer.parseInt(request.getParameter("p_TCveCompetencia"));
+        p.nombre_competencia = request.getParameter("p_TNombreCompetencia");
+        p.cve_carrera = Integer.parseInt(request.getParameter("p_SCarrera"));
 
-        p.duplicar_puesto(p.cve_dual_puesto);
+        p.actualizar_competencia(p.cve_competencia);
 
         JSONObject json = new JSONObject();
         json.put("error", p.error);
-        json.put("cve_dual_puesto", p.cve_dual_puesto);
         out.print(json);
         out.flush();
-    }
+    } 
     catch (Exception e)
     {
         out.print("Wacha el error: " +e);

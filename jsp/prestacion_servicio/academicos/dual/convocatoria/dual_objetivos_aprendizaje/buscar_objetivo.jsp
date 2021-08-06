@@ -9,18 +9,17 @@
 <%
     try 
     {
-        Dual_obj_result ob = new Dual_obj_result();
+        Dual_objetivos_aprendizaje ob = new Dual_objetivos_aprendizaje();
 
         ob.numero = Integer.parseInt(request.getParameter("p_numero"));
-        ob.objetivo = request.getParameter("p_objetivo");
-        ob.resultado = request.getParameter("p_resultado");
-        ob.cve_dual_puesto = Integer.parseInt(request.getParameter("p_cve_dual_puesto"));
-        ob.anio = Integer.parseInt(request.getParameter("p_anio"));
 
-        ob.actualizar_obj(ob.numero);
+        ob.consultar_objetivo_aprendizaje();
 
         JSONObject json = new JSONObject();
-        json.put("error", ob.error);
+
+        json.put("numero", ob.numero);
+        json.put("objetivo", ob.objetivo);
+        json.put("resultado", ob.resultado);
         out.print(json);
         out.flush();
     } 

@@ -35,7 +35,7 @@
                     int numero = 0;
 
                     consultas = "SELECT emp.nombre, emp.giro_empresa, emp.cve_empresa "
-                              + "FROM dual_puestos_empresa pe "
+                              + "FROM dual_empresas pe "
                               + "INNER JOIN direc_empresas emp ON emp.cve_empresa = pe.cve_empresa "
                               + "INNER JOIN dual_puestos_aprendizaje pl ON pl.cve_puesto_aprendizaje = pe.cve_puesto_aprendizaje "
                               + "WHERE pl.cve_puesto_aprendizaje = "+cve_puesto_aprendizaje+" ";
@@ -49,7 +49,7 @@
                         %>
                             <tr>
                                 <td class="align-middle text-center"><%=numero%></td>
-                                <td class="align-middle text-center"><%=nombre_empresa%> / <%=cve_empresa%></td>
+                                <td class="align-middle text-center"><%=nombre_empresa%></td>
                                 <td class="align-middle text-center"><%=giro_empresa%></td>
                                 <td class="align-middle text-center"><img src="../../../../../imagenes/ikonoz/nuevo.png" class="iconsButtons" title="Quitar" onclick="FQuitar_empresa('<%=cve_empresa%>')"></td>
                             </tr>
