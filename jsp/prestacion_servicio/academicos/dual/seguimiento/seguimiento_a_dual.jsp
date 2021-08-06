@@ -97,7 +97,7 @@ if (session.getAttribute("usuario") != null)
                 <select type="text" id="SEmpresa" name="SEmpresa" class="captura_obligada combo200">
                     <option value=""></option>
                     <%
-                        consultas="SELECT direc_empresas.nombre "
+                        consultas="SELECT direc_empresas.nombre,direc_empresas.cve_empresa "
                                  +"FROM direc_empresas INNER JOIN "
                                  +"dual_empresas ON direc_empresas.cve_empresa = dual_empresas.cve_empresa "
                                  +"WHERE  (dual_empresas.cve_puesto_aprendizaje = 1)";
@@ -106,7 +106,7 @@ if (session.getAttribute("usuario") != null)
                         {
                         nombre_empresa=rs2.getString(1);        
                     %>
-                    <option value="<%=cve_empresa%>"><%=nombre_empresa%></option>
+                    <option value="<%=cve_empresa%>"><%=nombre_empresa%> <%=cve_empresa%></option>
                     <%
                         }
                         SMBD.desconectarBD();
@@ -150,7 +150,7 @@ if (session.getAttribute("usuario") != null)
             <input type="text" name="TCorreoInst" id="TCorreoInst" class="captura_obligada combo100">
         </div>
         <div class="col-md-2" align="center">
-            <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar" onClick="">
+            <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar" onClick="FGuardarDatosInst();">
             <br>Guardar
         </div>
     <div class="col-md-5">&nbsp;</div>
@@ -674,10 +674,10 @@ if (session.getAttribute("usuario") != null)
           $('#gif_espera').html('<img src="../../../../../imagenes/ajax-loader.gif" width="50">');  
         }
 
-    /*function FGuardarDatosInst(cve_alumno)
+    function FGuardarDatosInst(cve_alumno)
     {
         var valida=0;
-        if($('#SEmpresa'+cve_alumno).val()==-1||$('#SEmpresa'+cve_alumno).val()==null)
+        if($('#SEmpresa'+cve_alumno).val()>=-1||$('#SEmpresa'+cve_alumno).val()==null)
         {
              alert('Seleccione una empresa primero.');valida++;
             $('#SEmpresa'+cve_alumno).focus();
@@ -770,7 +770,7 @@ if (session.getAttribute("usuario") != null)
                 }
             });
         }
-    }*/
+    }
 //Actualizacon.................................................
 </script>
 </html>
