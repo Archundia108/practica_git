@@ -99,8 +99,8 @@ if (session.getAttribute("usuario") != null)
                     <%
                         consultas="SELECT direc_empresas.nombre "
                                  +"FROM direc_empresas INNER JOIN "
-                                 +"dual_puestos_empresa ON direc_empresas.cve_empresa=dual_puestos_empresa.cve_empresa "
-                                 +"WHERE (dual_puestos_empresa.cve_puesto_aprendizaje = 1);";
+                                 +"dual_empresas ON direc_empresas.cve_empresa = dual_empresas.cve_empresa "
+                                 +"WHERE  (dual_empresas.cve_puesto_aprendizaje = 1)";
                         rs2=SMBD.SQLBD(consultas);
                         while(rs2.next())
                         {
