@@ -10,8 +10,8 @@ if (session.getAttribute("usuario") != null)
         String consultas="",nombre_periodo="",mes1="",mes2="",mes3="",mes4="",nombre_empresa="";
         int meses=0,numero_periodo=0,cve_empresa=0;     
         int cve_periodo=Integer.parseInt(request.getParameter("cve_periodo"));
-        int cve_puesto_aprendizaje=Integer.parseInt(request.getParameter("cve_puesto_aprendizaje"));
-        int cve_alumno=Integer.parseInt(request.getParameter("cve_cve_alumno"));
+        //int cve_puesto_aprendizaje=Integer.parseInt(request.getParameter("cve_puesto_aprendizaje"));
+        //int cve_alumno=Integer.parseInt(request.getParameter("cve_cve_alumno"));
 
         
     %>
@@ -150,7 +150,7 @@ if (session.getAttribute("usuario") != null)
             <input type="text" name="TCorreoInst" id="TCorreoInst" class="captura_obligada combo100">
         </div>
         <div class="col-md-2" align="center">
-            <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar" onClick="FGuardarDatosInst();">
+            <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar" onClick="">
             <br>Guardar
         </div>
     <div class="col-md-5">&nbsp;</div>
@@ -674,7 +674,7 @@ if (session.getAttribute("usuario") != null)
           $('#gif_espera').html('<img src="../../../../../imagenes/ajax-loader.gif" width="50">');  
         }
 
-    function FGuardarDatosInst(cve_alumno)
+    /*function FGuardarDatosInst(cve_alumno)
     {
         var valida=0;
         if($('#SEmpresa'+cve_alumno).val()==-1||$('#SEmpresa'+cve_alumno).val()==null)
@@ -770,7 +770,7 @@ if (session.getAttribute("usuario") != null)
                 }
             });
         }
-    }
+    }*/
 //Actualizacon.................................................
 </script>
 </html>
