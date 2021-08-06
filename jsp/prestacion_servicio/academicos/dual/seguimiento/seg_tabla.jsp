@@ -160,7 +160,7 @@ if (session.getAttribute("usuario") != null)
             //alert('Asigne calificacion primero.');
             $('#SCalifConoc_'+cve_alumno).focus();
         }
-        alert($('#SCalifConoc_'+cve_alumno).val()+" "+valida);
+        //alert($('#SCalifConoc_'+cve_alumno).val()+" "+valida);
         if(valida>0)
         {
             FCargando();
