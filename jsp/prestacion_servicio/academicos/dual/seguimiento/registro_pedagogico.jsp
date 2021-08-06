@@ -133,7 +133,7 @@ if (session.getAttribute("usuario") != null)
         {
             FCargando();
             var par={"p_TCuatri" : $('#TCuatri').val()};
-            alert("seguimiento/registro_pedagogico.jsp?p_TCuatri="+par.p_TCuatri);
+            //alert("seguimiento/registro_pedagogico.jsp?p_TCuatri="+par.p_TCuatri);
             $.post("registro_pedagogico/pedagogico_alumnos_cuatri.jsp",par,function(htmlExterno){
                 $('#ListadoAlumnos').html(htmlExterno);
                 console.log(htmlExterno);
