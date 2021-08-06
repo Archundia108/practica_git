@@ -128,7 +128,7 @@ if (session.getAttribute("usuario") != null)
 
     function FCargarCuatri()
      {
-        alert($('#TCuatri').val());
+        //alert($('#TCuatri').val());
         if($('#TCuatri').val()!=0)
         {
             FCargando();
