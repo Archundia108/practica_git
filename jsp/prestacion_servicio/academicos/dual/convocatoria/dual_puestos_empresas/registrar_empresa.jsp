@@ -1,9 +1,10 @@
-<%@ page language="java" 
+<%@ 
+    page language="java" 
+    import="java.sql.*, java.lang.*, java.util.*, prestacion_servicio.academicos.dual.*" 
+    import="org.json.simple.JSONObject"
     contentType="application/json; charset=UTF-8" 
     pageEncoding="UTF-8"
-    import="java.sql.*, java.lang.*, java.util.*, prestacion_servicio.academicos.dual.*" 
     errorPage="../../../../../../error.jsp"
-    import="org.json.simple.JSONObject"
 %> 
 
 <%
