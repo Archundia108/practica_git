@@ -52,7 +52,7 @@ if (session.getAttribute("usuario") != null)
                         <td colspan="1" class="SoloTexto">Actores</td>
                     </tr>
                     <tr>
-                        <td style="background-color: #2EFE64;" colspan="1" align="center" ><a href="jsp/prestacion_servicio/academicos/dual/convocatoria/dual_puestos.jsp" class="liga">Registro de puestos</a></td>
+                        <td style="background-color: #2EFE64;" colspan="1" align="center" ><a href="jsp/prestacion_servicio/academicos/dual/convocatoria/dual_puestos_aprendizaje.jsp" class="liga">Registro de puestos de aprendizaje</a></td>
                         <td colspan="1" class="SoloTexto2">Director</td>
                     </tr>
                     <tr>

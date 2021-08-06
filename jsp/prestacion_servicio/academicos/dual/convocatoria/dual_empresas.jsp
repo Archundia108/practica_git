@@ -64,7 +64,7 @@
                                 <option value="-1">...seleccionar...</option>
                                 <%
                                     consultas = "SELECT cve_empresa, nombre, giro_empresa "
-                                            + "FROM direc_empresas";
+                                              + "FROM direc_empresas";
                                     rs = SMBD.SQLBD(consultas);
                                     while (rs.next())
                                     {
@@ -138,7 +138,7 @@
 
                         $.post
                         (
-                            "dual_puestos_empresas/tabla_empresas.jsp", par,
+                            "dual_empresas/tabla_empresas.jsp", par,
                             function(htmlExterno) 
                             {
                                 $('#TblEmpresas').html(htmlExterno);
@@ -168,7 +168,7 @@
                             (
                                 {
                                     data        : par,
-                                    url         : "dual_puestos_empresas/registrar_empresa.jsp",
+                                    url         : "dual_empresas/registrar_empresa.jsp",
                                     type        : "POST",
                                     dataType    : "JSON",
                                     success     : function (res)
@@ -195,7 +195,7 @@
                         (
                             {
                                 data        : par,
-                                url         : "dual_puestos_empresas/eliminar_empresa.jsp",
+                                url         : "dual_empresas/eliminar_empresa.jsp",
                                 type        : "POST",
                                 dataType    : "JSON",
                                 success     : function (res)

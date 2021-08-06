@@ -1,29 +1,36 @@
-<%@ page language="java" import="java.sql.*, java.lang.*, java.util.*, comun.*" errorPage="../../../../../error.jsp" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@
+    page language="java"
+    import="java.sql.*, java.lang.*, java.util.*, comun.*"
+    contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"
+    errorPage="../../../../../error.jsp"
+%>
+
 <%
     if (session.getAttribute("usuario") != null)
     {
-        String usuario = String.valueOf(session.getAttribute("usuario"));
-        int cve_usuario = Integer.parseInt(String.valueOf(session.getAttribute("cve_usuario")));
-        String nombre_dual_puesto = request.getParameter("nombre_dual_puesto");
-        int cve_dual_puesto = Integer.parseInt(request.getParameter("cve_dual_puesto"));
-        int anio = Integer.parseInt(request.getParameter("anio"));
-
         BD SMBD = new BD();
         ResultSet rs;
+
+        String usuario = String.valueOf(session.getAttribute("usuario"));
+        int cve_usuario = Integer.parseInt(String.valueOf(session.getAttribute("cve_usuario")));
+        String nombre_puesto_aprendizaje = request.getParameter("nombre_puesto_aprendizaje");
+        int cve_puesto_aprendizaje = Integer.parseInt(request.getParameter("cve_puesto_aprendizaje"));
+        int anio = Integer.parseInt(request.getParameter("anio"));
+
         String consultas = "", error = "", objetivo = "";
         int numero = 0;
+
         %> 
             <html>
                 <head>
-                    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
-                    
                     <title>Objetivos de aprendizaje</title>
-
                     <link rel="stylesheet" href="../../../../../estilos/sic.css">
                     <link rel="stylesheet" href="../../../../../estilos/bootstrap4.2.1.min.css"> 
                     <script type="text/javascript" src="../../../../../js/jquery-2.2.4.min.js"></script>
                     <script type="text/javascript" src="../../../../../js/bootstrap4.1.3.min.js"></script>
                 </head>
+
                 <body>
                     <table width="80%" cellpadding="0" cellspacing="0" border="0" align="center">
                         <tr align="center">
@@ -40,12 +47,12 @@
                         <div class="col-md-2">
                             Puesto
                             <br>
-                            <input type="text"class="captura combo200" value="<%=nombre_dual_puesto%>" readonly>
+                            <input type="text"class="captura combo200" value="<%=nombre_puesto_aprendizaje%>" readonly>
                         </div>
                         <div class="col-md-2">
                             Folio
                             <br>
-                            <input type="text" name="TFolio" id="TFolio" class="captura combo100" value="0" readonly>
+                            <input type="text" name="TFolioObjetivo" id="TFolioObjetivo" class="captura combo100" value="0" readonly>
                         </div>
                         <div class="col-md-2">
                             Objetivo
@@ -69,7 +76,7 @@
                             Limpiar/Nuevo
                         </div>
                         <div class="col-md-2">
-                            <img src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar" onclick="Fregistrar_objetivos()">
+                            <img src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar" onclick="FRegistrar_objetivo()">
                             <br>
                             Guardar/Modificar
                         </div>
@@ -83,20 +90,8 @@
 
                     <br>
                     <div class="col-md-12">
-                        <table style="margin: auto;" align="" class="table table-hover table-sm border border-info SoloTexto2" cellpadding="0" cellspacing="0" id="TblObjetivos">
-                            <thead class="table-dark SoloTexto2">
-                                <tr class="bg-secondary">
-                                    <th class="align-middle text-center" scope="col">Folio</th>
-                                    <th class="align-middle text-center" scope="col">Objetivo</th>
-                                    <th class="align-middle text-center" scope="col">Resutado</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="align-middle text-center">--</td>
-                                    <td class="align-middle text-center">--</td>
-                                    <td class="align-middle text-center">--</td>
-                            </tbody>
+                        <table class="table table-hover table-sm border border-info SoloTexto2" cellpadding="0" cellspacing="0" id="TblObjetivos">
+                            <!--Tabla-->
                         </table>
                     </div>
 
@@ -111,13 +106,16 @@
                         </div>
                     </div>
                 </body>
+
                 <script type="text/JavaScript" language="JavaScript">
-                    function FCargando() {
-                    $('#gif_espera').html('<img src="../../../../../imagenes/ajax-loader.gif" width="50">')
+                    function FCargando() 
+                    {
+                    $('#gif_espera').html('<img src="../../../../../imagenes/ajax-loader.gif" width="50">');
                     }
 
-                    function FTerminado() {
-                        $('#gif_espera').html('&nbsp;')
+                    function FTerminado() 
+                    {
+                        $('#gif_espera').html('&nbsp;');
                     }
 
                     function FCaracteres(event) 
@@ -140,22 +138,23 @@
                         FCargando();
                         var par =
                         {
-                            "p_cve_usuario"      : <%=cve_usuario%>,
-                            "p_cve_dual_puesto"  : <%=cve_dual_puesto%>
+                            "p_cve_usuario"             : <%=cve_usuario%>,
+                            "p_cve_puesto_aprendizaje"  : <%=cve_puesto_aprendizaje%>
                         }
+
                         $.post
                         (
-                            "dual_obj_result/tabla_obj_result.jsp", par,
+                            "dual_objetivos_aprendizaje/tabla_objetivos.jsp", par,
                             function(htmlExterno) 
                             {
                                 $('#TblObjetivos').html(htmlExterno);
                                 FTerminado();
                             }
-                        )
+                        );
                     }
                     FTabla_objetivos()
 
-                    function Fregistrar_objetivos() 
+                    function FRegistrar_objetivo() 
                     {
                         FCargando();
                         var valida = 0;
@@ -175,63 +174,66 @@
                             }
                             else
                             {
-                                if ($('#TFolio').val() != 0) 
+                                if ($('#TFolioObjetivo').val() != 0) 
                                 {
-                                    FActualizar_objetivos();
+                                    FActualizar_objetivo();
                                     valida++;
                                 }
                             }
                         }
+
                         if (valida == 0) 
                         {
                             var par = 
                             {
-                                "p_objetivo"         : $('#TObjetivo').val(),
-                                "p_resultado"        : $('#TResultado').val(),
-                                "p_cve_dual_puesto"  : <%=cve_dual_puesto%>,
-                                "p_anio"             : <%=anio%>,
-                                "p_cve_usuario"      : <%=cve_usuario%>
+                                "p_objetivo"                : $('#TObjetivo').val(),
+                                "p_resultado"               : $('#TResultado').val(),
+                                "p_cve_puesto_aprendizaje"  : <%=cve_puesto_aprendizaje%>,
+                                "p_anio"                    : <%=anio%>,
+                                "p_cve_usuario"             : <%=cve_usuario%>
                             }
+
                             $.ajax
                             (
                                 {
                                     data     : par,
-                                    url      : "dual_obj_result/registrar_obj_result.jsp",
+                                    url      : "dual_objetivos_aprendizaje/registrar_objetivo.jsp",
                                     type     : "POST",
                                     dataType : "JSON",
                                     success  : function(res) 
-                                                {
-                                                    alert(res.error);
-                                                    FTerminado();
-                                                    $('#TFolio').val(res.numero);
-                                                    FTabla_objetivos();
-                                                }
+                                               {
+                                                   alert(res.error);
+                                                   FTerminado();
+                                                   $('#TFolioObjetivo').val(res.numero);
+                                                   FTabla_objetivos();
+                                               }
                                 }
                             );
                         }
                     }
 
-                    function FBuscar(numero) 
+                    function FBuscar_objetivo(numero) 
                     {
                         FCargando();
                         var par =
                         {
                             "p_numero" : numero
                         }
+
                         $.ajax
                         (
                             {
                                 data : par,
-                                url : "dual_obj_result/buscar_obj_result.jsp",
+                                url : "dual_objetivos_aprendizaje/buscar_objetivo.jsp",
                                 type : "POST",
                                 dataType : "JSON",
                                 success : function (res) 
-                                            {
-                                                $('#TFolio').val(res.numero);
-                                                $('#TObjetivo').val(res.objetivo);
-                                                $('#TResultado').val(res.resultado);
-                                                FTerminado();
-                                            }
+                                          {
+                                              $('#TFolioObjetivo').val(res.numero);
+                                              $('#TObjetivo').val(res.objetivo);
+                                              $('#TResultado').val(res.resultado);
+                                              FTerminado();
+                                          }
                             }
                         );
                     }
@@ -239,37 +241,38 @@
                     function FLimpiar() 
                     {
                         FCargando();
-                        $('#TFolio').val(0);
+                        $('#TFolioObjetivo').val(0);
                         $('#TObjetivo').val("");
                         $('#TResultado').val("");
                         FTerminado();
                     }
 
-                    function FActualizar_objetivos() 
+                    function FActualizar_objetivo() 
                     {
                         FCargando();
                         var par =
                         {
-                            "p_numero"           : $('#TFolio').val(),
-                            "p_objetivo"         : $('#TObjetivo').val(),
-                            "p_resultado"        : $('#TResultado').val(),
-                            "p_cve_dual_puesto"  : <%=cve_dual_puesto%>,
-                            "p_anio"             : <%=anio%>,
-                            "p_cve_usuario"      : <%=cve_usuario%>
+                            "p_numero"                  : $('#TFolioObjetivo').val(),
+                            "p_objetivo"                : $('#TObjetivo').val(),
+                            "p_resultado"               : $('#TResultado').val(),
+                            "p_cve_puesto_aprendizaje"  : <%=cve_puesto_aprendizaje%>,
+                            "p_anio"                    : <%=anio%>,
+                            "p_cve_usuario"             : <%=cve_usuario%>
                         }
+
                         $.ajax
                         (
                             {
                                 data : par,
-                                url : "dual_obj_result/actualizar_obj_result.jsp",
+                                url : "dual_objetivos_aprendizaje/actualizar_objetivo.jsp",
                                 type : "POST",
                                 dataType : "JSON",
                                 success : function (res) 
-                                            {
-                                                alert(res.error);
-                                                FTerminado();
-                                                FTabla_objetivos();
-                                            }
+                                          {
+                                              alert(res.error);
+                                              FTerminado();
+                                              FTabla_objetivos();
+                                          }
                             }
                         );
                     }
@@ -279,6 +282,6 @@
     }
     else
     {
-        out.print("Inicia sesi&oacute;n");
+        out.print("Inicia sesión");
     }
 %>

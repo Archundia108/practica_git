@@ -9,12 +9,12 @@
 <%
     try 
     {
-        Dual_puestos_empresa pe = new Dual_puestos_empresa();
+        Dual_empresas pe = new Dual_empresas();
 
         pe.cve_empresa = Integer.parseInt(request.getParameter("p_cve_empresa"));
         pe.cve_puesto_aprendizaje = Integer.parseInt(request.getParameter("p_cve_puesto_aprendizaje"));
 
-        pe.eliminar_puesto_empresa();
+        pe.eliminar_empresa();
 
         JSONObject json = new JSONObject();
         json.put("error", pe.error);

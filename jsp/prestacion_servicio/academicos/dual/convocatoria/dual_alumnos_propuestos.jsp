@@ -5,7 +5,7 @@ if (session.getAttribute("usuario") != null)
 {
     String usuario = String.valueOf(session.getAttribute("usuario"));
     //int cve_usuario = Integer.parseInt(String.valueOf(session.getAttribute("cve_usuario")));
-    int cve_usuario = 30824;
+    int cve_usuario = 131;
     %>
         <!DOCTYPE html>
         <html>
