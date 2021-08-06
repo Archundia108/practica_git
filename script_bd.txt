@@ -63,7 +63,6 @@ CREATE TABLE dual_alumnos
 	cve_alumno INT NOT NULL,
 	cve_periodo INT NOT NULL,
 	cve_competencia INT NOT NULL,
-	cve_puesto_aprendizaje INT,
 	cve_empresa INT NOT NULL,
 	horario TEXT NOT NULL,
 	cve_tutor INT NOT NULL,
