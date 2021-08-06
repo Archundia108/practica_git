@@ -737,7 +737,7 @@ if (session.getAttribute("usuario") != null)
                 }
            }
         }
-        alert($('#SEmpresa'+cve_alumno).val()+" "+valida);
+        //alert($('#SEmpresa'+cve_alumno).val()+" "+valida);
         if (valida==0) 
         {
             FCargando();
@@ -755,7 +755,7 @@ if (session.getAttribute("usuario") != null)
                 "p_cve_puesto_aprendizaje":cve_puesto_aprendizaje
 
             };
-            alert("seguimiento_a_dual/guardarDatos.jsp?p_SEmpresa="+par.p_SEmpresa+"&p_TNomRotacion="+par.p_TNomRotacion+"&p_TNomInst="+par.p_TNomInst+"&p_TPatInst="+par.p_TPatInst+"&p_TMatInst="+par.p_TMatInst+"&p_TNumeroInst"+par.p_TNumeroInst+"&p_TCorreoInst"+par.p_TCorreoInst+"&p_cve_alumno"+par.p_cve_alumno+"&p_cve_periodo"par.p_cve_periodo+"&p_cve_puesto_aprendizaje"+par.p_cve_puesto_aprendizaje);
+            //alert("seguimiento_a_dual/guardarDatos.jsp?p_SEmpresa="+par.p_SEmpresa+"&p_TNomRotacion="+par.p_TNomRotacion+"&p_TNomInst="+par.p_TNomInst+"&p_TPatInst="+par.p_TPatInst+"&p_TMatInst="+par.p_TMatInst+"&p_TNumeroInst"+par.p_TNumeroInst+"&p_TCorreoInst"+par.p_TCorreoInst+"&p_cve_alumno"+par.p_cve_alumno+"&p_cve_periodo"par.p_cve_periodo+"&p_cve_puesto_aprendizaje"+par.p_cve_puesto_aprendizaje);
             $.ajax
             ({
                 data:par,
