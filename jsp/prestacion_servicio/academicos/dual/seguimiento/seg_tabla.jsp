@@ -157,7 +157,7 @@ if (session.getAttribute("usuario") != null)
         }
         else
         {
-            alert('Asigne calificacion primero.');
+            //alert('Asigne calificacion primero.');
             $('#SCalifConoc_'+cve_alumno).focus();
         }
         alert($('#SCalifConoc_'+cve_alumno).val()+" "+valida);
@@ -172,7 +172,7 @@ if (session.getAttribute("usuario") != null)
                 "p_cve_periodo":cve_periodo,
                 "p_cve_puesto_aprendizaje":cve_puesto_aprendizaje
             };
-            alert("registro_pedagogico/guardar_calif_pedagogica.jsp?p_SCalifConoc_="+par.p_SCalifConoc+"&p_TObservaciones="+par.p_TObservaciones+"&p_cve_alumno="+par.p_cve_alumno+"&p_cve_periodo="+par.p_cve_periodo+"&p_cve_puesto_aprendizaje="+par.p_cve_puesto_aprendizaje);
+            //alert("registro_pedagogico/guardar_calif_pedagogica.jsp?p_SCalifConoc_="+par.p_SCalifConoc+"&p_TObservaciones="+par.p_TObservaciones+"&p_cve_alumno="+par.p_cve_alumno+"&p_cve_periodo="+par.p_cve_periodo+"&p_cve_puesto_aprendizaje="+par.p_cve_puesto_aprendizaje);
             $.ajax({
                 data:par,
                 url:"seg_tabla/guardar_seg_alumnos.jsp",

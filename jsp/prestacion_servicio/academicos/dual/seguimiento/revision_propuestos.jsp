@@ -143,7 +143,7 @@ if (session.getAttribute("usuario") != null)
             
             FCargando();
             var par={"p_TCuatri" : $('#TCuatri').val()};
-            alert("alumnos_cuatri.jsp?p_TCuatri="+par.p_TCuatri);
+            //alert("alumnos_cuatri.jsp?p_TCuatri="+par.p_TCuatri);
             $.post("revision_propuestos/alumnos_cuatri.jsp",par,function(htmlExterno){
                 $('#ListadoAlumnos').html(htmlExterno);
                 console.log(htmlExterno);
@@ -162,7 +162,7 @@ function FGuardarAsesor(cve_alumno,cve_periodo,cve_puesto_aprendizaje)
         }
         else
         {
-            alert("Seleccione un Asesor dual.");
+            //alert("Seleccione un Asesor dual.");
             $('#SAsesor_'+cve_alumno).focus();
         }
         alert($('#SAsesor_'+cve_alumno).val()+" "+valida);
@@ -178,7 +178,7 @@ function FGuardarAsesor(cve_alumno,cve_periodo,cve_puesto_aprendizaje)
                 
             };
 
-            alert("revision_propuestos/guardarAsesor.jsp?p_SAsesor="+par.p_SAsesor+"&p_cve_alumno="+par.p_cve_alumno+"&p_cve_periodo="+par.p_cve_periodo+"&p_cve_puesto_aprendizaje="+par.p_cve_puesto_aprendizaje);
+            //alert("revision_propuestos/guardarAsesor.jsp?p_SAsesor="+par.p_SAsesor+"&p_cve_alumno="+par.p_cve_alumno+"&p_cve_periodo="+par.p_cve_periodo+"&p_cve_puesto_aprendizaje="+par.p_cve_puesto_aprendizaje);
             $.ajax({
                 data :par,
                 url  :"revision_propuestos/guardarAsesor.jsp",
@@ -204,7 +204,7 @@ function FGuardarAsesor(cve_alumno,cve_periodo,cve_puesto_aprendizaje)
                     "p_cve_puesto_aprendizaje": cve_puesto_aprendizaje
                     
                 };
-                alert("revision_propuestos/notificacion.jsp?p_cve_periodo="+par.p_cve_periodo+"&p_cve_puesto_aprendizaje="+par.p_cve_puesto_aprendizaje+"&p_cve_alumno="+par.p_cve_alumno);
+                //alert("revision_propuestos/notificacion.jsp?p_cve_periodo="+par.p_cve_periodo+"&p_cve_puesto_aprendizaje="+par.p_cve_puesto_aprendizaje+"&p_cve_alumno="+par.p_cve_alumno);
                 $.ajax({
                 data :par,
                 url  :"revision_propuestos/notificacion.jsp",
