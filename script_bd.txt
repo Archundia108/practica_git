@@ -28,9 +28,9 @@ CREATE TABLE dual_puestos_aprendizaje
 DROP TABLE IF EXISTS dual_empresas
 CREATE TABLE dual_empresas
 (
-	cve_puesto_aprendizaje INT NOT NULL,
+	cve_competencia INT NOT NULL,
 	cve_empresa INT NOT NULL
-	PRIMARY KEY (cve_puesto_aprendizaje, cve_empresa)
+	PRIMARY KEY (cve_competencia, cve_empresa)
 )
 
 DROP TABLE IF EXISTS dual_objetivos_aprendizaje
@@ -62,7 +62,7 @@ CREATE TABLE dual_alumnos
 (
 	cve_alumno INT NOT NULL,
 	cve_periodo INT NOT NULL,
-	cve_puesto_aprendizaje INT NOT NULL,
+	cve_competencia INT NOT NULL,
 	cve_empresa INT NOT NULL,
 	horario TEXT NOT NULL,
 	cve_tutor INT NOT NULL,
@@ -82,13 +82,13 @@ CREATE TABLE dual_alumnos
 	fecha_tutor_notif DATE,
 	fecha_notif_asesor_dual DATE,
 	nom_plan_rotacion VARCHAR (50) NOT NULL
-	PRIMARY KEY (cve_alumno, cve_puesto_aprendizaje, cve_periodo)
+	PRIMARY KEY (cve_alumno, cve_competencia, cve_periodo)
 )
 
 DROP TABLE IF EXISTS dual_meses
 CREATE TABLE dual_meses
 (
-	cve_puesto_aprendizaje INT NOT NULL,
+	cve_competencia INT NOT NULL,
 	anio INT NOT NULL,
 	cve_alumno INT NOT NULL,
 	cve_periodo INT NOT NULL, 
@@ -102,7 +102,7 @@ CREATE TABLE dual_meses
 DROP TABLE IF EXISTS dual_semanas
 CREATE TABLE dual_semanas
 (
-	cve_puesto_aprendizaje INT NOT NULL,
+	cve_competencia INT NOT NULL,
 	anio INT NOT NULL,
 	cve_alumno INT NOT NULL,
 	cve_periodo INT NOT NULL,
@@ -128,7 +128,7 @@ CREATE TABLE dual_semanas
 DROP TABLE IF EXISTS dual_dias
 CREATE TABLE dual_dias
 (
-	cve_puesto_aprendizaje INT NOT NULL,
+	cve_competencia INT NOT NULL,
 	anio INT NOT NULL,
 	cve_alumno INT NOT NULL,
 	cve_periodo INT NOT NULL,
@@ -143,7 +143,7 @@ CREATE TABLE dual_dias
 DROP TABLE IF EXISTS dual_alumnos_puestos
 CREATE TABLE dual_alumnos_puestos
 (
-	cve_puesto_aprendizaje INT NOT NULL,
+	cve_competencia INT NOT NULL,
 	anio INT NOT NULL,
 	cve_alumno INT NOT NULL
 	PRIMARY KEY (cve_puesto_aprendizaje, anio, cve_alumno)
