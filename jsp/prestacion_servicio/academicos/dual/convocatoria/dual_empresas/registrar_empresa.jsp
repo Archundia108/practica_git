@@ -13,7 +13,7 @@
         Dual_empresas pe = new Dual_empresas();
 
         pe.cve_empresa = Integer.parseInt(request.getParameter("p_SEmpresa"));
-        pe.cve_puesto_aprendizaje = Integer.parseInt(request.getParameter("p_cve_puesto_aprendizaje"));
+        pe.cve_competencia = Integer.parseInt(request.getParameter("p_cve_competencia"));
 
         pe.registrar_empresa();
 

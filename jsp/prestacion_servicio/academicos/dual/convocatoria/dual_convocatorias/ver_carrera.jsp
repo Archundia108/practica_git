@@ -1,17 +1,26 @@
-<%@ page language="java"  import="java.sql.*, java.lang.*, java.util.*, comun.*" errorPage="../../../../../error.jsp" import="org.json.simple.JSONObject"%>
+<%@
+    page language="java"
+    import="java.sql.*, java.lang.*, java.util.*, comun.*"
+    import="org.json.simple.JSONObject"
+    contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"
+    errorPage="../../../../../error.jsp"
+%>
 
 <%
     try 
     {
         BD SMBD = new BD();
         ResultSet rs;
+
+        int cve_competencia = Integer.parseInt(request.getParameter("p_cve_competencia"));
+        
         String consultas = "", error = "", nombre_carrera = "";
-        int cve_puesto_aprendizaje = Integer.parseInt(request.getParameter("p_cve_puesto_aprendizaje"));
         
         consultas = "SELECT c.descripcion "
                   + "FROM carreras_universidad c "
-                  + "INNER JOIN dual_puestos_aprendizaje pu ON pu.cve_carrera = c.cve_carrera "
-                  + "WHERE pu.cve_puesto_aprendizaje = "+cve_puesto_aprendizaje+"";
+                  + "INNER JOIN dual_competencias pu ON pu.cve_carrera = c.cve_carrera "
+                  + "WHERE pu.cve_competencia = "+cve_competencia+"";
         rs = SMBD.SQLBD(consultas);
         while (rs.next()) 
         {
@@ -26,6 +35,6 @@
     } 
     catch (Exception e) 
     {
-        out.print("No jalo pibe, wacha el error: "+e);
+        out.print("Wacha el error: "+e);
     }
 %> 

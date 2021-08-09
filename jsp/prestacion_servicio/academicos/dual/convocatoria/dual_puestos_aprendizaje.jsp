@@ -256,7 +256,7 @@
                             w = (w / 8) * 6;
                             h = (h / 8) * 5;
                             
-                            var URL = "dual_empresas.jsp?cve_puesto_aprendizaje="+$('#TCvePuestoAprendizaje').val();
+                            var URL = "dual_empresas.jsp?cve_competencia="+$('#SCveCompetencia').val();
                             
                             window.open(URL,'titulo_ventana','width='+w+',height='+h+',menubar=no,scrollbars=yes,toolbar=no,locatio n=no,directories=no,resizable=no,top='+top+',left='+left);
                         }

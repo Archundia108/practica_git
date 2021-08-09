@@ -14,18 +14,18 @@
 
         String usuario = String.valueOf(session.getAttribute("usuario"));
         int cve_usuario = Integer.parseInt(String.valueOf(session.getAttribute("cve_usuario")));
-        int cve_puesto_aprendizaje = Integer.parseInt(request.getParameter("cve_puesto_aprendizaje"));
+        int cve_competencia = Integer.parseInt(request.getParameter("cve_competencia"));
 
-        String consultas = "", error = "", nombre_empresa = "", giro_empresa = "", nombre_puesto_aprendizaje = "";
+        String consultas = "", error = "", nombre_empresa = "", giro_empresa = "", nombre_competencia = "";
         int cve_empresa = 0;
 
-        consultas = "SELECT nombre_puesto_aprendizaje "
-                  + "FROM dual_puestos_aprendizaje  "
-                  + "WHERE cve_puesto_aprendizaje = "+cve_puesto_aprendizaje+" ";
+        consultas = "SELECT nombre_competencia "
+                  + "FROM dual_competencias  "
+                  + "WHERE cve_competencia = "+cve_competencia+" ";
         rs = SMBD.SQLBD(consultas);
         while (rs.next())
         {
-            nombre_puesto_aprendizaje = rs.getString(1);
+            nombre_competencia = rs.getString(1);
         }
         SMBD.desconectarBD();
 
@@ -53,9 +53,9 @@
                     <div class="row SoloTexto2">
                         <div class="col-md-3">&nbsp;</div>
                         <div class="col-md-2">
-                            Puesto de aprendizaje
+                            Competencia
                             <br>
-                            <input type="text" class="captura combo200" value="<%=nombre_puesto_aprendizaje%>" readonly>
+                            <input type="text" class="captura combo200" value="<%=nombre_competencia%>" readonly>
                         </div>
                         <div class="col-md-2">
                             Seleccionar empresa
@@ -133,7 +133,7 @@
                         FCargando();
                         var par =
                         {
-                            "p_cve_puesto_aprendizaje" : "<%=cve_puesto_aprendizaje%>"
+                            "p_cve_competencia" : "<%=cve_competencia%>"
                         }
 
                         $.post
@@ -160,8 +160,8 @@
                             FCargando();
                             var par =
                             {
-                                "p_SEmpresa"               : $('#SEmpresa').val(),
-                                "p_cve_puesto_aprendizaje" : <%=cve_puesto_aprendizaje%>
+                                "p_SEmpresa"         : $('#SEmpresa').val(),
+                                "p_cve_competencia"  : <%=cve_competencia%>
                             }
 
                             $.ajax
@@ -187,8 +187,8 @@
                         FCargando();
                         var par =
                         {
-                            "p_cve_empresa"            : cve_empresa,
-                            "p_cve_puesto_aprendizaje" : <%=cve_puesto_aprendizaje%>
+                            "p_cve_empresa"      : cve_empresa,
+                            "p_cve_competencia"  : <%=cve_competencia%>
                         }
 
                         $.ajax
