@@ -6,7 +6,7 @@ try
 	EBD.cve_asesor_dual_utsjr=Integer.parseInt(request.getParameter("p_SAsesor"));
 	EBD.cve_periodo=Integer.parseInt(request.getParameter("p_cve_periodo"));
 	EBD.cve_alumno=Integer.parseInt(request.getParameter("p_cve_alumno"));
-	EBD.cve_puesto_aprendizaje=Integer.parseInt(request.getParameter("p_cve_puesto_aprendizaje"));
+	EBD.cve_competencia=Integer.parseInt(request.getParameter("p_cve_competencia"));
 	
 	EBD.FAsignar_asesor_dual();
 	//EBD.FBuscar_asesor_dual_utsjr();

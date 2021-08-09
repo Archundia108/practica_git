@@ -7,7 +7,7 @@ try
 	ebd.obser_exa_conoc=request.getParameter("p_TObservaciones");
 	ebd.cve_alumno=Integer.parseInt(request.getParameter("p_cve_alumno"));
 	ebd.cve_periodo=Integer.parseInt(request.getParameter("p_cve_periodo"));
-	ebd.cve_puesto_aprendizaje=Integer.parseInt(request.getParameter("p_cve_puesto_aprendizaje"));
+	ebd.cve_competencia=Integer.parseInt(request.getParameter("p_cve_competencia"));
 
 	ebd.FAsignarCalifConoc();
 	JSONObject json=new JSONObject();

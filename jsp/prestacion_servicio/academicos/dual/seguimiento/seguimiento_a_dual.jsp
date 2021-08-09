@@ -10,8 +10,8 @@ if (session.getAttribute("usuario") != null)
         String consultas="",nombre_periodo="",mes1="",mes2="",mes3="",mes4="",nombre_empresa="";
         int meses=0,numero_periodo=0,cve_empresa=0;     
         int cve_periodo=Integer.parseInt(request.getParameter("cve_periodo"));
-        //int cve_puesto_aprendizaje=Integer.parseInt(request.getParameter("cve_puesto_aprendizaje"));
-        //int cve_alumno=Integer.parseInt(request.getParameter("cve_cve_alumno"));
+        //int cve_competencia=Integer.parseInt(request.getParameter("cve_competencia"));
+        int cve_alumno=Integer.parseInt(request.getParameter("cve_alumno"));
 
         
     %>
@@ -100,7 +100,7 @@ if (session.getAttribute("usuario") != null)
                         consultas="SELECT direc_empresas.nombre,direc_empresas.cve_empresa "
                                  +"FROM direc_empresas INNER JOIN "
                                  +"dual_empresas ON direc_empresas.cve_empresa = dual_empresas.cve_empresa "
-                                 +"WHERE  (dual_empresas.cve_puesto_aprendizaje = 1)";
+                                 +"WHERE  (dual_empresas.cve_competencia = 1)";
                         rs2=SMBD.SQLBD(consultas);
                         while(rs2.next())
                         {
@@ -357,7 +357,7 @@ if (session.getAttribute("usuario") != null)
     /*consultas="SELECT periodos.cve_periodo, periodos.numero_periodo "
              +"FROM periodos INNER JOIN "
              +"dual_alumnos ON periodos.cve_periodo = dual_alumnos.cve_periodo "
-             +"WHERE (periodos.cve_periodo >= 68) AND (dual_alumnos.cve_alumno = "+cve_alumno+") AND (dual_alumnos.cve_puesto_aprendizaje = "+cve_puesto_aprendizaje+")";*/
+             +"WHERE (periodos.cve_periodo >= 68) AND (dual_alumnos.cve_alumno = "+cve_alumno+") AND (dual_alumnos.cve_competencia = "+cve_competencia+")";*/
            consultas="SELECT numero_periodo "
                     +"FROM periodos "
                     +"WHERE (cve_periodo = "+cve_periodo+")";
@@ -379,7 +379,7 @@ if (session.getAttribute("usuario") != null)
                     mes4="Dic";
                     break;
                 }
-                case 2: if(cve_periodo==68)
+       nombre_periodo         case 2: if(cve_periodo==68)
                 {
                     mes1="Ene";
                     mes2="Feb";
@@ -639,6 +639,8 @@ if (session.getAttribute("usuario") != null)
                         </div>
                         <br>
 
+                        <button class="btn btn-secondary" onclick="mostrarvalores();">Valores</button>
+
                         <div class="row SoloTexto2">    
                             <div class="col-md-12">
                                 Universidad Tecnol&oacute;gica de San Juan del R&iacute;o <br>
@@ -675,10 +677,32 @@ if (session.getAttribute("usuario") != null)
           $('#gif_espera').html('<img src="../../../../../imagenes/ajax-loader.gif" width="50">');  
         }
 
+        function mostrarvalores(cve_alumno,cve_periodo,cve_competencia){
+            //var a=$("#SEmpresa_").val();
+            //var b=$("#TNomRotacion").val();
+            //var c=$("#TNomInst").val();
+            //var d=$("#TPatInst").val();
+            //var e=$("#TMatInst").val();
+            //var f=$("#TNumeroInst").val();
+            //var g=$("#TCorreoInst").val();
+            //var h=$(cve_alumno).val();
+
+            var i=$(cve_periodo).val();
+            //alert(a);
+            //alert(b);
+            //alert(c);
+            //alert(d);
+            //alert(e);
+            //alert(f);
+            //alert(g);
+            //alert(h);
+            alert(i);
+        }
+
     function FGuardarDatosInst(cve_alumno)
     {
         var valida=0;
-        alert($('#SEmpresa_'+cve_alumno).val()+" "+valida);
+        //alert($('#SEmpresa_'+cve_alumno).val()+" "+valida);
         if($('#SEmpresa_'+cve_alumno).val()>-1||$('#SEmpresa_'+cve_alumno).val()!=null)
         {
              alert('Seleccione una empresa primero.');valida++;
@@ -686,7 +710,7 @@ if (session.getAttribute("usuario") != null)
         }
         else
         {
-            alert($('#TNomRotacion'+cve_alumno).val()+" "+valida);
+            //alert($('#TNomRotacion'+cve_alumno).val()+" "+valida);
            if ($('#TNomRotacion'+cve_alumno).val()==""||$('#TNomRotacion'+cve_alumno).val()==null)
            {
                 alert('Introduzca el nombre del plan de rotacion.');
@@ -755,10 +779,10 @@ if (session.getAttribute("usuario") != null)
                 "p_TCorreoInst"           :$('#TCorreoInst'+cve_alumno).val(),
                 "p_cve_alumno"            :cve_alumno,
                 "p_cve_periodo"           :cve_periodo,
-                "p_cve_puesto_aprendizaje":cve_puesto_aprendizaje
+                "p_cve_competencia"       :cve_competencia
 
             };
-            //alert("seguimiento_a_dual/guardarDatos.jsp?p_SEmpresa_="+par.p_SEmpresa+"&p_TNomRotacion="+par.p_TNomRotacion+"&p_TNomInst="+par.p_TNomInst+"&p_TPatInst="+par.p_TPatInst+"&p_TMatInst="+par.p_TMatInst+"&p_TNumeroInst"+par.p_TNumeroInst+"&p_TCorreoInst"+par.p_TCorreoInst+"&p_cve_alumno"+par.p_cve_alumno+"&p_cve_periodo"par.p_cve_periodo+"&p_cve_puesto_aprendizaje"+par.p_cve_puesto_aprendizaje);
+            //alert("seguimiento_a_dual/guardarDatos.jsp?p_SEmpresa_="+par.p_SEmpresa+"&p_TNomRotacion="+par.p_TNomRotacion+"&p_TNomInst="+par.p_TNomInst+"&p_TPatInst="+par.p_TPatInst+"&p_TMatInst="+par.p_TMatInst+"&p_TNumeroInst"+par.p_TNumeroInst+"&p_TCorreoInst"+par.p_TCorreoInst+"&p_cve_alumno"+par.p_cve_alumno+"&p_cve_periodo"par.p_cve_periodo+"&p_cve_competencia"+par.p_cve_competencia);
             $.ajax
             ({
                 data:par,

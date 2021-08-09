@@ -9,7 +9,7 @@ try
 	int cve_periodo=Integer.parseInt(request.getParameter("p_TCuatri"));
 	//int cve_periodo = 70;
 	String expediente="",nombre_alumno="",nombre_periodo="", nombre_asesor_dual_utsjr="",nombre_grupo="",nombre_tutor="",nom_plan_rotacion="";
-	int cve_grupo=0,cve_asesor_dual=0,cve_tutor=0,cve_alumno=0,grado_alumno=0,cve_puesto_aprendizaje=0;
+	int cve_grupo=0,cve_asesor_dual=0,cve_tutor=0,cve_alumno=0,grado_alumno=0,cve_competencia=0;
 	
 %>
 	<table style="margin: auto;" class="table table-hover table-sm border border-info" cellpadding="0" cellspacing="0" id="TblAlumnosDual">
@@ -35,7 +35,7 @@ try
 	consultas="SELECT alumnos.expediente, personas.nombre + ' ' + personas.apellido_pat + ' ' + personas.apellido_mat "
 					 +"AS nombre, alumnos.cve_grupo, grupos.nombre AS grupo, alumnos.cve_alumno, alumnos.grado_actual, "
 					 +"personas_1.nombre + ' ' + personas_1.apellido_pat + ' ' + personas_1.apellido_mat AS tutor, "
-					 +"dual_alumnos.cve_asesor_dual_utsjr, dual_alumnos.cve_puesto_aprendizaje,dual_alumnos.nom_plan_rotacion "
+					 +"dual_alumnos.cve_asesor_dual_utsjr, dual_alumnos.cve_competencia,dual_alumnos.nom_plan_rotacion "
 					 +"FROM grupos INNER JOIN personas INNER JOIN alumnos INNER JOIN dual_alumnos ON "
 					 +"alumnos.cve_alumno = dual_alumnos.cve_alumno "
 					 +"ON personas.cve_persona = dual_alumnos.cve_alumno ON grupos.cve_grupo = alumnos.cve_grupo INNER JOIN personas "
@@ -52,11 +52,11 @@ try
     	cve_alumno=rs.getInt(5);
     	grado_alumno=rs.getInt(6);
     	nombre_tutor=rs.getString(7);
-    	cve_puesto_aprendizaje=rs.getInt(9);
+    	cve_competencia=rs.getInt(9);
     	nom_plan_rotacion=rs.getString(10);
     	ebd.cve_periodo=cve_periodo;
     	ebd.cve_alumno=cve_alumno;
-    	ebd.cve_puesto_aprendizaje=cve_puesto_aprendizaje;
+    	ebd.cve_competencia=cve_competencia;
 
     	ebd.FBuscar_asesor_dual_utsjr();
     	
@@ -91,10 +91,10 @@ try
                %>
 			</select></td>
 <td class="align-middle text-center">
-<input type="button" value="Guardar asesor" name="guardar" href="" class="liga" onClick="FGuardarAsesor(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_puesto_aprendizaje%>);">
+<input type="button" value="Guardar asesor" name="guardar" href="" class="liga" onClick="FGuardarAsesor(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia%>);">
 </td>
 <td class="align-middle text-center">
-<input type="button" value="Notificar" name="Notificar" href="" class="liga" onClick="FNotificacion(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_puesto_aprendizaje%>);">
+<input type="button" value="Notificar" name="Notificar" href="" class="liga" onClick="FNotificacion(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia%>);">
 </td>
 </tr>
     <%

@@ -7,7 +7,7 @@ try
 	ResultSet rs,rs2;
 	String consultas="",nombre_alumno="",nombre_empresa="",obser_exa_psico="",nombre_plan_rotacion="",fecha_exa_psico="";
 	int cve_periodo=Integer.parseInt(request.getParameter("p_TCuatri"));
-  int cve_alumno=0,cve_puesto_aprendizaje=0,calif_exa_psico=0,expediente=0;
+  int cve_alumno=0,cve_competencia=0,calif_exa_psico=0,expediente=0;
 %>
 <table tyle="margin: auto;" nom class="table table-hover table-sm border border-info" cellpadding="0" cellspacing="0" id="TblAlumnosPedagogico">
       	<thead class="table-dark SoloTexto2">
@@ -31,7 +31,7 @@ try
              +"personas.apellido_mat AS nombre, ISNULL(dual_alumnos.calif_exa_psico,0)AS calificacion, "
              +"ISNULL(dual_alumnos.obser_exa_psico,'...')AS observaciones, alumnos.expediente, ISNULL(dual_alumnos.nom_plan_rotacion,'Pendiente') "
              +"AS Nom_plan_rotacion, dual_alumnos.cve_alumno, "
-             +"dual_alumnos.cve_puesto_aprendizaje, dual_alumnos.cve_empresa, dual_alumnos.cve_periodo, "
+             +"dual_alumnos.cve_competencia, dual_alumnos.cve_empresa, dual_alumnos.cve_periodo, "
              +"ISNULL(convert(varchar(10),dual_alumnos.fecha_exa_psico,103),' ')AS fecha_de_examen "
              +"FROM dual_alumnos INNER JOIN alumnos ON dual_alumnos.cve_alumno = alumnos.cve_alumno "
              +"INNER JOIN personas ON dual_alumnos.cve_alumno = personas.cve_persona "
@@ -49,12 +49,12 @@ try
       expediente=rs.getInt(5);
       nombre_plan_rotacion=rs.getString(6);
       cve_alumno=rs.getInt(7);
-      cve_puesto_aprendizaje=rs.getInt(8);
+      cve_competencia=rs.getInt(8);
       cve_periodo=rs.getInt(10);
       fecha_exa_psico=rs.getString(11);
 
       ebd.cve_alumno=cve_alumno;
-      ebd.cve_puesto_aprendizaje=cve_puesto_aprendizaje;
+      ebd.cve_competencia=cve_competencia;
       ebd.cve_periodo=cve_periodo;
       ebd.bucarCalif();
   %>
@@ -84,7 +84,7 @@ try
                   <textarea id="TObservaciones_<%=cve_alumno%>" name="TObservaciones<%=cve_alumno%>" type="textarea" class="captura combo150" id="" maxlength="200" autofocus style="margin-top: 1.32812; margin-bottom: 1.32812; height: 50px;" ><%=obser_exa_psico%></textarea>
                   <input type="hidden" name="" id="" value="<%=obser_exa_psico%>"></td>
               <td class="align-middle text-center">
-                  <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar" onClick="FGuardarCalif(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_puesto_aprendizaje%>)">
+                  <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar" onClick="FGuardarCalif(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia%>)">
                   <br>Guardar
             </td>
         </tr>

@@ -152,7 +152,7 @@ if (session.getAttribute("usuario") != null)
         }
      }
 
-function FGuardarAsesor(cve_alumno,cve_periodo,cve_puesto_aprendizaje)
+function FGuardarAsesor(cve_alumno,cve_periodo,cve_competencia)
      {
         var valida=0;
         
@@ -174,11 +174,11 @@ function FGuardarAsesor(cve_alumno,cve_periodo,cve_puesto_aprendizaje)
                 "p_SAsesor" : $('#SAsesor_'+cve_alumno).val(),
                 "p_cve_alumno" : cve_alumno,
                 "p_cve_periodo": cve_periodo,
-                "p_cve_puesto_aprendizaje": cve_puesto_aprendizaje,
+                "p_cve_competencia": cve_competencia,
                 
             };
 
-            //alert("revision_propuestos/guardarAsesor.jsp?p_SAsesor="+par.p_SAsesor+"&p_cve_alumno="+par.p_cve_alumno+"&p_cve_periodo="+par.p_cve_periodo+"&p_cve_puesto_aprendizaje="+par.p_cve_puesto_aprendizaje);
+            //alert("revision_propuestos/guardarAsesor.jsp?p_SAsesor="+par.p_SAsesor+"&p_cve_alumno="+par.p_cve_alumno+"&p_cve_periodo="+par.p_cve_periodo+"&p_cve_competencia="+par.p_cve_competencia);
             $.ajax({
                 data :par,
                 url  :"revision_propuestos/guardarAsesor.jsp",
@@ -193,7 +193,7 @@ function FGuardarAsesor(cve_alumno,cve_periodo,cve_puesto_aprendizaje)
         }
      }
 
-     function FNotificacion(cve_alumno,cve_periodo,cve_puesto_aprendizaje)
+     function FNotificacion(cve_alumno,cve_periodo,cve_competencia)
      {
         var valida=0        
             FCargando();
@@ -201,10 +201,10 @@ function FGuardarAsesor(cve_alumno,cve_periodo,cve_puesto_aprendizaje)
                 {
                     "p_cve_alumno" : cve_alumno,
                     "p_cve_periodo": cve_periodo,
-                    "p_cve_puesto_aprendizaje": cve_puesto_aprendizaje
+                    "p_cve_competencia": cve_competencia
                     
                 };
-                //alert("revision_propuestos/notificacion.jsp?p_cve_periodo="+par.p_cve_periodo+"&p_cve_puesto_aprendizaje="+par.p_cve_puesto_aprendizaje+"&p_cve_alumno="+par.p_cve_alumno);
+                //alert("revision_propuestos/notificacion.jsp?p_cve_periodo="+par.p_cve_periodo+"&p_cve_competencia="+par.p_cve_cve_competencia+"&p_cve_alumno="+par.p_cve_alumno);
                 $.ajax({
                 data :par,
                 url  :"revision_propuestos/notificacion.jsp",

@@ -5,7 +5,7 @@ try
 	BD SMBD = new BD();
 	revision_propuestos ebd=new revision_propuestos();
 	ResultSet rs;
-	int cve_alumno=0,cve_puesto_aprendizaje=0,calif_exa_conoc=0;
+	int cve_alumno=0,cve_competencia=0,calif_exa_conoc=0;
 	String consultas="",expediente="",nombre_alumno="",nombre_empresa="",nombre_puesto_aprendizaje="",fecha_exa_conoc="",obser_exa_conoc="";
 	int cve_periodo=Integer.parseInt(request.getParameter("p_TCuatri"));
 %>
@@ -30,13 +30,13 @@ try
     </thead>
     <tbody>
 <%
-consultas="SELECT ISNULL(direc_empresas.nombre,'Pendiente') AS Empresa, personas.nombre + ' ' + personas.apellido_pat + ' ' + personas.apellido_mat AS nombre, alumnos.expediente, dual_alumnos.cve_puesto_aprendizaje, dual_alumnos.cve_alumno, dual_alumnos.cve_periodo, dual_puestos_aprendizaje.nombre_puesto_aprendizaje, "
+consultas="SELECT ISNULL(direc_empresas.nombre,'Pendiente') AS Empresa, personas.nombre + ' ' + personas.apellido_pat + ' ' + personas.apellido_mat AS nombre, alumnos.expediente, dual_alumnos.cve_competencia, dual_alumnos.cve_alumno, dual_alumnos.cve_periodo, dual_puestos_aprendizaje.nombre_puesto_aprendizaje, "
         +"ISNULL(dual_alumnos.calif_exa_conoc,0)AS calificacion, "
         +"ISNULL(convert(varchar(10),dual_alumnos.fecha_exa_conoc,103),' ')AS fecha_de_examen, "
         +"ISNULL(dual_alumnos.obser_exa_conoc,'...')AS observaciones "
         +"FROM dual_alumnos INNER JOIN personas ON dual_alumnos.cve_alumno = personas.cve_persona "
         +"INNER JOIN direc_empresas ON dual_alumnos.cve_empresa = direc_empresas.cve_empresa  "
-        +"INNER JOIN alumnos ON dual_alumnos.cve_alumno = alumnos.cve_alumno INNER JOIN dual_puestos_aprendizaje ON dual_alumnos.cve_puesto_aprendizaje = dual_puestos_aprendizaje.cve_puesto_aprendizaje "
+        +"INNER JOIN alumnos ON dual_alumnos.cve_alumno = alumnos.cve_alumno INNER JOIN dual_puestos_aprendizaje ON dual_alumnos.cve_competencia = dual_puestos_aprendizaje.cve_competencia "
         +"WHERE (dual_alumnos.cve_periodo = "+cve_periodo+") ORDER BY nombre";
     out.println(consultas);
     rs=SMBD.SQLBD(consultas);
@@ -45,7 +45,7 @@ consultas="SELECT ISNULL(direc_empresas.nombre,'Pendiente') AS Empresa, personas
       nombre_empresa=rs.getString(1);
       nombre_alumno=rs.getString(2);
       expediente=rs.getString(3);
-      cve_puesto_aprendizaje=rs.getInt(4);
+      cve_competencia=rs.getInt(4);
       cve_alumno=rs.getInt(5);
       cve_periodo=rs.getInt(6);
       nombre_puesto_aprendizaje=rs.getString(7);
@@ -54,7 +54,7 @@ consultas="SELECT ISNULL(direc_empresas.nombre,'Pendiente') AS Empresa, personas
       obser_exa_conoc=rs.getString(10);
 
       ebd.cve_alumno=cve_alumno;
-      ebd.cve_puesto_aprendizaje=cve_puesto_aprendizaje;
+      ebd.cve_competencia=cve_competencia;
       ebd.cve_periodo=cve_periodo;
     
 %>
@@ -89,7 +89,7 @@ consultas="SELECT ISNULL(direc_empresas.nombre,'Pendiente') AS Empresa, personas
             </td>
             <td class="align-middle text-center"><%=fecha_exa_conoc%></td>
             <td class="align-middle text-center">
-                <input type="button" value="Calificación" class="liga" name="Guardar" title="Guardar" onClick="FGuardarCalif(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_puesto_aprendizaje%>)">
+                <input type="button" value="Calificación" class="liga" name="Guardar" title="Guardar" onClick="FGuardarCalif(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia%>)">
             </td>
             <td class="align-middle text-center">
                 <input type="button" value="Cargar PDF" class="liga" name="GuardarPDF" title="Guardar" onClick="">
@@ -111,7 +111,7 @@ consultas="SELECT ISNULL(direc_empresas.nombre,'Pendiente') AS Empresa, personas
 <script type="text/javascript">
     function openWin() 
     {
-    myWindow=window.open("http://localhost:8080/dual/jsp/prestacion_servicio/academicos/dual/seguimiento/seguimiento_a_dual.jsp?cve_periodo=<%=cve_periodo%>&cve_alumno=<%=cve_alumno%>&cve_puesto_aprendizaje=<%=cve_puesto_aprendizaje%>","myWindow","width=800,height=500");  
+    myWindow=window.open("http://localhost:8080/dual/jsp/prestacion_servicio/academicos/dual/seguimiento/seguimiento_a_dual.jsp?cve_periodo=<%=cve_periodo%>&cve_alumno=<%=cve_alumno%>&cve_competencia=<%=cve_competencia%>","myWindow","width=800,height=800");  
     }
     function closeWin(){
         myWindow.close();
