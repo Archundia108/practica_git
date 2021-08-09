@@ -429,7 +429,26 @@
                         }
                         else
                         {
-                            alert("Tutores notificados");
+                            FCargando();
+                            var par = 
+                            {
+                                "p_cve_convocatoria" : $('#TCveConvocatoria').val()
+                            }
+
+                            $.ajax
+                            (
+                                {
+                                    data      : par,
+                                    url       : "dual_convocatorias/notificar.jsp",
+                                    type      : "POST",
+                                    dataType  : "JSON",
+                                    success   : function (res) 
+                                                {
+                                                    alert(res.error);
+                                                    FTerminado();
+                                                }
+                                }
+                            );
                         }
                     }
                 </script>
@@ -438,6 +457,6 @@
     }
     else
     {
-        out.print("Inicia sesi&oacute;n");
+        out.print("Inicia sesión");
     }
 %>

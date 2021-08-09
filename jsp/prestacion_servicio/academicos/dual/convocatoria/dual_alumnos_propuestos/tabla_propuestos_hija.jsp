@@ -40,7 +40,7 @@
                                 <td class="aling-middle text-center"><%=cve_alumno%></td>
                                 <td class="aling-middle text-center"><%=nombre_alumno%></td>
                                 <td class="aling-middle text-center">
-                                    <img src="../../../../../imagenes/ikonoz/notificar.png" class="iconsButtons" title="Notificar" onclick="FNotificar-alumno()">   
+                                    <img src="../../../../../imagenes/ikonoz/notificar.png" class="iconsButtons" title="Notificar" onclick="FNotificar_alumno('<%=cve_alumno%>')">   
                                 </td>
                                 <td class="aling-middle text-center">
                                     <img src="../../../../../imagenes/ikonoz/nuevo.png" class="iconsButtons" title="Quitar" onclick="FQuitar_alumno('<%=v%>', '<%=cve_usuario%>', '<%=cve_convocatoria%>', '<%=cve_alumno%>')">

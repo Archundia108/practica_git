@@ -130,6 +130,6 @@
     }
     else
     {
-        out.print("Inicia sesi&oacute;n");
+        out.print("Inicia sesión");
     }
 %>

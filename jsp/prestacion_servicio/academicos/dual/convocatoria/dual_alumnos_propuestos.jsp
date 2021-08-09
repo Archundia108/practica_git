@@ -212,18 +212,38 @@
                                 type        : "POST",
                                 dataType    : "JSON",
                                 success     : function (res)
-                                                {
-                                                    alert(res.error);
-                                                    FTabla_alumnos2(v, cve_usuario, cve_convocatoria);
-                                                    FTerminado();
-                                                }
+                                              {
+                                                  alert(res.error);
+                                                  FTabla_alumnos2(v, cve_usuario, cve_convocatoria);
+                                                  FTerminado();
+                                              }
                             }
                         );
                     }
 
-                    function FNotificar_alumno()
+                    function FNotificar_alumno(cve_alumno)
                     {
-                        alert("Alumno notificado");
+                        FCargando();
+                        var par = 
+                        {
+                            "p_cve_alumno" : cve_alumno
+                        }
+
+                        $.ajax
+                        (
+                            {
+                                data        : par,
+                                url         : "dual_alumnos_propuestos/notificar_propuesto.jsp",
+                                type        : "POST",
+                                dataType    : "JSON",
+                                success     : function (res)
+                                              {
+                                                  alert(res.error);
+                                                  FTerminado();
+                                              }
+                            }
+                        );
+
                     }
                 </script>
             </html>
