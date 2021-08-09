@@ -156,7 +156,6 @@
 
                     function FRegistrar_objetivo() 
                     {
-                        FCargando();
                         var valida = 0;
                         if ($('#TObjetivo').val() == 0 || $('#TObjetivo').val() == null) 
                         {
@@ -184,6 +183,7 @@
 
                         if (valida == 0) 
                         {
+                            FCargando();
                             var par = 
                             {
                                 "p_objetivo"                : $('#TObjetivo').val(),
