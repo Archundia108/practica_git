@@ -12,7 +12,7 @@
         BD SMBD = new BD();
         ResultSet rs;
 
-        int cve_puesto_aprendizaje = Integer.parseInt(request.getParameter("p_cve_puesto_aprendizaje"));
+        int cve_competencia = Integer.parseInt(request.getParameter("p_cve_competencia"));
 
         String consultas = "", error = "", nombre_empresa = "", giro_empresa = "";
         int cve_empresa = 0;
@@ -37,8 +37,8 @@
                     consultas = "SELECT emp.nombre, emp.giro_empresa, emp.cve_empresa "
                               + "FROM dual_empresas pe "
                               + "INNER JOIN direc_empresas emp ON emp.cve_empresa = pe.cve_empresa "
-                              + "INNER JOIN dual_puestos_aprendizaje pl ON pl.cve_puesto_aprendizaje = pe.cve_puesto_aprendizaje "
-                              + "WHERE pl.cve_puesto_aprendizaje = "+cve_puesto_aprendizaje+" ";
+                              + "INNER JOIN dual_competencias pl ON pl.cve_competencia = pe.cve_competencia "
+                              + "WHERE pl.cve_competencia = "+cve_competencia+" ";
                     rs = SMBD.SQLBD(consultas);
                     while (rs.next()) 
                     {
