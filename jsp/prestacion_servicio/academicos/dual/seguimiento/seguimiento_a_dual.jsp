@@ -512,7 +512,7 @@ if (session.getAttribute("usuario") != null)
                         <tbody>
                             <tr>
                                 <td class="align-middle text-center" scope="">1</td>
-                                <td class="align-middle text.center">_/_/_</td>
+                                <td class="align-middle text-center">_/_/_</td>
                                 <td class="align-middle text-center">
                                     <select id="SEvaluacionS" class="captura_obligada">
                                         <option value="">NA</option>
@@ -542,8 +542,8 @@ if (session.getAttribute("usuario") != null)
                                 </td>
                             </tr>
                             <tr>
-                                <td class="align-middle text-center" scope="col">2</td>
-                                <td class="align-middle text.center" >_/_/_</td>
+                                <td class="align-middle text-center" scope="">2</td>
+                                <td class="align-middle text-center" >_/_/_</td>
                                 <td class="align-middle text-center">
                                     <select id="SEvaluacionS2" class="captura_obligada">
                                         <option value="">NA</option>
@@ -572,8 +572,8 @@ if (session.getAttribute("usuario") != null)
                                         
                                     </tr>
                                     <tr>
-                                        <td class="align-middle text-center" scope="col">3</td>
-                                        <td class="align-middle text.center" >_/_/_</td>
+                                        <td class="align-middle text-center" scope="">3</td>
+                                        <td class="align-middle text-center" >_/_/_</td>
                                         <td class="align-middle text-center">
                                             <select id="SEvaluacionS3" class="captura_obligada">
                                                 <option value="">NA</option>
