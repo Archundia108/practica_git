@@ -16,7 +16,7 @@
         co.fecha_inicio = request.getParameter("p_fecha_inicio");
         co.fecha_termino = request.getParameter("p_fecha_termino");
         co.descripcion = request.getParameter("p_descripcion");
-        co.vigente = Integer.parseInt(request.getParameter("p_vigente"));
+        co.vigente = 1;
         co.cve_competencia = Integer.parseInt(request.getParameter("p_cve_competencia"));
 
         co.registra_convocatoria();

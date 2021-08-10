@@ -36,8 +36,8 @@
             <tbody>
                 <%
                     consultas = "SELECT co.cve_convocatoria, pa.cve_competencia, pa.nombre_competencia, co.descripcion, "
-                              + "CONVERT(VARCHAR(24), co.fecha_inicio, 103) AS fecha_inicio, CONVERT(VARCHAR(24), co.fecha_termino, 103) AS fecha_termino, "
-                              + "co.vigente, ISNULL(CONVERT(VARCHAR(24), fecha_notificacion, 103),'No se ha notificado') AS fecha_notificacion "
+                              +        "CONVERT(VARCHAR(24), co.fecha_inicio, 103) AS fecha_inicio, CONVERT(VARCHAR(24), co.fecha_termino, 103) AS fecha_termino, "
+                              +        "co.vigente, ISNULL(CONVERT(VARCHAR(24), fecha_notificacion, 103),'No se ha notificado') AS fecha_notificacion "
                               + "FROM dual_convocatorias co "
                               + "INNER JOIN dual_competencias pa ON pa.cve_competencia = co.cve_competencia "
                               + "INNER JOIN carreras_universidad ca ON ca.cve_carrera = pa.cve_carrera "
@@ -65,6 +65,9 @@
                                 <td class="aling-middle text-center"><%if(vigente == 1){out.print("Si");}else{out.print("No");}%></td>
                                 <td class="aling-middle text-center"><%=fecha_notificacion%></td>   
                             </tr>
+                            <script type="text/JavaScript" language="JavaScript">
+                                FVerificar_fecha('<%=fecha_termino%>', <%=cve_convocatoria%>);
+                            </script>
                         <%
                     }
                     SMBD.desconectarBD();
