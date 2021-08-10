@@ -1,9 +1,10 @@
-<%@ page language="java" 
-    contentType="application/json; charset=UTF-8" 
-    pageEncoding="UTF-8"
-    import="java.sql.*, java.lang.*, java.util.*, prestacion_servicio.academicos.dual.*, comun.*" 
-    errorPage="../../../../../../error.jsp"
+<%@ 
+    page language="java"
+    import="java.sql.*, java.lang.*, java.util.*, comun.*"
     import="org.json.simple.JSONObject"
+    contentType="application/json; charset=UTF-8"
+    pageEncoding="UTF-8"
+    errorPage="../../../../../../error.jsp"
 %> 
 
 <% 
@@ -11,7 +12,9 @@
     {
         BD SMBD = new BD();
         ResultSet rs;
+
         String expediente = request.getParameter("p_expediente");
+        
         String consultas = "", nombre = "";
         
         consultas = "SELECT CONCAT(p.nombre, ' ', p.apellido_pat, ' ', p.apellido_mat) as nombre "

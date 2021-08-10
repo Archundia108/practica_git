@@ -214,6 +214,7 @@
                         {
                             "p_cve_usuario" : <%=cve_usuario%>
                         }
+
                         $.post
                         (
                             "dual_convocatorias/tabla_convocatorias.jsp", par,
@@ -222,7 +223,7 @@
                                 $('#TblConvocatorias').html(htmlExterno);
                                 FTerminado();
                             }
-                        )
+                        );
                     }
                     FTabla_convocatorias()
 
@@ -445,6 +446,7 @@
                                     success   : function (res) 
                                                 {
                                                     alert(res.error);
+                                                    FTabla_convocatorias();
                                                     FTerminado();
                                                 }
                                 }
