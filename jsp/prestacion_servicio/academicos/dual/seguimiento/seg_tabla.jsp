@@ -73,19 +73,18 @@ if (session.getAttribute("usuario") != null)
         <table width="80%"  cellspacing="0" cellpadding="0" align="center" class="table-hover border border-info">
             <thead class="table-dark SoloTexto2">
                 <tr class="bg-info">
-                    <th class="align-middle text-center" colspan="11" scope="col">Seguimiento</th>
+                    <th class="align-middle text-center" colspan="9" scope="col">Seguimiento</th>
                     <tr class="bg-secondary">
                         <th class="align-middle text-center" scope="col">Expediente</th>
                         <th class="align-middle text-center" scope="col">Nombre</th>
-                        <th class="align-middle text-center" scope="col">Empresa</th>
-                        <th class="align-middle text-center" scope="col">Plan de rotación</th>
                         <th class="align-middle text-center" scope="col">Calif. examen conocimientos</th>
                         <th class="align-middle text-center" scope="col">Observaciones</th>
                         <th class="align-middle text-center">Fecha</th>
                         <th class="align-middle text-center">Guardar</th>
                         <th class="align-middle text-center">Evidencia de evaluación</th>
-                        <th class="align-middle text-center">Ver PDF</th>
                         <th class="align-middle text-center">Ver Seguimiento</th>
+                        <th class="align-middle text-center">Empresa</th>
+                        
                     </tr>
                 </tr>
             </thead>

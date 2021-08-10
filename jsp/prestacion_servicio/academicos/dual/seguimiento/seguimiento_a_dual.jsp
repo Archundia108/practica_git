@@ -500,18 +500,19 @@ if (session.getAttribute("usuario") != null)
                                     </th>
                                     <tr class="bg-secondary">
                                         <th class="align-middle text-center" scope="col">Parcial</th>
+                                        <th class="align-middle text-center" scope="col">Fecha de evaluación</th>
                                         <th class="align-middle text-center" scope="col">Ser</th>
                                         <th class="align-middle text-center" scope="col">Saber</th>
                                         <th class="align-middle text-center" scope="col">Saber Hacer</th>
-                                        <th class="align-middle text-center" scope="col">Guardar </th>
-                                        <th class="align-middle text-center" scope="col">Promedio </th>
+                                        <th class="align-middle text-center" scope="col">Guardar</th>
+                                        
                                     </tr>
                                 </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th class="align-middle text-center" scope="col">1</th>
-
+                                <td class="align-middle text-center" scope="">1</td>
+                                <td class="align-middle text.center">_/_/_</td>
                                 <td class="align-middle text-center">
                                     <select id="SEvaluacionS" class="captura_obligada">
                                         <option value="">NA</option>
@@ -539,11 +540,10 @@ if (session.getAttribute("usuario") != null)
                                 <td class="align-middle text-center">
                                     <input class="liga" value="Guardar" title="Guardar" type="button" name="Guardar">
                                 </td>
-                                <td class="align-middle text-center">-</td>
                             </tr>
                             <tr>
-                                <th class="align-middle text-center" scope="col">2</th>
-
+                                <td class="align-middle text-center" scope="col">2</td>
+                                <td class="align-middle text.center" >_/_/_</td>
                                 <td class="align-middle text-center">
                                     <select id="SEvaluacionS2" class="captura_obligada">
                                         <option value="">NA</option>
@@ -569,11 +569,11 @@ if (session.getAttribute("usuario") != null)
                                         <td class="align-middle text-center">
                                             <input class="liga" value="Guardar" title="Guardar" type="button" name="Guardar">
                                         </td>
-                                        <td class="align-middle text-center">-</td>
+                                        
                                     </tr>
                                     <tr>
-                                        <th class="align-middle text-center" scope="col">3</th>
-
+                                        <td class="align-middle text-center" scope="col">3</td>
+                                        <td class="align-middle text.center" >_/_/_</td>
                                         <td class="align-middle text-center">
                                             <select id="SEvaluacionS3" class="captura_obligada">
                                                 <option value="">NA</option>
@@ -601,23 +601,23 @@ if (session.getAttribute("usuario") != null)
                                         <td class="align-middle text-center">
                                             <input class="liga" value="Guardar" title="Guardar" type="button" name="Guardar">
                                         </td>
-                                        <td class="align-middle text-center">-</td>
+                                        
                                     </tr>
                                     <tr>
-                                        <td colspan="5" class="align-middle text-center">
+                                        <td colspan="6" class="align-middle text-center">
                                             Promedio final
                                         </td>
                                         <br>
                                     </tr>
                                     <tr>
-                                        <td colspan="5" class="align-middle text-center">
+                                        <td colspan="6" class="align-middle text-center">
                                             -
                                         </td>
                                         <br>
                                     </tr>
                                 </tbody>
                             </table>
-                            <div class="col-md-3">&nbsp;</div>
+                            <!--<div class="col-md-3">&nbsp;</div>-->
                         </div>
                         <div class="col-md-3">&nbsp;</div>
                         <!--botones de pie-------------------------------------------------->   
@@ -632,7 +632,7 @@ if (session.getAttribute("usuario") != null)
                                 <br>Guardar
                             </div>
                             <div class="col-md-3">
-                                <img onClick="window.close();" src="../../../../../imagenes/ikonoz/inicio.png" class="iconsButtons" title="Salir">
+                                <img onClick="window.close();" src="../../../../../imagenes/ikonoz/salir.png" class="iconsButtons" title="Salir">
                                 <br>Cerrar
                             </div>
                             <div class="col-md-1">&nbsp;</div>

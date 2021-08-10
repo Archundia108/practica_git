@@ -40,10 +40,26 @@ if (session.getAttribute("usuario") != null)
                 <td class="encabezado">Observaciones del alumno(Asesor dual)</td>
             </tr>
          </table>
+
+        <div class="row SoloTexto2">
+            <div class="col-md-4">&nbsp;</div>
+            <div class="col-md-2">
+                " Nombre: "
+                <br>
+                <label class="alert-success">Egan Alexis Dueñas Martínez</label>
+            </div>
+        <div class="col-md-1">
+            " Expediente : "
+            <br>
+            <label class="alert-success">2019143023</label>
+        </div>
+        <div class="col-md-4">&nbsp;</div>
+    </div>       
+    <br>
          <br>
 
    <div class="row SoloTexto2">
-            <div class="col-md-2">&nbsp;</div>   
+            <div class="col-md-1">&nbsp;</div>   
         <div class="col-md-1">
             Fecha
             <br>
@@ -61,9 +77,17 @@ if (session.getAttribute("usuario") != null)
            <textarea name="ObserInst" id="ObserInst" type="textarea" class="captura combo200"  maxlength="200" autofocus style="margin-top: 1.32812; margin-bottom: 1.32812; height: 101px;" rows="5"></textarea>
            <input type="hidden" name="" id="" value="43">
        </div>
-       <div class="col-md-2">
-          <img type="" src="../../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guargar" onClick="">
+       <div class="col-md-1">
+          <img type="" src="../../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar" onClick="">
                 <br>Guardar 
+       </div>
+       <div class="col-md-1">
+          <img type="" src="../../../../../../imagenes/ikonoz/notificar.png" class="iconsButtons" title="NotificarEmp" onClick="">
+                <br>Notificar empresa 
+       </div>
+       <div class="col-md-1">
+          <img type="" src="../../../../../../imagenes/ikonoz/notificar.png" class="iconsButtons" title="NotificarAlum" onClick="">
+                <br>Notificar alumno 
        </div>
        <div class="col-md-1">&nbsp;</div>
 </div>
@@ -74,22 +98,22 @@ if (session.getAttribute("usuario") != null)
         <thead class="table-dark SoloTexto2">
               <tr class="bg-info">
                 <th class="align-middle text-center" colspan="4" scope="col">
-                    Evaluaciones 
+                    Observaciones 
                 </th>
-                <tr>
+                <tr class="bg-secondary">
+                    <th class="align-middle text-center" scope="col">Num</th>
                     <th class="align-middle text-center" scope="col">fecha</th>
                     <th class="align-middle text-center" scope="col">Tutor</th>
                     <th class="align-middle text-center" scope="col">Instructor</th>
-                    <th class="align-middle text-center" scope="col">---</th>
                 </tr>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <th scope="row" class="align-middle text-center">-</th>
+                <td class="align-middle text-center">_/_/_</td>
                 <td class="align-middle text-center">obsercaciones del tutor</td>
                 <td class="align-middle text-center">observaciones del instructor</td>
-                <td class="align-middle text-center">-</td>
             </tr>
         </tbody>
     </table>
@@ -97,7 +121,7 @@ if (session.getAttribute("usuario") != null)
 
 <div class="col-md-3">&nbsp;</div>
        <div class="col-md-12" align="center">
-                <img onClick="window.close();" src="../../../../../../imagenes/ikonoz/inicio.png" class="iconsButtons" title="Cerrar">
+                <img onClick="window.close();" src="../../../../../../imagenes/ikonoz/salir.png" class="iconsButtons" title="Cerrar">
                 <br>Cerrar
             </div>
 

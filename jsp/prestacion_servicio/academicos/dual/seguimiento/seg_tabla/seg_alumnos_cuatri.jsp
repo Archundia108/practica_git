@@ -12,19 +12,17 @@ try
 <table width="100%" border="1" cellspacing="0" cellpadding="0" align="center" class="table-hover border border-info">
     <thead class="table-dark SoloTexto2">
         <tr class="bg-info border-info">
-            <th class="align-middle text-center" colspan="11" scope="col">Seguimiento</th>
+            <th class="align-middle text-center" colspan="9" scope="col">Seguimiento</th>
             <tr class="bg-secondary">
-                <th class="align-middle text-center">Expediente</th>
-                <th class="align-middle text-center">Nombre</th>
-                <th class="align-middle text-center">Empresa</th>
-                <th class="align-middle text-center">Plan de rotación</th>
-                <th class="align-middle text-center">Calif. examen conocimientos</th>
-                <th class="align-middle text-center">Observaciones</th>
-                <th class="align-middle text-center">Fecha</th>
-                <th class="align-middle text-center">Guardar</th>
-                <th class="align-middle text-center">Evidencia de evaluación</th>
-                <th class="align-middle text-center">Ver Seguimiento</th>
-                <th class="align-middle text-center">Ver PDF</th>
+                        <th class="align-middle text-center">Expediente</th>
+                        <th class="align-middle text-center">Nombre</th>
+                        <th class="align-middle text-center">Calif. examen conocimientos</th>
+                        <th class="align-middle text-center">Observaciones</th>
+                        <th class="align-middle text-center">Fecha</th>
+                        <th class="align-middle text-center">Guardar</th>
+                        <th class="align-middle text-center">Evidencia de evaluación</th>
+                        <th class="align-middle text-center">Ver Seguimiento</th>
+                        <th class="align-middle text-center">Empresa</th>
             </tr>
         </tr>
     </thead>
@@ -61,11 +59,8 @@ consultas="SELECT ISNULL(direc_empresas.nombre,'Pendiente') AS Empresa, personas
         <tr>
             <th scope="row" class="align-middle text-center"title="<%=cve_alumno%>"><%=expediente%></th>
             <td class="align-middle text-center"><%=nombre_alumno%></td>
-            <td class="align-middle text-center"><%=nombre_empresa%></td>
-            <td class="align-middle text-center"><%=nombre_puesto_aprendizaje%></td>
             <td class="align-middle text-center">
                 <select type="text" id="SCalifConoc_<%=cve_alumno%>" name="SCalifConoc_<%=cve_alumno%>" class="captura_obligada combo100">
-                    
                     <option value="<%=calif_exa_conoc%>"><%=calif_exa_conoc%></option>
                     <option value="-1">-1</option>
                     <option value="0">0</option>
@@ -84,22 +79,20 @@ consultas="SELECT ISNULL(direc_empresas.nombre,'Pendiente') AS Empresa, personas
             <td class="align-middle text-center">
                 <textarea name="TObservaciones_<%=cve_alumno%>" type="textarea" class="captura combo150" id="TObservaciones_<%=cve_alumno%>" maxlength="200" autofocus style="margin-top: 1.32812; margin-bottom: 1.32812; height: 40px;" ><%=obser_exa_conoc%>
                 </textarea>
-                <input type="hidden" name="" id="" value="<%=obser_exa_conoc%>">
-            </td>
-            </td>
+                <input type="hidden" name="" id="" value="<%=obser_exa_conoc%>"></td>
             <td class="align-middle text-center"><%=fecha_exa_conoc%></td>
             <td class="align-middle text-center">
                 <input type="button" value="Calificación" class="liga" name="Guardar" title="Guardar" onClick="FGuardarCalif(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia%>)">
             </td>
+            </td>
             <td class="align-middle text-center">
-                <input type="button" value="Cargar PDF" class="liga" name="GuardarPDF" title="Guardar" onClick="">
+                <input type="button" value="Cargar PDF" class="liga" name="GuardarPDF" title="Guardar" onclick="">
+                <a href="seguimiento_a_dual.jsp?cve_periodo=<%=cve_periodo%>" target="popup" onClick="window.open(this.href, this.target, 'width=700,height=400'); return false;">PDF</a>
             </td>
             <td class="align-middle text-center">
                 <a class="liga" target="popup" onClick="openWin();">Ver</a>
             </td>
-            <td class="align-middle text-center">
-                <a href="seguimiento_a_dual.jsp?cve_periodo=<%=cve_periodo%>" target="popup" onClick="window.open(this.href, this.target, 'width=700,height=400'); return false;">PDF</a>
-            </td>
+            <td class="align-middle text-center"><%=nombre_empresa%></td>
         </tr>
         <%
         }
