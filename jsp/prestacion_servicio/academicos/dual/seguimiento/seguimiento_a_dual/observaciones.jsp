@@ -1,4 +1,4 @@
-<%@ page language="java"  import="java.sql.*, java.lang.*, java.util.*, comun.*" errorPage="../../../../../../error.jsp"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="java.sql.*, java.lang.*, java.util.*, comun.*" errorPage="../../../../../../error.jsp"%>
 <%
 if (session.getAttribute("usuario") != null)
 {
@@ -43,8 +43,12 @@ if (session.getAttribute("usuario") != null)
          <br>
 
    <div class="row SoloTexto2">
-            <div class="col-md-2">&nbsp;</div>
-            
+            <div class="col-md-2">&nbsp;</div>   
+        <div class="col-md-1">
+            Fecha
+            <br>
+            <input class="captura combo100" type="text" name="FechaObser" readonly id="FechaObser"> 
+        </div>
         <div class="col-md-3">
            " Observaciones del Asesor Dual "
            <br>
@@ -57,15 +61,39 @@ if (session.getAttribute("usuario") != null)
            <textarea name="ObserInst" id="ObserInst" type="textarea" class="captura combo200"  maxlength="200" autofocus style="margin-top: 1.32812; margin-bottom: 1.32812; height: 101px;" rows="5"></textarea>
            <input type="hidden" name="" id="" value="43">
        </div>
-       <div class="col-md-3">
+       <div class="col-md-2">
           <img type="" src="../../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guargar" onClick="">
                 <br>Guardar 
        </div>
        <div class="col-md-1">&nbsp;</div>
-
-       <br>
 </div>
 <br>
+
+<div class="col-md-12 Solotexto2">
+    <table class="table table-hover table-sm border border-info">
+        <thead class="table-dark SoloTexto2">
+              <tr class="bg-info">
+                <th class="align-middle text-center" colspan="4" scope="col">
+                    Evaluaciones 
+                </th>
+                <tr>
+                    <th class="align-middle text-center" scope="col">fecha</th>
+                    <th class="align-middle text-center" scope="col">Tutor</th>
+                    <th class="align-middle text-center" scope="col">Instructor</th>
+                    <th class="align-middle text-center" scope="col">---</th>
+                </tr>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row" class="align-middle text-center">-</th>
+                <td class="align-middle text-center">obsercaciones del tutor</td>
+                <td class="align-middle text-center">observaciones del instructor</td>
+                <td class="align-middle text-center">-</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 <div class="col-md-3">&nbsp;</div>
        <div class="col-md-12" align="center">

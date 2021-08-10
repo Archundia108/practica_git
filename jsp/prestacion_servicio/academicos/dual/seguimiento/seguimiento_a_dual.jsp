@@ -497,16 +497,16 @@ if (session.getAttribute("usuario") != null)
                                 <tr class="bg-info">
                                     <th class="align-middle text-center" colspan="6" scope="col">
                                      Evaluaciones 
-                                 </th>
-                                 <tr class="bg-secondary">
-                                    <th class="align-middle text-center" scope="col">Parcial</th>
-                                    <th class="align-middle text-center" scope="col">Ser</th>
-                                    <th class="align-middle text-center" scope="col">Saber</th>
-                                    <th class="align-middle text-center" scope="col">Saber Hacer</th>
-                                    <th class="align-middle text-center" scope="col">Guardar </th>
-                                    <th class="align-middle text-center" scope="col">Promedio </th>
+                                    </th>
+                                    <tr class="bg-secondary">
+                                        <th class="align-middle text-center" scope="col">Parcial</th>
+                                        <th class="align-middle text-center" scope="col">Ser</th>
+                                        <th class="align-middle text-center" scope="col">Saber</th>
+                                        <th class="align-middle text-center" scope="col">Saber Hacer</th>
+                                        <th class="align-middle text-center" scope="col">Guardar </th>
+                                        <th class="align-middle text-center" scope="col">Promedio </th>
+                                    </tr>
                                 </tr>
-                            </tr>
                         </thead>
                         <tbody>
                             <tr>
