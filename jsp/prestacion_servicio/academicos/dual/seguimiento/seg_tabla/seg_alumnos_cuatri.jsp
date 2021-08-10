@@ -90,7 +90,7 @@ consultas="SELECT ISNULL(direc_empresas.nombre,'Pendiente') AS Empresa, personas
                 <a href="seguimiento_a_dual.jsp?cve_periodo=<%=cve_periodo%>" target="popup" onClick="window.open(this.href, this.target, 'width=700,height=400'); return false;">PDF</a>
             </td>
             <td class="align-middle text-center">
-                <a class="liga" target="popup" onClick="openWin();">Ver</a>
+                <button type="button" class="btn btn-link" target="popup" onClick="openWin();">Ver</button>
             </td>
             <td class="align-middle text-center"><%=nombre_empresa%></td>
         </tr>

@@ -25,6 +25,7 @@ if (session.getAttribute("usuario") != null)
         <link rel="stylesheet" href="../../../../../estilos/estilos.css">
         <link rel="stylesheet" href="../../../../../estilos/bootstrap.min.css">
         <link rel="stylesheet" href="../../../../../estilos/bootstrap4.2.1.min.css">
+      
 
         <script type="text/javascript" language="JavaScript1.2" src="../../../../../jsp/menu/stmenu.js"></script>
         <script type="text/javascript" language="JavaScript1.2" src="../../../../../js/jquery-2.2.4.min.js"></script>
