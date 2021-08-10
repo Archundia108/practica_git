@@ -379,7 +379,7 @@ if (session.getAttribute("usuario") != null)
                     mes4="Dic";
                     break;
                 }
-       nombre_periodo         case 2: if(cve_periodo==68)
+       case 2: if(cve_periodo==68)
                 {
                     mes1="Ene";
                     mes2="Feb";
@@ -679,7 +679,7 @@ if (session.getAttribute("usuario") != null)
 
         function mostrarvalores(cve_alumno,cve_periodo,cve_competencia){
             //var a=$("#SEmpresa_").val();
-            //var b=$("#TNomRotacion").val();
+            var b=$("#TNomRotacion").val();
             //var c=$("#TNomInst").val();
             //var d=$("#TPatInst").val();
             //var e=$("#TMatInst").val();
@@ -689,14 +689,14 @@ if (session.getAttribute("usuario") != null)
 
             var i=$(cve_periodo).val();
             //alert(a);
-            //alert(b);
+            alert(b);
             //alert(c);
             //alert(d);
             //alert(e);
             //alert(f);
             //alert(g);
             //alert(h);
-            alert(i);
+            //alert(i);
         }
 
     function FGuardarDatosInst(cve_alumno)
@@ -710,52 +710,52 @@ if (session.getAttribute("usuario") != null)
         }
         else
         {
-            //alert($('#TNomRotacion'+cve_alumno).val()+" "+valida);
-           if ($('#TNomRotacion'+cve_alumno).val()==""||$('#TNomRotacion'+cve_alumno).val()==null)
+            alert($('#TNomRotacion').val()+" "+valida);
+           if ($('#TNomRotacion').val()==""||$('#TNomRotacion').val()==null)
            {
                 alert('Introduzca el nombre del plan de rotacion.');
                 valida++;
-                $('#TNomRotacion'+cve_alumno).focus();
+                $('#TNomRotacion').focus();
            }
            else
            {
-                if($('#TNomInst'+cve_alumno).val()==""||$('#TNomInst'+cve_alumno).val()==null)
+                if($('#TNomInst').val()==""||$('#TNomInst').val()==null)
                 {
                     alert('Introduzca el nombre del instructor.');
                     valida++;
-                    $('#TNomInst'+cve_alumno).focus();
+                    $('#TNomInst').focus();
                 }
                 else
                 {
-                    if ($('#TPatInst'+cve_alumno).val()==""||$('#TPatInst'+cve_alumno).val()==null)
+                    if ($('#TPatInst').val()==""||$('#TPatInst').val()==null)
                     {
                         alert('Introduzca el apellido paterno.');
                         valida++;
-                        $('#TPatInst'+cve_alumno).focus();
+                        $('#TPatInst').focus();
                     }
                     else
                     {
-                        if ($('#TMatInst'+cve_alumno).val()==""||$('#TMatInst'+cve_alumno).val()==null) 
+                        if ($('#TMatInst').val()==""||$('#TMatInst').val()==null) 
                         {
                             alert('Introduzca el apellido materno');
                             valida++;
-                            $('#TMatInst'+cve_alumno).focus();
+                            $('#TMatInst').focus();
                         }
                         else
                         {
-                            if ($('#TNumeroInst'+cve_alumno).val()==""||$('#TNumeroInst'+cve_alumno).val()==null)
+                            if ($('#TNumeroInst').val()==""||$('#TNumeroInst').val()==null)
                             {
                                 alert('Introduzca el teléfono del instructor');
                                 valida++;
-                                $('#TNumeroInst'+cve_alumno).focus(); 
+                                $('#TNumeroInst').focus(); 
                             }
                             else
                             {
-                                if ($('#TCorreoInst'+cve_alumno).val()==""||$('#TCorreoInst'+cve_alumno).val()==null) 
+                                if ($('#TCorreoInst').val()==""||$('#TCorreoInst').val()==null) 
                                 {
                                     alert('Introduzca la dirección de correo electrónico del instructor');
                                     valida++;
-                                    $('#TCorreoInst'+cve_alumno
+                                    $('#TCorreoInst'
                                     ).focus();
                                 }
                             } 
@@ -770,13 +770,13 @@ if (session.getAttribute("usuario") != null)
             FCargando();
             var par=
             {
-                "p_SEmpresa"              :$('#SEmpresa_'+cve_alumno).val(),
-                "p_TNomRotacion"          :$('#TNomRotacion'+cve_alumno).val(),
-                "p_TNomInst"              :$('#TNomInst'+cve_alumno).val(),
-                "p_TPatInst"              :$('#p_TPatInst'+cve_alumno).val(),
-                "p_TMatInst"              :$('#TPatInst'+cve_alumno).val(),
-                "p_TNumeroInst"           :$('#TNumeroInst'+cve_alumno).val(),
-                "p_TCorreoInst"           :$('#TCorreoInst'+cve_alumno).val(),
+                "p_SEmpresa"              :$('#SEmpresa_').val(),
+                "p_TNomRotacion"          :$('#TNomRotacion').val(),
+                "p_TNomInst"              :$('#TNomInst').val(),
+                "p_TPatInst"              :$('#TPatInst').val(),
+                "p_TMatInst"              :$('#TPatInst').val(),
+                "p_TNumeroInst"           :$('#TNumeroInst').val(),
+                "p_TCorreoInst"           :$('#TCorreoInst').val(),
                 "p_cve_alumno"            :cve_alumno,
                 "p_cve_periodo"           :cve_periodo,
                 "p_cve_competencia"       :cve_competencia
