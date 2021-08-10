@@ -38,9 +38,9 @@ if (session.getAttribute("usuario") != null)
     </head>
     <body>
         <table width="80%" cellpadding="0" cellspacing="0" border="0" align="center">
-           <tr>
+           <!--<tr>
             <td><img src="../../../../../imagenes/banner.jpg" width="100%" height="80"></td>
-        </tr>
+        </tr>-->
         <tr align="center">
             <td class="titulo">Proyecto Dual</td>
         </tr>
@@ -656,7 +656,7 @@ if (session.getAttribute("usuario") != null)
     var myWindow;
     function openWin() 
     {
-    myWindow=window.open("observaciones.jsp","myWindow","width=800,height=500");  
+    myWindow=window.open("seguimiento_a_dual/observaciones.jsp","myWindow","width=800,height=500");  
     }
     function closeWin(){
         myWindow.close();
