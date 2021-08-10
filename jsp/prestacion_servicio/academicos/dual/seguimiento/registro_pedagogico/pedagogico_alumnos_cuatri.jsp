@@ -7,7 +7,7 @@ try
 	ResultSet rs,rs2;
 	String consultas="",nombre_alumno="",nombre_empresa="",obser_exa_psico="",nombre_plan_rotacion="",fecha_exa_psico="";
 	int cve_periodo=Integer.parseInt(request.getParameter("p_TCuatri"));
-  int cve_alumno=0,cve_competencia=0,calif_exa_psico=0,expediente=0;
+  int cve_alumno=0,cve_competencia=0,calif_exa_psico=0,expediente=0,cve_empresa=0;
 %>
 <table tyle="margin: auto;" nom class="table table-hover table-sm border border-info" cellpadding="0" cellspacing="0" id="TblAlumnosPedagogico">
       	<thead class="table-dark SoloTexto2">
@@ -50,6 +50,7 @@ try
       nombre_plan_rotacion=rs.getString(6);
       cve_alumno=rs.getInt(7);
       cve_competencia=rs.getInt(8);
+      cve_empresa=rs.getInt(9);
       cve_periodo=rs.getInt(10);
       fecha_exa_psico=rs.getString(11);
 
@@ -57,6 +58,8 @@ try
       ebd.cve_competencia=cve_competencia;
       ebd.cve_periodo=cve_periodo;
       ebd.bucarCalif();
+
+      out.print(cve_competencia);
   %>
           <tr>
               <th scope="row" class="align-middle text-center" title="<%=cve_alumno%>"><%=expediente%></th>

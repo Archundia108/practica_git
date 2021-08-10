@@ -128,12 +128,12 @@ if (session.getAttribute("usuario") != null)
 
     function FCargarCuatri()
      {
-        //alert($('#TCuatri').val());
+        alert($('#TCuatri').val());
         if($('#TCuatri').val()!=0)
         {
             FCargando();
             var par={"p_TCuatri" : $('#TCuatri').val()};
-            //alert("seguimiento/registro_pedagogico.jsp?p_TCuatri="+par.p_TCuatri);
+            alert("seguimiento/registro_pedagogico.jsp?p_TCuatri="+par.p_TCuatri);
             $.post("registro_pedagogico/pedagogico_alumnos_cuatri.jsp",par,function(htmlExterno){
                 $('#ListadoAlumnos').html(htmlExterno);
                 console.log(htmlExterno);
@@ -144,6 +144,7 @@ if (session.getAttribute("usuario") != null)
 
      function FGuardarCalif(cve_alumno,cve_periodo,cve_competencia)
      {
+        alert(cve_competencia);
         var valida=0;
         if($('#SCalificacion_'+cve_alumno).val()>0)
         {
@@ -151,10 +152,10 @@ if (session.getAttribute("usuario") != null)
         }
         else
         {
-            //alert('Asigne calificacion primero.');
+            alert('Asigne calificacion primero.');
             $('#SCalificacion_'+cve_alumno).focus();
         }
-        //alert($('#SCalificacion_'+cve_alumno).val()+" "+valida);
+        alert($('#SCalificacion_'+cve_alumno).val()+" "+valida);
         if(valida>0)
         {
             FCargando();
@@ -164,9 +165,9 @@ if (session.getAttribute("usuario") != null)
                 "p_TObservaciones":$('#TObservaciones_'+cve_alumno).val(),
                 "p_cve_alumno":cve_alumno,
                 "p_cve_periodo":cve_periodo,
-                "P_cve_competencia":cve_competencia
+                "p_cve_competencia":cve_competencia
             };
-            //alert("registro_pedagogico/guardar_calif_pedagogica.jsp?p_SCalificacion_="+par.p_SCalificacion+"&p_TObservaciones="+par.p_TObservaciones+"&p_cve_alumno="+par.p_cve_alumno+"&p_cve_periodo="+par.p_cve_periodo+"&p_cve_competencia="+par.p_cve_competencia);
+            alert("registro_pedagogico/guardar_calif_pedagogica.jsp?p_SCalificacion_="+par.p_SCalificacion+"&p_TObservaciones="+par.p_TObservaciones+"&p_cve_alumno="+par.p_cve_alumno+"&p_cve_periodo="+par.p_cve_periodo+"&p_cve_competencia="+par.p_cve_competencia);
             $.ajax({
                 data:par,
                 url:"registro_pedagogico/guardar_calif_pedagogica.jsp",
