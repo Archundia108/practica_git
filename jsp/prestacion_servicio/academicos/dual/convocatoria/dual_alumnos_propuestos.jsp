@@ -16,7 +16,7 @@
         %>
             <html>
                 <head>
-                    <title>Registro de puestos</title>
+                    <title>Registro de alumnos propuestos</title>
                     <link rel="stylesheet" href="../../../../../estilos/sic.css">
                     <link rel="stylesheet" href="../../../../../estilos/bootstrap4.2.1.min.css"> 
                     <script type="text/javascript" src="../../../../../js/jquery-2.2.4.min.js"></script>
@@ -221,7 +221,7 @@
                         );
                     }
 
-                    function FNotificar_alumno(cve_alumno)
+                    function FNotificar_alumno(v, cve_usuario, cve_convocatoria, cve_alumno)
                     {
                         FCargando();
                         var par = 
@@ -239,6 +239,7 @@
                                 success     : function (res)
                                               {
                                                   alert(res.error);
+                                                  FTabla_alumnos2(v, cve_usuario, cve_convocatoria);
                                                   FTerminado();
                                               }
                             }

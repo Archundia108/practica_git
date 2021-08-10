@@ -66,7 +66,7 @@
                                     <input type="text" class="captura_obligada combo200" id="TAgregar<%=v%>" name="TAgregar<%=v%>" onkeypress="return FCaracteres(event)">
                                     <img src="../../../../../imagenes/ikonoz/agregar_persona.png" class="iconsButtons" title="Agregar" onclick="FRegistrar_alumnos('<%=v%>', '<%=cve_usuario%>', '<%=cve_convocatoria%>')">
                                 </td>
-                                <td class="aling-middle text-center" colspan="4">
+                                <td class="aling-middle text-center" colspan="5">
                                     <table class="table table-hover border-info SoloTexto2" cellpading="0" cellspacing="0" id="TblAlumnos<%=v%>">
                                         <!--Tabla-->
                                     </table>
