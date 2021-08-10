@@ -149,5 +149,3 @@ CREATE TABLE dual_alumnos_puestos
 	PRIMARY KEY (cve_competencia, anio, cve_alumno)
 )
 
-
-West Coast!!!
