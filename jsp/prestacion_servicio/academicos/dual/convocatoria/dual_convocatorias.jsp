@@ -62,6 +62,15 @@
                             <br>
                             <input type="date" name="TFechaTer" id="TFechaTer" class="captura combo100">
                         </div>
+                        <div class="col-md-1">
+                            Vigente
+                            <br>
+                            <select name="SVigente" id="SVigente" class="captura combo100">
+                                <option value="-1">...seleccionar</option>
+                                <option value="1">Si</option>
+                                <option value="0">No</option>
+                            </select>
+                        </div>
                         <div class="col-md-2">
                             Competencia
                             <br>
@@ -85,7 +94,7 @@
                                 %>
                             </select>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             Carrera
                             <br>
                             <input type="text" name="TCarrera" id="TCarrera" class="captura combo300" readonly>
@@ -252,7 +261,6 @@
                     function FRegistrar_convocatorias() 
                     {
                         var valida = 0;
-                        var vigente = 1;
                         var date = new Date();
                         var dia = date.getDate();
                         var mes = date.getMonth() + 1;
@@ -280,36 +288,36 @@
                             }
                             else
                             {
-                                if ($('#SCveCompetencia').val() == -1 || $('#SCveCompetencia').val() == null ) 
+                                if ($('#SVigente').val() == -1 || $('#SVigente').val() == null) 
                                 {
-                                    alert("Favor de seleccionar el puesto de aprendizaje");
-                                    $('#SCveCompetencia').focus();
+                                    alert("Favor de ingresar si es vigente");
+                                    $('#SVigente').focus();
                                     valida++;
                                 }
                                 else
                                 {
-                                    if ($('#TDescripcion').val() == 0 || $('#TDescripcion').val() == null ) 
+                                    if ($('#SCveCompetencia').val() == -1 || $('#SCveCompetencia').val() == null ) 
                                     {
-                                        alert("Favor de ingresar la descripcion");
-                                        $('#TDescripcion').focus();
+                                        alert("Favor de seleccionar el puesto de aprendizaje");
+                                        $('#SCveCompetencia').focus();
                                         valida++;
                                     }
                                     else
                                     {
-                                        var f_ini = $('#TFechaIni').val().split('-');
-                                        var nf_ini = f_ini[2] + '-' + f_ini[1] + '-' + f_ini[0];
-                                        var f_ter = $('#TFechaTer').val().split('-');
-                                        var nf_ter = f_ter[2] + '-' + f_ter[1] + '-' + f_ter[0];
-
-                                        if (f_ter[0] < fecha[0]) 
+                                        if ($('#TDescripcion').val() == 0 || $('#TDescripcion').val() == null ) 
                                         {
-                                            alert("Ingrese una fecha de término válida");
-                                            $('#TFechaTer').focus();
+                                            alert("Favor de ingresar la descripcion");
+                                            $('#TDescripcion').focus();
                                             valida++;
                                         }
                                         else
                                         {
-                                            if (f_ter[1] < fecha[1]) 
+                                            var f_ini = $('#TFechaIni').val().split('-');
+                                            var nf_ini = f_ini[2] + '-' + f_ini[1] + '-' + f_ini[0];
+                                            var f_ter = $('#TFechaTer').val().split('-');
+                                            var nf_ter = f_ter[2] + '-' + f_ter[1] + '-' + f_ter[0];
+
+                                            if (f_ter[0] < fecha[0]) 
                                             {
                                                 alert("Ingrese una fecha de término válida");
                                                 $('#TFechaTer').focus();
@@ -317,7 +325,7 @@
                                             }
                                             else
                                             {
-                                                if (f_ter[2] < fecha[2]) 
+                                                if (f_ter[1] < fecha[1]) 
                                                 {
                                                     alert("Ingrese una fecha de término válida");
                                                     $('#TFechaTer').focus();
@@ -325,10 +333,19 @@
                                                 }
                                                 else
                                                 {
-                                                    if ($('#TCveConvocatoria').val() != 0) 
+                                                    if (f_ter[2] < fecha[2]) 
                                                     {
-                                                        FActualizar_convocatorias();
+                                                        alert("Ingrese una fecha de término válida");
+                                                        $('#TFechaTer').focus();
                                                         valida++;
+                                                    }
+                                                    else
+                                                    {
+                                                        if ($('#TCveConvocatoria').val() != 0) 
+                                                        {
+                                                            FActualizar_convocatorias();
+                                                            valida++;
+                                                        }
                                                     }
                                                 }
                                             }
@@ -345,6 +362,7 @@
                             {
                                 "p_fecha_inicio"     : nf_ini,
                                 "p_fecha_termino"    : nf_ter,
+                                "p_vigente"          : $('#SVigente').val(),
                                 "p_cve_competencia"  : $('#SCveCompetencia').val(),
                                 "p_descripcion"      : $('#TDescripcion').val(),
                                 "p_cve_usuario"      : <%=cve_usuario%>
@@ -420,6 +438,7 @@
                             "p_cve_convocatoria"  : $('#TCveConvocatoria').val(),
                             "p_fecha_inicio"      : $('#TFechaIni').val(),
                             "p_fecha_termino"     : $('#TFechaTer').val(),
+                            "p_vigente"           : $('#SVigente').val(),
                             "p_cve_competencia"   : $('#SCveCompetencia').val(),
                             "p_descripcion"       : $('#TDescripcion').val()
                         }
