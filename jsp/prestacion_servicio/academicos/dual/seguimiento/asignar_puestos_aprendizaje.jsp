@@ -28,6 +28,7 @@
         {
             nombre_competencia = rs.getString(1);
         }
+        SMBD.desconectarBD();
         %>            
             <html>
                 <head>
@@ -113,7 +114,6 @@
                                             {
                                                 if ($('#CSeleccionar<%=numero_check%>').is(':checked')) 
                                                 {
-                                                    FCargando();
                                                     var par = 
                                                     {
                                                         "p_cve_competencia" : <%=cve_competencia%>
@@ -125,7 +125,6 @@
                                                         function(htmlExterno) 
                                                         {
                                                             $('#SOrden<%=numero_check%>').html(htmlExterno);
-                                                            FTerminado();
                                                         }
                                                     );
                                                 }
@@ -137,7 +136,6 @@
                                                         function(htmlExterno) 
                                                         {
                                                             $('#SOrden<%=numero_check%>').html(htmlExterno);
-                                                            FTerminado();
                                                         }
                                                     );
                                                 }
@@ -173,18 +171,6 @@
                         </div>
                     </div>
                 </body>
-
-                <script type="text/JavaScript" language="JavaScript">
-                    function FCargando() 
-                    {
-                        $('#gif_espera').html('<img src="../../../../../imagenes/ajax-loader.gif" width="50">');
-                    }
-
-                    function FTerminado() 
-                    {
-                        $('#gif_espera').html('&nbsp;');
-                    }
-                </script>
             </html>
         <%
     }
