@@ -87,8 +87,8 @@ try
                   <textarea id="TObservaciones_<%=cve_alumno%>" name="TObservaciones<%=cve_alumno%>" type="textarea" class="captura combo150" id="" maxlength="200" autofocus style="margin-top: 1.32812; margin-bottom: 1.32812; height: 50px;" ><%=obser_exa_psico%></textarea>
                   <input type="hidden" name="" id="" value="<%=obser_exa_psico%>"></td>
               <td class="align-middle text-center">
-                  <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar" onClick="FGuardarCalif(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia%>)">
-                  <br>Guardar
+                  <button type="" class="btn btn-info btn-sm" title="Guardar" onClick="FGuardarCalif(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia%>)">Guardar</button>
+                  
             </td>
         </tr>
         <%

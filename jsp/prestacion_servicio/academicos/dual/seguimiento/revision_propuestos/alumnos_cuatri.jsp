@@ -12,7 +12,7 @@ try
 	int cve_grupo=0,cve_asesor_dual=0,cve_tutor=0,cve_alumno=0,grado_alumno=0,cve_competencia=0;
 	
 %>
-	<table width="80%" cellspacing="0" cellpadding="0" align="center" class="table-hover border border-info">
+	<table width="95%" cellspacing="1" cellpadding="1" align="center" class="table-hover border border-info">
 		<thead class="table-dark SoloTexto2">
 			<tr class="bg-info">
 				<th class="align-middle text-center" colspan="10" scope="col">Listado Personas</th>
@@ -91,10 +91,10 @@ try
                %>
 			</select></td>
 <td class="align-middle text-center">
-<input type="button" value="Guardar asesor" name="guardar" href="" class="liga" onClick="FGuardarAsesor(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia%>);">
+	<input type="button" value="Guardar asesor" name="guardar" href="" class="btn btn-info btn-sm" onClick="FGuardarAsesor(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia%>);">
 </td>
 <td class="align-middle text-center">
-<input type="button" value="Notificar" name="Notificar" href="" class="liga" onClick="FNotificacion(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia%>);">
+	<input type="button" value="Notificar" name="Notificar" href="" class="btn btn-info btn-sm" onClick="FNotificacion(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia%>);">
 </td>
 </tr>
     <%

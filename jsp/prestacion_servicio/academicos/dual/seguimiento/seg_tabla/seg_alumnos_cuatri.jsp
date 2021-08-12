@@ -82,12 +82,12 @@ consultas="SELECT ISNULL(direc_empresas.nombre,'Pendiente') AS Empresa, personas
                 <input type="hidden" name="" id="" value="<%=obser_exa_conoc%>"></td>
             <td class="align-middle text-center"><%=fecha_exa_conoc%></td>
             <td class="align-middle text-center">
-                <input type="button" value="Calificación" class="liga" name="Guardar" title="Guardar" onClick="FGuardarCalif(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia%>)">
+                <input type="button" value="Calificación" class="btn btn-info btn-sm" name="Guardar" title="Guardar" onClick="FGuardarCalif(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia%>)">
             </td>
             </td>
             <td class="align-middle text-center">
-                <input type="button" value="Cargar PDF" class="liga" name="GuardarPDF" title="Guardar" onclick="">
-                <a href="seguimiento_a_dual.jsp?cve_periodo=<%=cve_periodo%>" target="popup" onClick="window.open(this.href, this.target, 'width=700,height=400'); return false;">PDF</a>
+                <input type="button" value="Cargar PDF" class="btn btn-info btn-sm" name="GuardarPDF" title="Guardar" onclick="">
+                <input type="button" class="btn btn-outline-info btn-sm" name="PDF" href="seguimiento_a_dual.jsp?cve_periodo=<%=cve_periodo%>" target="popup" onClick="window.open(this.href, this.target, 'width=700,height=400'); return false;">PDF
             </td>
             <td class="align-middle text-center">
                 <button type="button" class="btn btn-link" target="popup" onClick="openWin();">Ver</button>
