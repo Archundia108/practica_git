@@ -142,6 +142,7 @@ CREATE TABLE dual_alumnos_puestos
 (
 	cve_competencia INT NOT NULL,
 	cve_puesto_aprendizaje INT NOT NULL,
-	cve_alumno INT NOT NULL
+	cve_alumno INT NOT NULL,
+	orden INT NOT NULL
 	PRIMARY KEY (cve_competencia, cve_puesto_aprendizaje, cve_alumno)
 )
