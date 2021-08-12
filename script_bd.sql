@@ -89,21 +89,19 @@ DROP TABLE IF EXISTS dual_meses
 CREATE TABLE dual_meses
 (
 	cve_competencia INT NOT NULL,
-	anio INT NOT NULL,
 	cve_alumno INT NOT NULL,
 	cve_periodo INT NOT NULL, 
 	mes_1 INT NOT NULL,
 	mes_2 INT NOT NULL,
 	mes_3 INT NOT NULL,
 	mes_4 INT NOT NULL
-	PRIMARY KEY (cve_competencia, anio, cve_alumno, cve_periodo)
+	PRIMARY KEY (cve_competencia, cve_alumno, cve_periodo)
 )
 
 DROP TABLE IF EXISTS dual_semanas
 CREATE TABLE dual_semanas
 (
 	cve_competencia INT NOT NULL,
-	anio INT NOT NULL,
 	cve_alumno INT NOT NULL,
 	cve_periodo INT NOT NULL,
 	semana_1 INT NOT NULL,
@@ -122,14 +120,13 @@ CREATE TABLE dual_semanas
 	semana_14 INT NOT NULL,
 	semana_15 INT NOT NULL,
 	semana_16 INT NOT NULL
-	PRIMARY KEY (cve_competencia, anio, cve_alumno, cve_periodo)
+	PRIMARY KEY (cve_competencia, cve_alumno, cve_periodo)
 )
 
 DROP TABLE IF EXISTS dual_dias
 CREATE TABLE dual_dias
 (
 	cve_competencia INT NOT NULL,
-	anio INT NOT NULL,
 	cve_alumno INT NOT NULL,
 	cve_periodo INT NOT NULL,
 	L INT NOT NULL,
@@ -137,14 +134,15 @@ CREATE TABLE dual_dias
 	I INT NOT NULL,
 	J INT NOT NULL,
 	V INT NOT NULL
-	PRIMARY KEY (cve_competencia, anio, cve_alumno, cve_periodo)
+	PRIMARY KEY (cve_competencia, cve_alumno, cve_periodo)
 )
 
 DROP TABLE IF EXISTS dual_alumnos_puestos
 CREATE TABLE dual_alumnos_puestos
 (
 	cve_competencia INT NOT NULL,
-	anio INT NOT NULL,
-	cve_alumno INT NOT NULL
-	PRIMARY KEY (cve_competencia, anio, cve_alumno)
+	cve_puesto_aprendizaje INT NOT NULL,
+	cve_alumno INT NOT NULL,
+	orden INT NOT NULL
+	PRIMARY KEY (cve_competencia, cve_puesto_aprendizaje, cve_alumno)
 )

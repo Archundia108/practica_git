@@ -496,7 +496,7 @@ if (session.getAttribute("usuario") != null)
                         <table style="margin:auto;" width="70%" class="table table-hover table-sm border border-info" cellpadding="0" cellspacing="0" id="">
                             <thead class="table-dark SoloTexto2">
                                 <tr class="bg-info">
-                                    <th class="align-middle text-center" colspan="6" scope="col">
+                                    <th class="align-middle text-center" colspan="7" scope="col">
                                      Evaluaciones 
                                     </th>
                                     <tr class="bg-secondary">
@@ -506,7 +506,7 @@ if (session.getAttribute("usuario") != null)
                                         <th class="align-middle text-center" scope="col">Saber</th>
                                         <th class="align-middle text-center" scope="col">Saber Hacer</th>
                                         <th class="align-middle text-center" scope="col">Guardar</th>
-                                        
+                                        <th class="align-middle text-center" scope="col">Notificar</th>
                                     </tr>
                                 </tr>
                         </thead>
@@ -541,6 +541,9 @@ if (session.getAttribute("usuario") != null)
                                 <td class="align-middle text-center">
                                     <input class="liga" value="Guardar" title="Guardar" type="button" name="Guardar">
                                 </td>
+                                <td class="align-middle text-center">
+                                    <input class="liga" value="Notificar" title="Notificar" type="button" name="Notificar">
+                                </td>
                             </tr>
                             <tr>
                                 <td class="align-middle text-center" scope="">2</td>
@@ -570,7 +573,9 @@ if (session.getAttribute("usuario") != null)
                                         <td class="align-middle text-center">
                                             <input class="liga" value="Guardar" title="Guardar" type="button" name="Guardar">
                                         </td>
-                                        
+                                        <td class="align-middle text-center">
+                                            <input class="liga" value="Notificar" title="Notificar" type="button" name="Notificar">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td class="align-middle text-center" scope="">3</td>
@@ -602,16 +607,18 @@ if (session.getAttribute("usuario") != null)
                                         <td class="align-middle text-center">
                                             <input class="liga" value="Guardar" title="Guardar" type="button" name="Guardar">
                                         </td>
-                                        
+                                        <td class="align-middle text-center">
+                                            <input class="liga" value="Notificar" title="Notificar" type="button" name="Notificar">
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="6" class="align-middle text-center">
+                                        <td colspan="7" class="align-middle text-center">
                                             Promedio final
                                         </td>
                                         <br>
                                     </tr>
                                     <tr>
-                                        <td colspan="6" class="align-middle text-center">
+                                        <td colspan="7" class="align-middle text-center">
                                             -
                                         </td>
                                         <br>

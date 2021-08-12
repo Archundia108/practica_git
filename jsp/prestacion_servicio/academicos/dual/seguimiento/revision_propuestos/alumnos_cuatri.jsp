@@ -12,7 +12,7 @@ try
 	int cve_grupo=0,cve_asesor_dual=0,cve_tutor=0,cve_alumno=0,grado_alumno=0,cve_competencia=0;
 	
 %>
-	<table style="margin: auto;" class="table table-hover table-sm border border-info" cellpadding="0" cellspacing="0" id="TblAlumnosDual">
+	<table width="80%" cellspacing="0" cellpadding="0" align="center" class="table-hover border border-info">
 		<thead class="table-dark SoloTexto2">
 			<tr class="bg-info">
 				<th class="align-middle text-center" colspan="10" scope="col">Listado Personas</th>
