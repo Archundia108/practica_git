@@ -68,9 +68,9 @@ if (session.getAttribute("usuario") != null)
         </div>
         
         <br>
-
-    <div id="ListadoAlumnos" class="width:98%;">
-            <table style="margin: auto;" id="TblAlumnosDual" class="table table-hover table-sm border border-info" width="98%" cellpadding="0" cellspacing="0" id="">
+    <div class="col-md-1">&nbsp;</div>
+    <div id="ListadoAlumnos" class="width:80%;">
+            <table width="80%" cellspacing="0" cellpadding="0" align="center" class="table-hover border border-info">
               <thead class="table-dark SoloTexto2">
                  <tr class="bg-info">
                       <th class="align-middle text-center" colspan="10" scope="col">Listado de alumnos en formacion dual</th>
@@ -99,6 +99,7 @@ if (session.getAttribute("usuario") != null)
                     </tbody>
                 </table>
         </div>
+        <div class="col-md-1">&nbsp;</div>
             
 
         <div class="col-md-12" align="center">
