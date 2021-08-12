@@ -10,7 +10,7 @@ if (session.getAttribute("usuario") != null)
         String consultas="",nombre_periodo="",mes1="",mes2="",mes3="",mes4="",nombre_empresa="";
         int meses=0,numero_periodo=0,cve_empresa=0;     
         int cve_periodo=Integer.parseInt(request.getParameter("cve_periodo"));
-        //int cve_competencia=Integer.parseInt(request.getParameter("cve_competencia"));
+        int cve_competencia=Integer.parseInt(request.getParameter("cve_competencia"));
         int cve_alumno=Integer.parseInt(request.getParameter("cve_alumno"));
 
         
@@ -496,7 +496,7 @@ if (session.getAttribute("usuario") != null)
                         <table style="margin:auto;" width="70%" class="table table-hover table-sm border border-info" cellpadding="0" cellspacing="0" id="">
                             <thead class="table-dark SoloTexto2">
                                 <tr class="bg-info">
-                                    <th class="align-middle text-center" colspan="7" scope="col">
+                                    <th class="align-middle text-center" colspan="9" scope="col">
                                      Evaluaciones 
                                     </th>
                                     <tr class="bg-secondary">
@@ -507,6 +507,8 @@ if (session.getAttribute("usuario") != null)
                                         <th class="align-middle text-center" scope="col">Saber Hacer</th>
                                         <th class="align-middle text-center" scope="col">Guardar</th>
                                         <th class="align-middle text-center" scope="col">Notificar</th>
+                                        <th class="align-middle text-center">Horario de Alumno</th>
+                                        <th class="align-middle text-center">Fecha de notificación</th>
                                     </tr>
                                 </tr>
                         </thead>
@@ -539,11 +541,15 @@ if (session.getAttribute("usuario") != null)
                                     </select>
                                 </td>
                                 <td class="align-middle text-center">
-                                    <input class="liga" value="Guardar" title="Guardar" type="button" name="Guardar">
+                                    <input class="btn btn-info btn-sm" value="Guardar" title="Guardar" type="button" name="Guardar">
                                 </td>
                                 <td class="align-middle text-center">
-                                    <input class="liga" value="Notificar" title="Notificar" type="button" name="Notificar">
+                                    <input class="btn btn-info btn-sm" value="Notificar" title="Notificar" type="button" name="Notificar">
                                 </td>
+                                <td class="align-middle text-center">
+                                   <input class="btn btn-outline-info btn-sm" value="Horario" title="BHorario" type="button" name="Horario"> 
+                                </td>
+                                <td class="align-middle text-center">_/_/_</td>
                             </tr>
                             <tr>
                                 <td class="align-middle text-center" scope="">2</td>
@@ -571,11 +577,15 @@ if (session.getAttribute("usuario") != null)
                                             </select>
                                         </td>
                                         <td class="align-middle text-center">
-                                            <input class="liga" value="Guardar" title="Guardar" type="button" name="Guardar">
+                                            <input class="btn btn-info btn-sm" value="Guardar" title="Guardar" type="button" name="Guardar">
                                         </td>
                                         <td class="align-middle text-center">
-                                            <input class="liga" value="Notificar" title="Notificar" type="button" name="Notificar">
+                                            <input class="btn btn-info btn-sm" value="Notificar" title="Notificar" type="button" name="Notificar">
                                         </td>
+                                        <td class="align-middle text-center">
+                                            <input class="btn btn-outline-info btn-sm" value="Horario" title="BHorario" type="button" name="Horario"> 
+                                        </td>
+                                        <td class="align-middle text-center">_/_/_</td>
                                     </tr>
                                     <tr>
                                         <td class="align-middle text-center" scope="">3</td>
@@ -605,20 +615,24 @@ if (session.getAttribute("usuario") != null)
                                             </select>
                                         </td>
                                         <td class="align-middle text-center">
-                                            <input class="liga" value="Guardar" title="Guardar" type="button" name="Guardar">
+                                            <input class="btn btn-info btn-sm" value="Guardar" title="Guardar" type="button" name="Guardar">
                                         </td>
                                         <td class="align-middle text-center">
-                                            <input class="liga" value="Notificar" title="Notificar" type="button" name="Notificar">
+                                            <input class="btn btn-info btn-sm" value="Notificar" title="Notificar" type="button" name="Notificar">
                                         </td>
+                                        <td class="align-middle text-center">
+                                            <input class="btn btn-outline-info btn-sm" value="Horario" title="BHorario" type="button" name="BHorario"> 
+                                        </td>
+                                        <td class="align-middle text-center">_/_/_</td>
                                     </tr>
                                     <tr>
-                                        <td colspan="7" class="align-middle text-center">
+                                        <td colspan="9" class="align-middle text-center">
                                             Promedio final
                                         </td>
                                         <br>
                                     </tr>
                                     <tr>
-                                        <td colspan="7" class="align-middle text-center">
+                                        <td colspan="9" class="align-middle text-center">
                                             -
                                         </td>
                                         <br>
@@ -687,27 +701,27 @@ if (session.getAttribute("usuario") != null)
 
         function mostrarvalores(cve_alumno,cve_periodo,cve_competencia){
             //var a=$("#SEmpresa_").val();
-            var b=$("#TNomRotacion").val();
+            //var b=$("#TNomRotacion").val();
             //var c=$("#TNomInst").val();
             //var d=$("#TPatInst").val();
             //var e=$("#TMatInst").val();
             //var f=$("#TNumeroInst").val();
             //var g=$("#TCorreoInst").val();
-            //var h=$(cve_alumno).val();
+            var h=$(cve_alumno).val();
 
-            var i=$(cve_periodo).val();
+            //var i=$(cve_periodo).val();
             //alert(a);
-            alert(b);
+            //alert(b);
             //alert(c);
             //alert(d);
             //alert(e);
             //alert(f);
             //alert(g);
-            //alert(h);
+            alert(h);
             //alert(i);
         }
 
-    function FGuardarDatosInst(cve_alumno)
+    function FGuardarDatosInst(cve_alumno,cve_periodo,cve_competencia)
     {
         var valida=0;
         //alert($('#SEmpresa_'+cve_alumno).val()+" "+valida);
@@ -790,7 +804,16 @@ if (session.getAttribute("usuario") != null)
                 "p_cve_competencia"       :cve_competencia
 
             };
-            //alert("seguimiento_a_dual/guardarDatos.jsp?p_SEmpresa_="+par.p_SEmpresa+"&p_TNomRotacion="+par.p_TNomRotacion+"&p_TNomInst="+par.p_TNomInst+"&p_TPatInst="+par.p_TPatInst+"&p_TMatInst="+par.p_TMatInst+"&p_TNumeroInst"+par.p_TNumeroInst+"&p_TCorreoInst"+par.p_TCorreoInst+"&p_cve_alumno"+par.p_cve_alumno+"&p_cve_periodo"par.p_cve_periodo+"&p_cve_competencia"+par.p_cve_competencia);
+            /*alert("seguimiento_a_dual/guardarDatos.jsp?p_SEmpresa_="+par.p_SEmpresa+""
+                                                        &p_TNomRotacion="+par.p_TNomRotacion+"
+                                                        &p_TNomInst="+par.p_TNomInst+"
+                                                        &p_TPatInst="+par.p_TPatInst+"
+                                                        &p_TMatInst="+par.p_TMatInst+"
+                                                        &p_TNumeroInst"+par.p_TNumeroInst+"
+                                                        &p_TCorreoInst"+par.p_TCorreoInst+"
+                                                        &p_cve_alumno"+par.p_cve_alumno+"
+                                                        &p_cve_periodo"par.p_cve_periodo+"
+                                                        &p_cve_competencia"+par.p_cve_competencia);*/
             $.ajax
             ({
                 data:par,
