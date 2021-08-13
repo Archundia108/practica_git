@@ -81,7 +81,7 @@ CREATE TABLE dual_alumnos
 	cve_convocatoria INT NOT NULL,
 	fecha_tutor_notif DATE,
 	fecha_notif_asesor_dual DATE,
-	nom_plan_rotacion VARCHAR (50) NOT NULL
+	nom_plan_rotacion VARCHAR (50) NULL
 	PRIMARY KEY (cve_alumno, cve_competencia, cve_periodo)
 )
 
