@@ -13,12 +13,14 @@
         ResultSet rs;
 
         int cve_competencia = Integer.parseInt(request.getParameter("p_cve_competencia"));
+        int numero_check = Integer.parseInt(request.getParameter("p_numero_check"));
         
         String consultas = "";
         int numero_puestos_aprendizaje = 0;
 
         %>
-            <select class="captura">
+            <select id="SOrden<%=numero_check%>" class="captura">
+                <option value="0">0</option>
                 <%
                     consultas = "SELECT cve_puesto_aprendizaje "
                               + "FROM dual_puestos_aprendizaje "
