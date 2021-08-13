@@ -9,7 +9,7 @@ try
 	int cve_periodo=Integer.parseInt(request.getParameter("p_TCuatri"));
   int cve_alumno=0,cve_competencia=0,calif_exa_psico=0,expediente=0,cve_empresa=0;
 %>
-<table tyle="margin: auto;" nom class="table table-hover table-sm border border-info" cellpadding="0" cellspacing="0" id="TblAlumnosPedagogico">
+<table width="95%" border="1" cellspacing="1" cellpadding="1" align="center" class="table-hover border border-info" id="TblAlumnosPedagogico">
       	<thead class="table-dark SoloTexto2">
 	      <tr class="bg-info">
             	<th class="align-middle text-center" colspan="8" scope="col">Alumnos</th>
@@ -32,13 +32,13 @@ try
              +"ISNULL(dual_alumnos.obser_exa_psico,'...')AS observaciones, alumnos.expediente, ISNULL(dual_alumnos.nom_plan_rotacion,'Pendiente') "
              +"AS Nom_plan_rotacion, dual_alumnos.cve_alumno, "
              +"dual_alumnos.cve_competencia, dual_alumnos.cve_empresa, dual_alumnos.cve_periodo, "
-             +"ISNULL(convert(varchar(10),dual_alumnos.fecha_exa_psico,103),' ')AS fecha_de_examen "
+             +"ISNULL(convert(varchar(10),dual_alumnos.fecha_exa_psico,103),'_/_/_')AS fecha_de_examen "
              +"FROM dual_alumnos INNER JOIN alumnos ON dual_alumnos.cve_alumno = alumnos.cve_alumno "
              +"INNER JOIN personas ON dual_alumnos.cve_alumno = personas.cve_persona "
              +"LEFT OUTER JOIN direc_empresas ON dual_alumnos.cve_empresa = direc_empresas.cve_empresa "
              +"WHERE (dual_alumnos.cve_periodo = "+cve_periodo+") order by personas.nombre asc";
              
-    out.println(consultas);
+    //out.println(consultas);
     rs=SMBD.SQLBD(consultas);
     while(rs.next())
     {
@@ -59,7 +59,7 @@ try
       ebd.cve_periodo=cve_periodo;
       ebd.bucarCalif();
 
-      out.print(cve_competencia);
+      //out.print(cve_competencia);
   %>
           <tr>
               <th scope="row" class="align-middle text-center" title="<%=cve_alumno%>"><%=expediente%></th>

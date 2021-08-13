@@ -67,7 +67,7 @@ if (session.getAttribute("usuario") != null)
         <br>
     <div id="ListadoAlumnos" class="col-md-12">
         <div class="col-md-2">&nbsp;</div>
-        <table tyle="margin: auto;" class="table table-hover table-sm border border-info" cellpadding="0" cellspacing="0" id="">
+        <table width="80%"  cellspacing="1" cellpadding="1" align="center" class="table-hover border border-info">
                         <thead class="table-dark SoloTexto2">
                             <tr class="bg-info">
                                 <th class="align-middle text-center" colspan="9" scope="col">Alumnos</th>
@@ -128,12 +128,12 @@ if (session.getAttribute("usuario") != null)
 
     function FCargarCuatri()
      {
-        alert($('#TCuatri').val());
+        //alert($('#TCuatri').val());
         if($('#TCuatri').val()!=0)
         {
             FCargando();
             var par={"p_TCuatri" : $('#TCuatri').val()};
-            alert("seguimiento/registro_pedagogico.jsp?p_TCuatri="+par.p_TCuatri);
+            //alert("seguimiento/registro_pedagogico.jsp?p_TCuatri="+par.p_TCuatri);
             $.post("registro_pedagogico/pedagogico_alumnos_cuatri.jsp",par,function(htmlExterno){
                 $('#ListadoAlumnos').html(htmlExterno);
                 console.log(htmlExterno);

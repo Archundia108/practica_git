@@ -152,7 +152,7 @@ if (session.getAttribute("usuario") != null)
             <input type="text" name="TCorreoInst" id="TCorreoInst" class="captura_obligada combo100">
         </div>
         <div class="col-md-2" align="center">
-            <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar" onClick="FGuardarDatosInst(<%=cve_alumno%>,<%=cve_competencia%>,<%=cve_periodo%>);">
+            <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar" onClick="FGuardarDatosInst(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia%>);"> <!-- cve_competencia-->
             <br>Guardar
         </div>
     <div class="col-md-5">&nbsp;</div>
@@ -479,7 +479,7 @@ if (session.getAttribute("usuario") != null)
                     <div class="row SoloTexto2">
                         <div class="col-md-2">&nbsp;</div>      
                         <div class="col-md-12" align="center">
-                            <img onclick="openWin();" src="../../../../../imagenes/ikonoz/editar.png" class="iconsButtons" title="observaciones">
+                            <img onclick="abrirObservaciones();" target="popup" src="../../../../../imagenes/ikonoz/editar.png" class="iconsButtons" title="observaciones">
                             <br>Observaciones del alumno
                         </div> 
                         <div class="col-md-2">&nbsp;</div>
@@ -547,7 +547,7 @@ if (session.getAttribute("usuario") != null)
                                     <input class="btn btn-info btn-sm" value="Notificar" title="Notificar" type="button" name="Notificar">
                                 </td>
                                 <td class="align-middle text-center">
-                                   <input class="btn btn-outline-info btn-sm" value="Horario" title="BHorario" type="button" onclick="openVen();" name="Horario"> 
+                                   <input class="btn btn-outline-info btn-sm" value="Horario" title="BHorario" type="button" target="popup" onclick="openVen();" name="Horario"> 
                                 </td>
                                 <td class="align-middle text-center">_/_/_</td>
                             </tr>
@@ -583,7 +583,7 @@ if (session.getAttribute("usuario") != null)
                                             <input class="btn btn-info btn-sm" value="Notificar" title="Notificar" type="button" name="Notificar">
                                         </td>
                                         <td class="align-middle text-center">
-                                            <input class="btn btn-outline-info btn-sm" value="Horario" title="BHorario" type="button" onclick="openVen();" name="Horario"> 
+                                            <input class="btn btn-outline-info btn-sm" value="Horario" title="BHorario" target="popup" type="button" onclick="openVen();" name="Horario"> 
                                         </td>
                                         <td class="align-middle text-center">_/_/_</td>
                                     </tr>
@@ -621,7 +621,7 @@ if (session.getAttribute("usuario") != null)
                                             <input class="btn btn-info btn-sm" value="Notificar" title="Notificar" type="button" name="Notificar">
                                         </td>
                                         <td class="align-middle text-center">
-                                            <input class="btn btn-outline-info btn-sm" value="Horario" title="BHorario" type="button" onclick="openVen();" name="BHorario"> 
+                                            <input class="btn btn-outline-info btn-sm" value="Horario" title="BHorario" target="popup" type="button" onclick="openVen();" name="BHorario"> 
                                         </td>
                                         <td class="align-middle text-center">_/_/_</td>
                                     </tr>
@@ -650,8 +650,6 @@ if (session.getAttribute("usuario") != null)
                         </div>
                         <br>
 
-                        <button class="btn btn-secondary" onclick="mostrarvalores();">Valores</button>
-
                         <div class="row SoloTexto2">    
                             <div class="col-md-12">
                                 Universidad Tecnol&oacute;gica de San Juan del R&iacute;o <br>
@@ -667,7 +665,7 @@ if (session.getAttribute("usuario") != null)
     var paginaHorario;
     function openVen()
     {
-        paginaHorario=window.open("seguimiento_a_dual/paginaHorario.jsp","paginaHorario","width=800,height=500");
+        paginaHorario=window.open("http://localhost:8080/dual/jsp/prestacion_servicio/academicos/dual/seguimiento/seguimiento_a_dual/paginaHorario.jsp?cve_alumno=<%=cve_alumno%>","paginaHorario","width=800,height=500");
     }
     function closeVen() 
     {
@@ -675,12 +673,12 @@ if (session.getAttribute("usuario") != null)
     }
 
     var myWindow;
-    function openWin() 
+    function abrirObservaciones() 
     {
-    myWindow=window.open("seguimiento_a_dual/observaciones.jsp","myWindow","width=800,height=500");  
+    observacionesVentana=window.open("seguimiento_a_dual/observaciones.jsp","observacionesVentana","width=800,height=500");  
     }
-    function closeWin(){
-        myWindow.close();
+    function cerrarObservaciones(){
+        observacionesVentana.close();
     }
 
     function FSalir()
@@ -698,7 +696,7 @@ if (session.getAttribute("usuario") != null)
           $('#gif_espera').html('<img src="../../../../../imagenes/ajax-loader.gif" width="50">');  
         }
 
-        function mostrarvalores(cve_alumno,cve_periodo,cve_competencia){
+        /*function mostrarvalores(cve_alumno,cve_periodo,cve_competencia){
             //var a=$("#SEmpresa_").val();
             //var b=$("#TNomRotacion").val();
             //var c=$("#TNomInst").val();
@@ -718,20 +716,20 @@ if (session.getAttribute("usuario") != null)
             //alert(g);
             alert(h);
             //alert(i);
-        }
+        }*/
 
     function FGuardarDatosInst(cve_alumno,cve_periodo,cve_competencia)
     {
         var valida=0;
         //alert($('#SEmpresa_'+cve_alumno).val()+" "+valida);
-        if($('#SEmpresa').selectedIndex <= 1)
+        if($('#SEmpresa')[0].selectedIndex < 1)
         {
              alert('Seleccione una empresa primero.');valida++;
             $('#SEmpresa_'+cve_alumno).focus();
         }
         else
         {
-            alert($('#TNomRotacion').val()+" "+valida);
+            //alert($('#TNomRotacion').val()+" "+valida);
            if ($('#TNomRotacion').val()==""||$('#TNomRotacion').val()==null)
            {
                 alert('Introduzca el nombre del plan de rotacion.');
@@ -789,8 +787,8 @@ if (session.getAttribute("usuario") != null)
         if (valida==0) 
         {
             FCargando();
-            alert("ok: #SEmpresa_"+cve_alumno.toString());
-            alert("ok 2: "+$('#SEmpresa_'+cve_alumno.toString()).val());
+            //alert("ok: #SEmpresa_"+cve_alumno.toString());
+            //alert("ok 2: "+$('#SEmpresa_'+cve_alumno.toString()).val());
             var par=
             {
                 "p_SEmpresa"              :$('#SEmpresa').val(),
@@ -824,8 +822,8 @@ if (session.getAttribute("usuario") != null)
                 dataType:"JSON",
                 success:function(res)
                 {
-                    alert("Respuesta?");
-                    // data = JSON.parse(res);
+                    //alert("Respuesta?");
+                    //data = JSON.parse(res);
                     console.log(res);
                     alert(res.error);
                     FTerminaCarga();

@@ -9,7 +9,7 @@ try
 	String consultas="",expediente="",nombre_alumno="",nombre_empresa="",nombre_puesto_aprendizaje="",fecha_exa_conoc="",obser_exa_conoc="";
 	int cve_periodo=Integer.parseInt(request.getParameter("p_TCuatri"));
 %>
-<table width="100%" border="1" cellspacing="0" cellpadding="0" align="center" class="table-hover border border-info">
+<table width="100%" border="1" cellspacing="1" cellpadding="1" align="center" class="table-hover border border-info">
     <thead class="table-dark SoloTexto2">
         <tr class="bg-info border-info">
             <th class="align-middle text-center" colspan="9" scope="col">Seguimiento</th>
@@ -36,7 +36,7 @@ consultas="SELECT ISNULL(direc_empresas.nombre,'Pendiente') AS Empresa, personas
         +"INNER JOIN direc_empresas ON dual_alumnos.cve_empresa = direc_empresas.cve_empresa  "
         +"INNER JOIN alumnos ON dual_alumnos.cve_alumno = alumnos.cve_alumno INNER JOIN dual_puestos_aprendizaje ON dual_alumnos.cve_competencia = dual_puestos_aprendizaje.cve_competencia "
         +"WHERE (dual_alumnos.cve_periodo = "+cve_periodo+") ORDER BY nombre";
-    out.println(consultas);
+    //out.println(consultas);
     rs=SMBD.SQLBD(consultas);
     while(rs.next())
     {
@@ -86,11 +86,13 @@ consultas="SELECT ISNULL(direc_empresas.nombre,'Pendiente') AS Empresa, personas
             </td>
             </td>
             <td class="align-middle text-center">
-                <input type="button" value="Cargar PDF" class="btn btn-info btn-sm" name="GuardarPDF" title="Guardar" onclick="">
-                <input type="button" class="btn btn-outline-info btn-sm" name="PDF" href="seguimiento_a_dual.jsp?cve_periodo=<%=cve_periodo%>" target="popup" onClick="window.open(this.href, this.target, 'width=700,height=400'); return false;">PDF
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <input type="button" value="Cargar PDF" class="btn btn-primary" name="GuardarPDF" title="Guardar" onclick="">
+                    <input type="button" value="PDF" class="btn btn-primary" name="PDF" href="seguimiento_a_dual.jsp?cve_periodo=<%=cve_periodo%>" target="popup" onClick="window.open(this.href, this.target, 'width=700,height=400'); return false;">
+                </div>
             </td>
             <td class="align-middle text-center">
-                <button type="button" class="btn btn-link" target="popup" onClick="openWin();">Ver</button>
+                <button type="button" class="btn btn-outline-info btn-sm" target="popup" onClick="abrirVenSeguimiento();">Ver</button>
             </td>
             <td class="align-middle text-center"><%=nombre_empresa%></td>
         </tr>
@@ -102,12 +104,12 @@ consultas="SELECT ISNULL(direc_empresas.nombre,'Pendiente') AS Empresa, personas
 </table>
 
 <script type="text/javascript">
-    function openWin() 
+    function abrirVenSeguimiento() 
     {
-    myWindow=window.open("http://localhost:8080/dual/jsp/prestacion_servicio/academicos/dual/seguimiento/seguimiento_a_dual.jsp?cve_periodo=<%=cve_periodo%>&cve_alumno=<%=cve_alumno%>&cve_competencia=<%=cve_competencia%>","myWindow","width=800,height=800");  
+    seguimientoVentana=window.open("http://localhost:8080/dual/jsp/prestacion_servicio/academicos/dual/seguimiento/seguimiento_a_dual.jsp?cve_periodo=<%=cve_periodo%>&cve_alumno=<%=cve_alumno%>&cve_competencia=<%=cve_competencia%>","seguimientoVentana","width=800,height=800");  
     }
-    function closeWin(){
-        myWindow.close();
+    function cerrarVenSeguimiento(){
+        seguimientoVentana.close();
     }
 </script>
 <%

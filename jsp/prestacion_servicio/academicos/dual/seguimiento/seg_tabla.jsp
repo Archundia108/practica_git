@@ -140,7 +140,7 @@ if (session.getAttribute("usuario") != null)
             $.post("seg_tabla/seg_alumnos_cuatri.jsp",par,function(htmlExterno){
                 $('#ListadoAlumnos').html(htmlExterno);
                 console.log(htmlExterno);
-                FTerminaCarga();
+            FTerminaCarga();
             });
         }
      }
