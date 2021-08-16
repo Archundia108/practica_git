@@ -79,6 +79,10 @@
                                     SMBD.desconectarBD();
                                 %>
                             </select>
+                            <br>
+                            <img src="../../../../../imagenes/ikonoz/impresion.png" class="iconsButtons" title="Impresión de competencia" onclick="FVentana_impresion()">
+                            <br>
+                            Impresión de competencia
                         </div>
                         <div class="col-md-2">
                             Nombre del puesto de aprendizaje
@@ -144,7 +148,7 @@
                                 <option value="0">No</option>
                             </select>
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-1">
                             <img src="../../../../../imagenes/ikonoz/empresas.png" class="iconsButtons" title="Empresas" onclick="FVentana_empresas()">
                             <br>
                             Empresas
@@ -155,14 +159,19 @@
                             Objetivos de aprendizaje
                         </div>
                         <div class="col-md-2">
-                            <img src="../../../../../imagenes/ikonoz/impresion.png" class="iconsButtons" title="Impresión" onclick="FVentana_impresion()">
+                            <img src="../../../../../imagenes/ikonoz/impresion.png" class="iconsButtons" title="Impresión de puesto" onclick="FVentana_impresion()">
                             <br>
-                            Ver PDF
+                            Impresión del puesto de aprendizaje
                         </div>
                         <div class="col-md-2">
-                            <img src="../../../../../imagenes/ikonoz/historico.png" class="iconsButtons" title="Matriz">
+                            <img src="../../../../../imagenes/ikonoz/historico.png" class="iconsButtons" title="Adjuntar matriz">
                             <br>
                             Adjuntar matriz
+                        </div>
+                        <div class="col-md-1">
+                            <img src="../../../../../imagenes/ikonoz/historico.png" class="iconsButtons" title="Ver matriz">
+                            <br>
+                            Ver  matriz
                         </div>
                         <div class="col-md-1">&nbsp;</div>
                     </div>
@@ -303,7 +312,7 @@
                             w = (w / 8) * 6;
                             h = (h / 8) * 5;
                             
-                            var URL = "impresion_competencia.jsp?cve_puesto_aprendizaje="+$('#TCvePuestoAprendizaje').val()+"&anio="+$('#TAnio').val();
+                            var URL = "impresion_puesto_aprendizaje.jsp?cve_puesto_aprendizaje="+$('#TCvePuestoAprendizaje').val()+"&anio="+$('#TAnio').val();
                             
                             window.open(URL,'titulo_ventana','width='+w+',height='+h+',menubar=no,scrollbars=yes,toolbar=no,locatio n=no,directories=no,resizable=no,top='+top+',left='+left);
                         }
