@@ -193,6 +193,7 @@
                                                 </tr>
                                             <%
                                         }
+                                        SMBD.desconectarBD();
                                     %>
                                 </tbody>
                             </table>
