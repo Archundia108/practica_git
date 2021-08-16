@@ -119,23 +119,23 @@ if (session.getAttribute("usuario") != null)
         <div class="col-md-3">
             Nombre de Plan de rotación
             <br>
-            <input type="text" id="TNomRotacion" name="TNomRotacion" class="captura_obligada combo200">    
+            <input type="text" onkeypress="return FCaracteres(event);" onkeyup="FMayusculas(this);" id="TNomRotacion" name="TNomRotacion" class="captura_obligada combo200">    
         </div>
         <div class="col-md-3">
             Nombre del instructor de empresa
             <br>
-            <input type="text" id="TNomInst" name="TNomInst" class="captura_obligada combo200" value="?">
+            <input type="text" onkeyup="FMayusculas(this);" onkeypress="return FCaracteresAlfa(event);" id="TNomInst" name="TNomInst" class="captura_obligada combo200" value="">
         </div>
     
         <div class="col-md-2">
             Ap. paterno
             <br>
-            <input type="text" id="TPatInst" name="TPatInst" class="captura_obligada combo150" value="?">
+            <input type="text" onkeyup="FMayusculas(this);" onkeypress="return FCaracteresAlfa(event);" id="TPatInst" name="TPatInst" class="captura_obligada combo150" value="">
         </div>
         <div class="col-md-2">
             Ap. materno
             <br>
-            <input type="text" id="TMatInst" name="TMatInst" class="captura_obligada combo150" value="?">
+            <input type="text" onkeyup="FMayusculas(this);" onkeypress="return FCaracteresAlfa(event);" id="TMatInst" name="TMatInst" class="captura_obligada combo150" value="">
         </div>     
     </div>
 </div>
@@ -144,12 +144,12 @@ if (session.getAttribute("usuario") != null)
     <div class="col-md-2">
             Número de tel.
             <br>
-            <input type="text" name="TNumeroInst" id="TNumeroInst" class="captura_obligada combo100">
+            <input type="text" onkeypress="return FCaracteresNum(event);" name="TNumeroInst" id="TNumeroInst" class="captura_obligada combo100">
         </div>
         <div class="col-md-2">
             Email
             <br>
-            <input type="text" name="TCorreoInst" id="TCorreoInst" class="captura_obligada combo100">
+            <input type="text" onkeypress="return FCaracteres(event);" name="TCorreoInst" id="TCorreoInst" class="captura_obligada combo100">
         </div>
         <div class="col-md-2" align="center">
             <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar" onClick="FGuardarDatosInst(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia%>);"> <!-- cve_competencia-->
@@ -175,6 +175,9 @@ if (session.getAttribute("usuario") != null)
     <div class="container-fluid">
         <div class="row">
             <!--Tabla Dias-------------------------------------------------------->
+        <%
+
+        %>
             <div class="col-md-6">
                 <table style="margin: auto;" align="" class="table table-hover table-sm border border-info " cellpadding="0" cellspacing="0">
                     <thead class="table-dark SoloTexto2">
@@ -470,7 +473,7 @@ if (session.getAttribute("usuario") != null)
                         <div class="col-md-2">
                             Horario
                             <br>
-                            <textarea class="captura combo200" style="margin-top: 1.32812; margin-bottom: 1.32812; height: 50px;" type="textarea" id="THorario" name="THorario"></textarea>
+                            <textarea onkeypress="return FCaracteres(event);" class="captura combo200" style="margin-top: 1.32812; margin-bottom: 1.32812; height: 50px;" type="textarea" id="THorario" name="THorario"></textarea>
                             <!--<input type="text" id="" name="" class="captura_obligada combo200" readonly>-->
                             <div class="col-md-6">&nbsp;</div>
                         </div>
@@ -662,6 +665,53 @@ if (session.getAttribute("usuario") != null)
                         <br>
                     </body>
 <script type="text/javascript">
+
+    function FCaracteresAlfa(event)
+    {
+        var key=(event.keyCode||event.which);
+        var tecla=String.fromCharCode(key).toString();
+        var letras="ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyzáéíóú .";
+        
+            if (letras.indexOf(tecla)==-1) 
+            {
+                return false;
+            }
+        
+    }
+
+    function FCaracteresNum(event)
+    {
+        var key=(event.keyCode||event.which);
+        var tecla=String.fromCharCode(key).toString();
+        var letras="1234567890";
+
+            if (letras.indexOf(tecla)==-1) 
+            {
+                return false;
+            }
+    }
+
+    function FCaracteres(event) 
+    {
+        var key = (event.keyCode || event.which);                
+        var tecla = String.fromCharCode(key).toString();
+        var letras = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyzáéíóú1234567890 ,@.:";
+
+        if (letras.indexOf(tecla) == 13) 
+        {
+            if (letras.indexOf(tecla) == -1) 
+            {
+                return false;   
+            }
+        }
+    }
+
+
+    function FMayusculas(letra) 
+    {
+        letra.value = letra.value.toUpperCase();
+    }
+
     var paginaHorario;
     function openVen()
     {

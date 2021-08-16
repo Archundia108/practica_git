@@ -77,7 +77,7 @@ consultas="SELECT ISNULL(direc_empresas.nombre,'Pendiente') AS Empresa, personas
                 </select>
             </td>
             <td class="align-middle text-center">
-                <textarea name="TObservaciones_<%=cve_alumno%>" type="textarea" class="captura combo150" id="TObservaciones_<%=cve_alumno%>" maxlength="200" autofocus style="margin-top: 1.32812; margin-bottom: 1.32812; height: 40px;" ><%=obser_exa_conoc%>
+                <textarea name="TObservaciones_<%=cve_alumno%>" onkeypress="return FCaracteres(event);" type="textarea" class="captura combo150" id="TObservaciones_<%=cve_alumno%>" maxlength="200" autofocus style="margin-top: 1.32812; margin-bottom: 1.32812; height: 40px;" ><%=obser_exa_conoc%>
                 </textarea>
                 <input type="hidden" name="" id="" value="<%=obser_exa_conoc%>"></td>
             <td class="align-middle text-center"><%=fecha_exa_conoc%></td>
@@ -110,6 +110,20 @@ consultas="SELECT ISNULL(direc_empresas.nombre,'Pendiente') AS Empresa, personas
     }
     function cerrarVenSeguimiento(){
         seguimientoVentana.close();
+    }
+    function FCaracteres(event) 
+    {
+        var key = (event.keyCode || event.which);                
+        var tecla = String.fromCharCode(key).toString();
+        var letras = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyzáéíóú1234567890 ,@.:";
+
+        if (letras.indexOf(tecla) == 13) 
+        {
+            if (letras.indexOf(tecla) == -1) 
+            {
+                return false;   
+            }
+        }
     }
 </script>
 <%
