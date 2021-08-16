@@ -134,7 +134,7 @@
 
                     <br>
                     <div class="row SoloTexto2">
-                        <div class="col-md-2">&nbsp;</div>
+                        <div class="col-md-1">&nbsp;</div>
                         <div class="col-md-2">
                             Vigente
                             <br>
@@ -155,11 +155,16 @@
                             Objetivos de aprendizaje
                         </div>
                         <div class="col-md-2">
+                            <img src="../../../../../imagenes/ikonoz/impresion.png" class="iconsButtons" title="Impresión" onclick="FVentana_impresion()">
+                            <br>
+                            Ver PDF
+                        </div>
+                        <div class="col-md-2">
                             <img src="../../../../../imagenes/ikonoz/historico.png" class="iconsButtons" title="Matriz">
                             <br>
                             Adjuntar matriz
                         </div>
-                        <div class="col-md-2">&nbsp;</div>
+                        <div class="col-md-1">&nbsp;</div>
                     </div>
 
                     <br>
@@ -278,6 +283,27 @@
                             h = (h / 8) * 5;
                             
                             var URL = "dual_objetivos_aprendizaje.jsp?nombre_puesto_aprendizaje="+$('#TNomPuestoAprendizaje').val()+"&cve_puesto_aprendizaje="+$('#TCvePuestoAprendizaje').val()+"&anio="+$('#TAnio').val();
+                            
+                            window.open(URL,'titulo_ventana','width='+w+',height='+h+',menubar=no,scrollbars=yes,toolbar=no,locatio n=no,directories=no,resizable=no,top='+top+',left='+left);
+                        }
+                    }
+
+                    function FVentana_impresion()
+                    {
+                        if ($('#TCvePuestoAprendizaje').val() == 0) 
+                        {
+                            alert("Selecciona un puesto de aprendizaje o registralo");
+                        }
+                        else
+                        {
+                            var w = screen.width;
+                            var h = screen.height;
+                            var left = w / 8;
+                            var top =  h / 8;
+                            w = (w / 8) * 6;
+                            h = (h / 8) * 5;
+                            
+                            var URL = "impresion_competencia.jsp?cve_puesto_aprendizaje="+$('#TCvePuestoAprendizaje').val()+"&anio="+$('#TAnio').val();
                             
                             window.open(URL,'titulo_ventana','width='+w+',height='+h+',menubar=no,scrollbars=yes,toolbar=no,locatio n=no,directories=no,resizable=no,top='+top+',left='+left);
                         }
