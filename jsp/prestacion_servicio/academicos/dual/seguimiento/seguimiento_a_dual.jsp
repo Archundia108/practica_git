@@ -195,7 +195,7 @@ if (session.getAttribute("usuario") != null)
                     <tbody>
                         <tr>
                             <td class="align-middle text-center">
-                               <input id="dia_l" class="mx-auto" type="checkbox"> </td>
+                               <input id="dia_l" class="mx-auto" type="checkbox"></td>
                             <td class="align-middle text-center">
                                 <input id="dia_l" class="mx-auto" type="checkbox"></td>
                             <td class="align-middle text-center">
