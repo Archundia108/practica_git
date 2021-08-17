@@ -195,7 +195,7 @@ if (session.getAttribute("usuario") != null)
                     <tbody>
                         <tr>
                             <td class="align-middle text-center">
-                               <input id="dia_l" class="mx-auto" type="checkbox"> </td>
+                               <input id="dia_l" class="mx-auto" type="checkbox"></td>
                             <td class="align-middle text-center">
                                 <input id="dia_l" class="mx-auto" type="checkbox"></td>
                             <td class="align-middle text-center">
@@ -521,26 +521,23 @@ if (session.getAttribute("usuario") != null)
                                 <td class="align-middle text-center">_/_/_</td>
                                 <td class="align-middle text-center">
                                     <select id="SEvaluacionS" class="captura_obligada">
-                                        <option value="">NA</option>
                                         <option value="">SA</option>
-                                        <option value="">DE</option>
-                                        <option value="">AU</option>
+                                        <option value="">SE</option>
+                                        <option value="">SH</option>
                                     </select>
                                 </td>
                                 <td class="align-middle text-center">
                                     <select id="SEvaluacionSa" class="captura_obligada">
-                                        <option value="">NA</option>
                                         <option value="">SA</option>
-                                        <option value="">DE</option>
-                                        <option value="">AU</option>
+                                        <option value="">SE</option>
+                                        <option value="">SH</option>
                                     </select>
                                 </td>
                                 <td class="align-middle text-center">
                                     <select id="SEvaluacionSh" class="captura_obligada">
-                                        <option value="">NA</option>
                                         <option value="">SA</option>
-                                        <option value="">DE</option>
-                                        <option value="">AU</option>
+                                        <option value="">SE</option>
+                                        <option value="">SH</option>
                                     </select>
                                 </td>
                                 <td class="align-middle text-center">

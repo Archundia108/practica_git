@@ -132,6 +132,7 @@ CREATE TABLE dual_dias
 	cve_alumno INT NOT NULL,
 	cve_periodo INT NOT NULL,
 	cve_puesto_aprendizaje INT NOT NULL,
+	L INT NOT NULL,
 	M INT NOT NULL,
 	I INT NOT NULL,
 	J INT NOT NULL,

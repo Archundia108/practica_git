@@ -103,7 +103,7 @@ if (session.getAttribute("usuario") != null)
                 <tr class="bg-secondary">
                     <th class="align-middle text-center" scope="col">Num</th>
                     <th class="align-middle text-center" scope="col">fecha</th>
-                    <th class="align-middle text-center" scope="col">Tutor</th>
+                    <th class="align-middle text-center" scope="col">Asesor</th>
                     <th class="align-middle text-center" scope="col">Instructor</th>
                 </tr>
             </tr>
