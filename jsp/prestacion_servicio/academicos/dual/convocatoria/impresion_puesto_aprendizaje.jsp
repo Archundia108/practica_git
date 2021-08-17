@@ -183,7 +183,6 @@
                         <div class="col-md-1">&nbsp;</div>
                     </div>
 
-
                     <br>
                     <div class="row SoloTexto2">
                         <div class="col-md-5">&nbsp;</div>
