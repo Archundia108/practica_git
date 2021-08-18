@@ -1126,7 +1126,7 @@ PhysOpts=
 
 [ModelOptions\Default Opts\JIDX]
 PhysOpts=</a:ModelOptionsText>
-<a:RepositoryFilename>C:\Tomcat 8.5\webapps\dual\tablas_modelo_dual.pdm</a:RepositoryFilename>
+<a:RepositoryFilename>D:\Program Files\Apache Software Foundation\Tomcat 8.5\webapps\dualPantallas\tablas_modelo_dual.pdm</a:RepositoryFilename>
 <a:ExtendedAttributesText>{3B3AB5FF-1A72-461F-BF3E-50C5C86A7DCB},SYASA16,75={753091C9-A033-4B4A-BE4C-FBF8E5A8A828},AutoFixMaterializedViewDone,4=true
 
 </a:ExtendedAttributesText>
@@ -1800,9 +1800,9 @@ Shadow=0
 <a:PaperSource>261</a:PaperSource>
 <c:Symbols>
 <o:TableSymbol Id="o5">
-<a:ModificationDate>1628274530</a:ModificationDate>
+<a:ModificationDate>1629305167</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-24561,-9873), (-13181,-2457))</a:Rect>
+<a:Rect>((-24544,-4904), (-13318,2414))</a:Rect>
 <a:LineColor>33023</a:LineColor>
 <a:FillColor>12632256</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -1825,9 +1825,9 @@ LABL 0 Arial,8,N</a:FontList>
 </o:TableSymbol>
 <o:TableSymbol Id="o7">
 <a:CreationDate>1628088148</a:CreationDate>
-<a:ModificationDate>1628274430</a:ModificationDate>
+<a:ModificationDate>1629305167</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-24490,9042), (-9170,14510))</a:Rect>
+<a:Rect>((-24419,13997), (-9361,19395))</a:Rect>
 <a:LineColor>33023</a:LineColor>
 <a:FillColor>12632256</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -1850,9 +1850,9 @@ LABL 0 Arial,8,N</a:FontList>
 </o:TableSymbol>
 <o:TableSymbol Id="o9">
 <a:CreationDate>1628088413</a:CreationDate>
-<a:ModificationDate>1628274434</a:ModificationDate>
+<a:ModificationDate>1629305167</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-24585,14627), (-6793,27887))</a:Rect>
+<a:Rect>((-24452,19638), (-7046,32716))</a:Rect>
 <a:LineColor>33023</a:LineColor>
 <a:FillColor>12632256</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -1875,9 +1875,9 @@ LABL 0 Arial,8,N</a:FontList>
 </o:TableSymbol>
 <o:TableSymbol Id="o11">
 <a:CreationDate>1628088679</a:CreationDate>
-<a:ModificationDate>1628284439</a:ModificationDate>
+<a:ModificationDate>1629305167</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-24571,4736), (-13887,8736))</a:Rect>
+<a:Rect>((-24562,9656), (-14016,13656))</a:Rect>
 <a:LineColor>33023</a:LineColor>
 <a:FillColor>12632256</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -1900,9 +1900,9 @@ LABL 0 Arial,8,N</a:FontList>
 </o:TableSymbol>
 <o:TableSymbol Id="o13">
 <a:CreationDate>1628088822</a:CreationDate>
-<a:ModificationDate>1628274484</a:ModificationDate>
+<a:ModificationDate>1629305167</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-24559,-2184), (-11017,4258))</a:Rect>
+<a:Rect>((-24543,2778), (-11153,9136))</a:Rect>
 <a:LineColor>33023</a:LineColor>
 <a:FillColor>12632256</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -1925,9 +1925,9 @@ LABL 0 Arial,8,N</a:FontList>
 </o:TableSymbol>
 <o:TableSymbol Id="o15">
 <a:CreationDate>1628089159</a:CreationDate>
-<a:ModificationDate>1628284529</a:ModificationDate>
+<a:ModificationDate>1629305167</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-4731,-4103), (11515,18897))</a:Rect>
+<a:Rect>((-4660,978), (11324,23656))</a:Rect>
 <a:LineColor>33023</a:LineColor>
 <a:FillColor>8421631</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -1950,9 +1950,9 @@ LABL 0 Arial,8,N</a:FontList>
 </o:TableSymbol>
 <o:TableSymbol Id="o17">
 <a:CreationDate>1628089610</a:CreationDate>
-<a:ModificationDate>1628284517</a:ModificationDate>
+<a:ModificationDate>1629305167</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((13709,-2259), (24393,6131))</a:Rect>
+<a:Rect>((13838,3917), (24384,12195))</a:Rect>
 <a:LineColor>33023</a:LineColor>
 <a:FillColor>33023</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -1975,9 +1975,9 @@ LABL 0 Arial,8,N</a:FontList>
 </o:TableSymbol>
 <o:TableSymbol Id="o19">
 <a:CreationDate>1628089768</a:CreationDate>
-<a:ModificationDate>1628284482</a:ModificationDate>
+<a:ModificationDate>1629305167</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((13829,7497), (24513,27575))</a:Rect>
+<a:Rect>((13838,12557), (24384,32355))</a:Rect>
 <a:LineColor>33023</a:LineColor>
 <a:FillColor>33023</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -2000,9 +2000,9 @@ LABL 0 Arial,8,N</a:FontList>
 </o:TableSymbol>
 <o:TableSymbol Id="o21">
 <a:CreationDate>1628090152</a:CreationDate>
-<a:ModificationDate>1628797986</a:ModificationDate>
+<a:ModificationDate>1629305167</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((13769,-12765), (24453,-3401))</a:Rect>
+<a:Rect>((13838,-5682), (24384,3556))</a:Rect>
 <a:LineColor>33023</a:LineColor>
 <a:FillColor>33023</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -2025,9 +2025,9 @@ LABL 0 Arial,8,N</a:FontList>
 </o:TableSymbol>
 <o:TableSymbol Id="o23">
 <a:CreationDate>1628090722</a:CreationDate>
-<a:ModificationDate>1629158539</a:ModificationDate>
+<a:ModificationDate>1629305167</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-14069,-21131), (-5521,-16637))</a:Rect>
+<a:Rect>((-13944,-16183), (-5766,-11745))</a:Rect>
 <a:LineColor>33023</a:LineColor>
 <a:FillColor>12615680</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -2050,9 +2050,9 @@ LABL 0 Arial,8,N</a:FontList>
 </o:TableSymbol>
 <o:TableSymbol Id="o25">
 <a:CreationDate>1628091072</a:CreationDate>
-<a:ModificationDate>1629158539</a:ModificationDate>
+<a:ModificationDate>1629305167</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-14441,-16157), (-5507,-10689))</a:Rect>
+<a:Rect>((-14277,-11202), (-5791,-5804))</a:Rect>
 <a:LineColor>33023</a:LineColor>
 <a:FillColor>12615680</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -2075,9 +2075,9 @@ LABL 0 Arial,8,N</a:FontList>
 </o:TableSymbol>
 <o:TableSymbol Id="o27">
 <a:CreationDate>1628091326</a:CreationDate>
-<a:ModificationDate>1629158539</a:ModificationDate>
+<a:ModificationDate>1629305167</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-14088,-26109), (-5618,-21615))</a:Rect>
+<a:Rect>((-14033,-21161), (-5793,-16723))</a:Rect>
 <a:LineColor>33023</a:LineColor>
 <a:FillColor>12615680</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -2100,9 +2100,9 @@ LABL 0 Arial,8,N</a:FontList>
 </o:TableSymbol>
 <o:TableSymbol Id="o29">
 <a:CreationDate>1628091460</a:CreationDate>
-<a:ModificationDate>1629158539</a:ModificationDate>
+<a:ModificationDate>1629305167</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-5297,-15127), (3713,-10633))</a:Rect>
+<a:Rect>((-5250,-10179), (3546,-5741))</a:Rect>
 <a:LineColor>33023</a:LineColor>
 <a:FillColor>12615680</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -2125,9 +2125,9 @@ LABL 0 Arial,8,N</a:FontList>
 </o:TableSymbol>
 <o:TableSymbol Id="o31">
 <a:CreationDate>1628091520</a:CreationDate>
-<a:ModificationDate>1629158539</a:ModificationDate>
+<a:ModificationDate>1629305167</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-5333,-21013), (1591,-15545))</a:Rect>
+<a:Rect>((-5340,-16058), (1478,-10660))</a:Rect>
 <a:LineColor>33023</a:LineColor>
 <a:FillColor>12615680</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -2150,9 +2150,9 @@ LABL 0 Arial,8,N</a:FontList>
 </o:TableSymbol>
 <o:TableSymbol Id="o33">
 <a:CreationDate>1628091829</a:CreationDate>
-<a:ModificationDate>1629158539</a:ModificationDate>
+<a:ModificationDate>1629305167</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-5474,-25494), (1374,-21494))</a:Rect>
+<a:Rect>((-5364,-20573), (1144,-16573))</a:Rect>
 <a:LineColor>33023</a:LineColor>
 <a:FillColor>12615680</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -2175,9 +2175,9 @@ LABL 0 Arial,8,N</a:FontList>
 </o:TableSymbol>
 <o:TableSymbol Id="o35">
 <a:CreationDate>1628284562</a:CreationDate>
-<a:ModificationDate>1629158539</a:ModificationDate>
+<a:ModificationDate>1629305167</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-24604,-21796), (-14782,-16328))</a:Rect>
+<a:Rect>((-24522,-16841), (-14984,-11443))</a:Rect>
 <a:LineColor>33023</a:LineColor>
 <a:FillColor>12615680</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -2200,11 +2200,11 @@ LABL 0 Arial,8,N</a:FontList>
 </o:TableSymbol>
 <o:TableSymbol Id="o37">
 <a:CreationDate>1629143233</a:CreationDate>
-<a:ModificationDate>1629143236</a:ModificationDate>
+<a:ModificationDate>1629305167</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((11358,-19882), (24516,-13440))</a:Rect>
-<a:LineColor>16512</a:LineColor>
-<a:FillColor>166354</a:FillColor>
+<a:Rect>((11550,-12340), (24444,-5982))</a:Rect>
+<a:LineColor>33023</a:LineColor>
+<a:FillColor>33023</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>STRN 0 Arial,8,N
 DISPNAME 0 Arial,8,N
@@ -2225,11 +2225,11 @@ LABL 0 Arial,8,N</a:FontList>
 </o:TableSymbol>
 <o:TableSymbol Id="o39">
 <a:CreationDate>1629143250</a:CreationDate>
-<a:ModificationDate>1629143253</a:ModificationDate>
+<a:ModificationDate>1629305167</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((11697,-30625), (24313,-20287))</a:Rect>
-<a:LineColor>16512</a:LineColor>
-<a:FillColor>166354</a:FillColor>
+<a:Rect>((12045,-22935), (24445,-12737))</a:Rect>
+<a:LineColor>33023</a:LineColor>
+<a:FillColor>33023</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>STRN 0 Arial,8,N
 DISPNAME 0 Arial,8,N
@@ -2250,11 +2250,11 @@ LABL 0 Arial,8,N</a:FontList>
 </o:TableSymbol>
 <o:TableSymbol Id="o41">
 <a:CreationDate>1629158554</a:CreationDate>
-<a:ModificationDate>1629159066</a:ModificationDate>
+<a:ModificationDate>1629305167</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-3553,-36443), (7905,-26105))</a:Rect>
-<a:LineColor>12615680</a:LineColor>
-<a:FillColor>16570034</a:FillColor>
+<a:Rect>((-5297,-31273), (5929,-21075))</a:Rect>
+<a:LineColor>33023</a:LineColor>
+<a:FillColor>12615680</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>STRN 0 Arial,8,N
 DISPNAME 0 Arial,8,N
