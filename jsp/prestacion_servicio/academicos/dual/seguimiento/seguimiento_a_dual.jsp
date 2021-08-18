@@ -383,7 +383,7 @@ if (session.getAttribute("usuario") != null)
                     mes4="Dic";
                     break;
                 }
-       case 2: if(cve_periodo==68)
+                case 2: if(cve_periodo==68)
                 {
                     mes1="Ene";
                     mes2="Feb";
@@ -438,7 +438,7 @@ if (session.getAttribute("usuario") != null)
             </table>
             <br>
             <div class="col-md-12" align="center">
-                <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar meses" onClick="">
+                <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar meses" onclick="FGuardarMeses(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia%>);">
                     <br>Guardar meses
             </div>
         </div>
@@ -477,7 +477,7 @@ if (session.getAttribute("usuario") != null)
                     <!--<input type="text" id="" name="" class="captura_obligada combo200" readonly>-->
                 </div>
                 <div class="col-md-1">
-                    <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar horario" onClick="">
+                    <img src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar horario" onclick="FGuardarHorario(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia%>);">
                     <br>Guardar horario
                 </div>
                 <div class="col-md-5">&nbsp;</div>
@@ -747,27 +747,83 @@ if (session.getAttribute("usuario") != null)
           $('#gif_espera').html('<img src="../../../../../imagenes/ajax-loader.gif" width="50">');  
         }
 
-        /*function mostrarvalores(cve_alumno,cve_periodo,cve_competencia){
-            //var a=$("#SEmpresa_").val();
-            //var b=$("#TNomRotacion").val();
-            //var c=$("#TNomInst").val();
-            //var d=$("#TPatInst").val();
-            //var e=$("#TMatInst").val();
-            //var f=$("#TNumeroInst").val();
-            //var g=$("#TCorreoInst").val();
-            var h=$(cve_alumno).val();
+    function FGuardarHorario(cve_alumno,cve_periodo,cve_competencia)
+    {
+        var valida=0;
+        if($('#THorario').val()==""||$('#THorario').val()==null)
+        {
+            alert('Intruduzca el horario.');valida++;
+            $('#THorario').focus();
+        }
+        if (valida==0) 
+        {
+            FCargando();
+            var par=
+            {
+                "p_THorario"              :$('#THorario').val(),
+                "p_cve_alumno"            :cve_alumno,
+                "p_cve_periodo"           :cve_periodo,
+                "p_cve_competencia"       :cve_competencia,
+                "action" : 1
+            };
 
-            //var i=$(cve_periodo).val();
-            //alert(a);
-            //alert(b);
-            //alert(c);
-            //alert(d);
-            //alert(e);
-            //alert(f);
-            //alert(g);
-            alert(h);
-            //alert(i);
-        }*/
+            $.ajax
+            ({
+                data:par,
+                url:"seguimiento_a_dual/guardarHorario.jsp",
+                type:"POST",
+                dataType:"JSON",
+                success:function(res)
+                {
+                    //alert("Respuesta?");
+                    //data = JSON.parse(res);
+                    console.log(res);
+                    alert(res.error);
+                    FTerminaCarga();
+                }
+            });
+        }
+    }
+
+    function FGuardarMeses(cve_alumno,cve_periodo,cve_competencia)
+    {
+        var valida=0;
+        //alert($('#mes_3').val()+" "+valida);
+        //alert($('#mes_4').val()+" "+valida); 
+        {
+            FCargando();
+            var par=
+            {
+                "p_mes_1"                 :$('#mes_1')[0].checked ? 1 : 0,
+                "p_mes_2"                 :$('#mes_2')[0].checked ? 1 : 0,
+                "p_mes_3"                 :$('#mes_3')[0].checked ? 1 : 0,
+                "p_mes_4"                 :$('#mes_4')[0].checked ? 1 : 0,  
+                "p_cve_alumno"            :cve_alumno,
+                "p_cve_periodo"           :cve_periodo,
+                "p_cve_competencia"       :cve_competencia,
+                "action" : 2
+            }
+
+            console.log(par);
+
+            $.ajax
+            ({
+                data:par,
+                url:"seguimiento_a_dual/guardarHorario.jsp",
+                type:"POST",
+                dataType:"JSON",
+                success:function(res)
+                {
+                    alert("Respuesta?");
+                    //data = JSON.parse(res);
+                    console.log(res);
+                    alert(res.error);
+                    FTerminaCarga();
+                }
+            });
+        }
+    }
+
 
     function FGuardarDatosInst(cve_alumno,cve_periodo,cve_competencia)
     {

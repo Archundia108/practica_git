@@ -166,7 +166,7 @@ function FGuardarAsesor(cve_alumno,cve_periodo,cve_competencia)
             //alert("Seleccione un Asesor dual.");
             $('#SAsesor_'+cve_alumno).focus();
         }
-        alert($('#SAsesor_'+cve_alumno).val()+" "+valida);
+        //alert($('#SAsesor_'+cve_alumno).val()+" "+valida);
         if(valida>0)
         {
             FCargando();
