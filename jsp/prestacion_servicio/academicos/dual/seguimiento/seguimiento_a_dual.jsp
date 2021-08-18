@@ -468,16 +468,20 @@ if (session.getAttribute("usuario") != null)
 </div>
 <!--Termina container horarios-------------------------------------------->
 <br>
-                    <div class="row SoloTexto2">
-                        <div class="col-md-5">&nbsp;</div>
-                        <div class="col-md-2">
-                            Horario
-                            <br>
-                            <textarea onkeypress="return FCaracteres(event);" class="captura combo200" style="margin-top: 1.32812; margin-bottom: 1.32812; height: 50px;" type="textarea" id="THorario" name="THorario"></textarea>
-                            <!--<input type="text" id="" name="" class="captura_obligada combo200" readonly>-->
-                            <div class="col-md-6">&nbsp;</div>
-                        </div>
-                    </div>
+            <div class="row SoloTexto2">
+                <div class="col-md-5">&nbsp;</div>
+                <div class="col-md-2">
+                    Horario
+                    <br>
+                    <textarea onkeypress="return FCaracteres(event);" class="captura combo200" style="margin-top: 1.32812; margin-bottom: 1.32812; height: 50px;" type="textarea" id="THorario" name="THorario"></textarea>
+                    <!--<input type="text" id="" name="" class="captura_obligada combo200" readonly>-->
+                </div>
+                <div class="col-md-1">
+                    <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar horario" onClick="">
+                    <br>Guardar horario
+                </div>
+                <div class="col-md-5">&nbsp;</div>
+            </div>
                     <!--boton de observaciones--------------------------------------------------> 
                     <div class="row SoloTexto2">
                         <div class="col-md-2">&nbsp;</div>      
