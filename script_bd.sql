@@ -163,4 +163,17 @@ CREATE TABLE dual_observaciones
 	PRIMARY KEY (cve_competencia,cve_alumno,cve_periodo,consecutivo)
 )
 
-
+DROP TABLE IF EXISTS dual_evaluaciones;
+CREATE TABLE dual_evaluaciones 
+(
+   cve_alumno           int                            not null,
+   cve_periodo          int                            not null,
+   cve_competencia      int                            not null,
+   cve_parcial          int                            not null,
+   FECHA_EVALUACION     date                           null,
+   FECHA_NOTIF          date                           null,
+   SA                   float                          null,
+   SE                   float                          null,
+   SH                   float                          null
+   PRIMARY KEY  (cve_alumno, cve_periodo, cve_competencia, cve_parcial)
+)
