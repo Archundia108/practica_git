@@ -144,7 +144,7 @@ if (session.getAttribute("usuario") != null)
 
      function FGuardarCalif(cve_alumno,cve_periodo,cve_competencia)
      {
-        alert(cve_competencia);
+        //alert(cve_competencia);
         var valida=0;
         if($('#SCalificacion_'+cve_alumno).val()>0)
         {
@@ -155,7 +155,7 @@ if (session.getAttribute("usuario") != null)
             alert('Asigne calificacion primero.');
             $('#SCalificacion_'+cve_alumno).focus();
         }
-        alert($('#SCalificacion_'+cve_alumno).val()+" "+valida);
+        //alert($('#SCalificacion_'+cve_alumno).val()+" "+valida);
         if(valida>0)
         {
             FCargando();
@@ -167,7 +167,7 @@ if (session.getAttribute("usuario") != null)
                 "p_cve_periodo":cve_periodo,
                 "p_cve_competencia":cve_competencia
             };
-            alert("registro_pedagogico/guardar_calif_pedagogica.jsp?p_SCalificacion_="+par.p_SCalificacion+"&p_TObservaciones="+par.p_TObservaciones+"&p_cve_alumno="+par.p_cve_alumno+"&p_cve_periodo="+par.p_cve_periodo+"&p_cve_competencia="+par.p_cve_competencia);
+            //alert("registro_pedagogico/guardar_calif_pedagogica.jsp?p_SCalificacion_="+par.p_SCalificacion+"&p_TObservaciones="+par.p_TObservaciones+"&p_cve_alumno="+par.p_cve_alumno+"&p_cve_periodo="+par.p_cve_periodo+"&p_cve_competencia="+par.p_cve_competencia);
             $.ajax({
                 data:par,
                 url:"registro_pedagogico/guardar_calif_pedagogica.jsp",

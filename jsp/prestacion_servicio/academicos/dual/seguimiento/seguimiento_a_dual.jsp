@@ -814,7 +814,7 @@ if (session.getAttribute("usuario") != null)
                 dataType:"JSON",
                 success:function(res)
                 {
-                    alert("Respuesta?");
+                    //alert("Respuesta?");
                     //data = JSON.parse(res);
                     console.log(res);
                     alert(res.error);
