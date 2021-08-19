@@ -25,7 +25,7 @@
 
         consultas = "SELECT nombre_competencia "
                   + "FROM dual_competencias "
-                  + "WHERE cve_competencia = "+cve_competencia+" ";
+                  + "WHERE (cve_competencia = "+cve_competencia+") ";
         rs = SMBD.SQLBD(consultas);
         while (rs.next()) 
         {
@@ -124,10 +124,9 @@
                                                         {
                                                             "p_cve_competencia" : <%=cve_competencia%>,
                                                             "p_numero_check"    : numero_check
-                                                        }
+                                                        };
 
-                                                        $.post
-                                                        (
+                                                        $.post(
                                                             "asignar_puestos_aprendizaje/ver_orden.jsp", par,
                                                             function(htmlExterno) 
                                                             {
@@ -140,7 +139,7 @@
                                                         var par = 
                                                         {
                                                             "p_numero_check"    : numero_check
-                                                        }
+                                                        };
 
                                                         $.post
                                                         (
@@ -216,7 +215,7 @@
                                 "p_cve_competencia"        : <%=cve_competencia%>,
                                 "p_cve_puesto_aprendizaje" : cve_puesto_aprendizaje,
                                 "p_orden"                  : $('#SOrden'+numero_check).val()
-                            }
+                            };
 
                             $.ajax
                             (

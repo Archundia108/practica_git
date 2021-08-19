@@ -53,7 +53,7 @@ if (session.getAttribute("usuario") != null)
                     <%
                         consultas="SELECT cve_periodo "
                                  +"FROM periodos " 
-                                 +"WHERE cve_periodo>=68";
+                                 +"WHERE (cve_periodo>=68)";
                                  rs=SMBD.SQLBD(consultas);
                                  while(rs.next()){
                                     cve_periodo=rs.getInt(1);
@@ -143,13 +143,19 @@ if (session.getAttribute("usuario") != null)
         {
             
             FCargando();
-            var par={"p_TCuatri" : $('#TCuatri').val()};
+            var par=
+            {
+                "p_TCuatri" : $('#TCuatri').val()
+            };
             //alert("alumnos_cuatri.jsp?p_TCuatri="+par.p_TCuatri);
-            $.post("revision_propuestos/alumnos_cuatri.jsp",par,function(htmlExterno){
-                $('#ListadoAlumnos').html(htmlExterno);
-                console.log(htmlExterno);
-                FTerminaCarga();
-            });
+            $.post(
+                "revision_propuestos/alumnos_cuatri.jsp",par,function(htmlExterno)
+                {
+                    $('#ListadoAlumnos').html(htmlExterno);
+                    console.log(htmlExterno);
+                    FTerminaCarga();
+                }
+            );
         }
      }
 

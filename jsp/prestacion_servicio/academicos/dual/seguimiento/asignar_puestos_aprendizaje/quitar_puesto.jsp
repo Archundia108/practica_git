@@ -25,6 +25,6 @@
     }
     catch (Exception e)
     {
-        out.print("Wacha el error: " +e);
+        out.print("error: " +e);
     }
 %>

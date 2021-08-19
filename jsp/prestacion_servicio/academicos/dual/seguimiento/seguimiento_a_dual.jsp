@@ -842,7 +842,7 @@ if (session.getAttribute("usuario") != null)
                 "p_cve_periodo"           :cve_periodo,
                 "p_cve_competencia"       :cve_competencia,
                 "action" : 2
-            }
+            };
 
             console.log(par);
 
@@ -961,8 +961,7 @@ if (session.getAttribute("usuario") != null)
                                                         &p_cve_alumno"+par.p_cve_alumno+"
                                                         &p_cve_periodo"par.p_cve_periodo+"
                                                         &p_cve_competencia"+par.p_cve_competencia);*/
-            $.ajax
-            ({
+            $.ajax({
                 data:par,
                 url:"seguimiento_a_dual/guardarDatos.jsp",
                 type:"POST",

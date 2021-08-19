@@ -24,7 +24,7 @@
                 <%
                     consultas = "SELECT cve_puesto_aprendizaje "
                               + "FROM dual_puestos_aprendizaje "
-                              + "WHERE cve_competencia = "+cve_competencia+" ";
+                              + "WHERE (cve_competencia = "+cve_competencia+") ";
                     rs = SMBD.SQLBD(consultas);
                     while (rs.next()) 
                     {
@@ -40,6 +40,6 @@
     } 
     catch (Exception e) 
     {
-        out.print("Wacha el error: " +e);
+        out.print("error: " +e);
     }
 %> 
