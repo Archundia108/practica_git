@@ -8,7 +8,7 @@ if (session.getAttribute("usuario") != null)
         BD SMBD = new BD();
         ResultSet rs, rs2;
         String consultas="",nombre_periodo="",mes1="",mes2="",mes3="",mes4="",nombre_empresa="";
-        int meses=0,numero_periodo=0,cve_empresa=0,cve_institucion=0;     
+        int meses=0,numero_periodo=0,cve_empresa=0,cve_institucion=0,num_sem=0;     
         int cve_periodo=Integer.parseInt(request.getParameter("cve_periodo"));
         int cve_competencia=Integer.parseInt(request.getParameter("cve_competencia"));
         int cve_alumno=Integer.parseInt(request.getParameter("cve_alumno"));
@@ -245,52 +245,52 @@ if (session.getAttribute("usuario") != null)
                                 <tr>
                                     <th class="align-middle text-center" scope="col">UTSJR</th>
                                         <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" type="checkbox" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,1);">
+                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" type="checkbox" onclick="">
                                         </td>
                                         <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" type="checkbox" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,1);">
+                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" type="checkbox" onclick="">
                                         </td>
                                         <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,1);" type="checkbox">
+                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                         </td>
                                         <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,1);" type="checkbox">
+                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                         </td>
                                         <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,1);" type="checkbox">
+                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                         </td>
                                         <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,1);" type="checkbox">
+                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                         </td>
                                         <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,1);" type="checkbox">
+                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                         </td>
                                         <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,1);" type="checkbox">
+                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                         </td>
                                         <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,1);" type="checkbox">
+                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                         </td>
                                         <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,1);" type="checkbox">
+                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                         </td>
                                         <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,1);" type="checkbox">
+                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                         </td>
                                         <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,1);" type="checkbox">
+                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                         </td>
                                         <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,1);" type="checkbox">
+                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                         </td>
                                         <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,1);" type="checkbox">
+                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                         </td>
                                         <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,1);" type="checkbox">
+                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                         </td>
                                         <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,1);" type="checkbox">
+                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                         </td>
                                             </tr>
                                         </tbody>
@@ -298,53 +298,53 @@ if (session.getAttribute("usuario") != null)
                                             <tr>
                                                 <th class="align-middle text-center" scope="col">Empresa</th>
                                                 <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,2);" type="checkbox">
+                                                   <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                                 </td>
                                                 <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,2);" type="checkbox">
+                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                                 </td>
                                                 <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,2);" type="checkbox">
+                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                                 </td>
                                                 <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,2);" type="checkbox">
+                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                                 </td>
                                                 <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,2);" type="checkbox">
+                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                                 </td>
                                                 <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,2);" type="checkbox">
+                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                                 </td>
                                                 <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,2);" type="checkbox">
+                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                                 </td>
                                                 <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_a<%=num_sem%><%=cve_alumno%>umno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,2);" type="checkbox">
+                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                                 </td>
 
                                                 <td class="align-middle text-center">
-                                                    <input id="sem_9<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,2);" type="checkbox">
+                                                    <input id="sem_9<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                                 </td>
                                                 <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,2);" type="checkbox">
+                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                                 </td>
                                                 <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,2);" type="checkbox">
+                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                                 </td>
                                                 <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,2);" type="checkbox">
+                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                                 </td>
                                                 <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,2,13);" type="checkbox">
+                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                                 </td>
                                                 <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,2);" type="checkbox">
+                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                                 </td>
                                                 <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,2);" type="checkbox">
+                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                                 </td>
                                                 <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="FGuardar_semana(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia>,2);" type="checkbox">
+                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -498,7 +498,7 @@ if (session.getAttribute("usuario") != null)
                             <td class="encabezado">Evaluacion para el alumno</td>
                         </tr>
                     </table>
-                    <!--Tabla Evaluaciones--------------------------------------------------> 
+<!-----------------Tabla Evaluaciones--------------------------------------------------> 
                     <div class="col-md-12">  
                         <table style="margin:auto;" width="70%" class="table table-hover table-sm border border-info" cellpadding="0" cellspacing="0" id="">
                             <thead class="table-dark SoloTexto2">
@@ -547,10 +547,10 @@ if (session.getAttribute("usuario") != null)
                                 <td class="align-middle text-center">
                                     <input class="btn btn-info btn-sm" value="Guardar" title="Guardar" type="button" name="Guardar">
                                 </td>
-                                <td rowspan="3" class="align-middle text-center">
+                                <td class="align-middle text-center">
                                     <input class="btn btn-info btn-sm" value="Notificar" title="Notificar" type="button" name="Notificar">
                                 </td>
-                                <td class="align-middle text-center">
+                                <td rowspan="3" class="align-middle text-center">
                                    <input class="btn btn-outline-info btn-sm" value="Horario" title="BHorario" type="button" target="popup" onclick="openVen();" name="Horario"> 
                                 </td>
                                 <td class="align-middle text-center">_/_/_</td>
@@ -583,12 +583,10 @@ if (session.getAttribute("usuario") != null)
                                         <td class="align-middle text-center">
                                             <input class="btn btn-info btn-sm" value="Guardar" title="Guardar" type="button" name="Guardar">
                                         </td>
-                                        <!--<td class="align-middle text-center">
-                                            <input class="btn btn-info btn-sm" value="Notificar" title="Notificar" type="button" name="Notificar">-->
-                                        </td>
                                         <td class="align-middle text-center">
-                                            <input class="btn btn-outline-info btn-sm" value="Horario" title="BHorario" target="popup" type="button" onclick="openVen();" name="Horario"> 
+                                            <input class="btn btn-info btn-sm" value="Notificar" title="Notificar" type="button" name="Notificar">
                                         </td>
+                                        
                                         <td class="align-middle text-center">_/_/_</td>
                                     </tr>
                                     <tr>
@@ -621,11 +619,10 @@ if (session.getAttribute("usuario") != null)
                                         <td class="align-middle text-center">
                                             <input class="btn btn-info btn-sm" value="Guardar" title="Guardar" type="button" name="Guardar">
                                         </td>
-                                        <!--<td class="align-middle text-center">
-                                            <input class="btn btn-info btn-sm" value="Notificar" title="Notificar" type="button" name="Notificar">-->
-                                        </td>
                                         <td class="align-middle text-center">
-                                            <input class="btn btn-outline-info btn-sm" value="Horario" title="BHorario" target="popup" type="button" onclick="openVen();" name="BHorario"> 
+                                            <input class="btn btn-info btn-sm" value="Notificar" title="Notificar" type="button" name="Notificar">
+                                        </td>
+                                         
                                         </td>
                                         <td class="align-middle text-center">_/_/_</td>
                                     </tr>
