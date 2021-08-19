@@ -3,7 +3,7 @@
     import="java.sql.*, java.lang.*, java.util.*, comun.*, prestacion_servicio.academicos.dual.*"
     contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
-    errorPage="../../../../../error.jsp"
+    errorPage=""
 %>
 
 <%

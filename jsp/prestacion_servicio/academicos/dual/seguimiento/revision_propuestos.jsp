@@ -1,4 +1,4 @@
-<%@ page language="java"  import="java.sql.*, prestacion_servicio.academicos.dual.*, java.lang.*, java.util.*, comun.*" errorPage="../../../../../error.jsp"%>
+<%@ page language="java"  import="java.sql.*, prestacion_servicio.academicos.dual.*, java.lang.*, java.util.*, comun.*" errorPage=""%>
 <%
 if (session.getAttribute("usuario") != null)
 {

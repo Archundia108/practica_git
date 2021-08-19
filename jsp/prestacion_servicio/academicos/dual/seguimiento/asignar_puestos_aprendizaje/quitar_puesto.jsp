@@ -4,7 +4,7 @@
     import="org.json.simple.JSONObject"
     contentType="application/json; charset=UTF-8"
     pageEncoding="UTF-8"
-    errorPage="../../../../../../error.jsp"
+    errorPage=""
 %>
 
 <%
