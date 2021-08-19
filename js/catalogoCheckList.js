@@ -13,7 +13,7 @@ function inicio()
         //data-id="intCveSeccion"
         var id = $(this).data("id"); // Este objeto es al que le des clic, pues no sabemos a cual de todos los elementos con
                 // la clase .miLink le diste clic
-        //alert("Le di clic al ID: "+ id);
+        alert("Le di clic al ID: "+ id);
         
         consultarDatosParaActualizar(id);
     });
@@ -265,11 +265,20 @@ function actualizarEnCatalogo()
 	});
 }
 
+function FSalir()
+{
+	location.href = "inicio.jsp?menu=4&op=9";
+}
+
+
 function obtenerDatosDeAcceso()
 /************************************************************************************
 	DESCRIPCION: Obtiene los datos de la persona que accedio al Sistema
 	CREADO POR: Nancy Alegría López
 	FECHA: 31/10/2017
+	
+	
+	
 ************************************************************************************/
 {
     //alert("Llego a obtenerDatosDeAcceso");

@@ -3,8 +3,7 @@
 	var startAt = 0			// 0 - sunday ; 1 - monday
 	var showWeekNumber = 0	// 0 - don't show; 1 - show
 	var showToday = 1		// 0 - don't show; 1 - show
-	var imgDir = "http://localhost:8080/p/imagenes/"; //LOCAL
-	//var imgDir = "http://200.188.14.49/p/imagenes/"; //PRODUCTIVO
+	var imgDir = "http://fmi:8080/p/imagenes/"			// directory for images ... e.g. var imgDir="/img/"
 	var gotoString = "Ir al mes actual"
 	var todayString = "Hoy es"
 	var weekString = "Sem"

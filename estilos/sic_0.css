@@ -9,64 +9,40 @@
 	FONT-WEIGHT: bold;
 	TEXT-DECORATION: none
 	text-align: left;
-	-webkit-border-radius: 8px;
-	border-radius: 8px;
-	padding-left: 3px;
 }
 .captura_obligada
 {
 	color: #990000;
 	border: 1px solid #002D73;
-/*	background-color: #66C4BF;*/
-	background-color:#99CCFF;
+	background-color: #66C4BF;
 	margin: 1pt;
+	font-family: Arial, Helvetica, sans-serif;
+	FONT-SIZE: 10px;
+	FONT-WEIGHT: bold;
+	TEXT-DECORATION: none
+	text-align: left;
+}
+.SoloTexto
+{
+	color:#333333;
+	background-color:#7ACFD6;
+	margin: 2pt;
 	font-family: Arial, Helvetica, sans-serif;
 	FONT-SIZE: 11px;
 	FONT-WEIGHT: bold;
 	TEXT-DECORATION: none
-	text-align: left;
-	-webkit-border-radius: 8px;
-	border-radius: 8px;
-	padding-left: 3px;
-}
-.SoloTexto
-{
-	color: #000000;
-	background-color: #CCCCCC;
-	margin: 2pt;
-	font-family: Arial, Helvetica, sans-serif;
-	FONT-SIZE: 13px;
-	FONT-WEIGHT: bold;
-
-	TEXT-DECORATION: none
 	text-align: right;
-	text-align: center;
 }
 .SoloTexto2
 {
 	color: #000000;
-	/*	background-color: #cccccc;*/
-	margin: 2pt;
-	font-family: Arial, Helvetica, sans-serif;
-	FONT-SIZE: 14px;
-	FONT-WEIGHT: normal;
-
-	TEXT-DECORATION: none
-	text-align: right;
-	text-align: center;
-}
-.SoloTextoVerde
-{
-	color: #000000;
-	background-color: #58D68D;
+/*	background-color: #cccccc;*/
 	margin: 2pt;
 	font-family: Arial, Helvetica, sans-serif;
 	FONT-SIZE: 11px;
 	FONT-WEIGHT: normal;
-
 	TEXT-DECORATION: none
 	text-align: right;
-	text-align: center;
 }
 .Textocodigos
 {
@@ -81,43 +57,25 @@
 }
 .encabezado
 {
-	color: #ffffff;
-	background-color: #91a9c9;
+    color:#FFFFFF;
+    background-color: #7FC5B5;
 	margin: 1pt;
 	font-family: Arial, Helvetica, sans-serif;
 	FONT-SIZE: 14px;
 	FONT-WEIGHT: bold;
 	LETTER-SPACING: 1px;
 	LINE-HEIGHT: 100%;
-
-
-
 	TEXT-DECORATION: none
 	text-align: center;
-	text-align: center;
-	padding-bottom: 7px;
-	padding-top: 7px;
 }
 .titulo
 {
-	color: #ffffff;
-    background-color: #002D73;
+/*	color: #002F5A;	*/
+color:#FFFFFF;
+    background-color: #009474;
 	margin: 3pt;
 	font-family: Arial, Monotype Corsiva,Arial;
 	FONT-SIZE: 20px;
-	FONT-WEIGHT: bold;
-	LETTER-SPACING: 1px;
-	LINE-HEIGHT: 130%;
-	TEXT-DECORATION: none
-	text-align: center;
-}
-.secciones
-{
-	color: #ffffff;
-    background-color: #002D73;
-	margin: 3pt;
-	font-family: Arial, Monotype Corsiva,Arial;
-	FONT-SIZE: 14px;
 	FONT-WEIGHT: bold;
 	LETTER-SPACING: 1px;
 	LINE-HEIGHT: 130%;
@@ -130,10 +88,8 @@ color: #FF0000;
 }
 .usuario
 {
-	color: #ffffff;
-	background-color: #00A688;	/*VERDE LETRAS UT LOGO*/
-	/*background-color: #990000; ROJO */
-	/*background-color: #C6D420;	VERDE OLIVO */ 	
+	color:#FFFFFF;
+	background-color: #002F5A;
 	margin: 3pt;
 	font-family: Arial, Monotype Corsiva,Arial;
 	FONT-SIZE: 15px;
@@ -175,15 +131,32 @@ color: #FF0000;
 
 .tablaazul
 {
+/*	border: 1 pt;
+    cellpading: 3 pt;
+    cellspacing: 3 pt;
+    border-collapse: separate;
+    background-color: #003366;
+	margin: 1pt;
+	font-family: Arial, Helvetica, sans-serif;
+	FONT-SIZE: 12px;
+	LETTER-SPACING: 1px;
+	TEXT-DECORATION: none: center;*/
 	border: 0 pt;
     cellpadding: 6 pt;
     cellspacing: 16 pt;
     background-color: #cccccc;
+/*    border-collapse: separate;
+	margin: 1pt;
+	font-family: Arial, Helvetica, sans-serif;
+	FONT-SIZE: 12px;
+	LETTER-SPACING: 1px;
+	TEXT-DECORATION: none: center;*/
 }
-.body
+.fondo
 {
-	background-color: #ffffff;
-	background-image: url(../imagenes/fondo_siisc_2.gif);
+  color: black;
+  background-color: #ffffff;
+  background-image: NONE;
 }
 .linea
 {
@@ -229,8 +202,13 @@ color: #FF0000;
 }
 .boton
 {
-	color: #003366;	/* color de la letra	*/
-	background-color:#99CC66;	/* color del boton */
+	color: #ffffff;
+	background-color: #003366; /*azul*/
+	border: 1px outset;
+	FONT-FAMILY: Arial, Helvetica, sans-serif;
+	FONT-SIZE: 14px;
+	FONT-WEIGHT: bold;
+	TEXT-DECORATION: none
 }
 
 .selBoton
@@ -270,26 +248,6 @@ color: #FF0000;
 	-moz-transform: scale(1.2) rotate(-15deg); -o-transform: scale(1.2) rotate(-15deg); -webkit-transform: scale(1.2) rotate(-15deg); -ms-transform: scale(1.2) rotate(-15deg);
 }
 
-.combo5
-{
-	width: 5px;
-}
-
-.combo10
-{
-	width: 10px;
-}
-
-.combo50
-{
-	width: 50px;
-}
-
-.combo80
-{
-	width: 80px;
-}
-
 .combo100
 {
 	width: 100px;
@@ -300,32 +258,19 @@ color: #FF0000;
 	width: 150px;
 }
 
-.combo200
-{
-	width: 200px;
-}
-
 .combo250
 {
 	width: 250px;
-}
-
-.combo300
-{
-	width: 300px;
-}
-.combo350
-{
-	width: 350px;
 }
 
 .combo400
 {
 	width: 400px;
 }
-.combo450
+
+.combo300
 {
-	width: 450px;
+	width: 300px;
 }
 
 .combo500
@@ -342,22 +287,3 @@ color: #FF0000;
 
 /*BOTÓN GRABAR PRODUCTO ZOL_PAGO*/
 #Grabarproducto{ -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3),0 0 40px rgba(0, 0, 0, 0.1); -o-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3),0 0 40px rgba(0, 0, 0, 0.1); -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1); -ms-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3),0 0 40px rgba(0, 0, 0, 0.1); box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1); }
-
-.checkGigante
-{
-	width:20px;
-	height:20px;
-}
-
-.SoloTextoNegrito
-{
-	color: #000000;
-	margin: 2pt;
-	font-family: Arial, Helvetica, sans-serif;
-	FONT-SIZE: 12px;
-	FONT-WEIGHT: bold;
-
-	TEXT-DECORATION: none
-	text-align: right;
-	text-align: center;
-}

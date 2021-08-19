@@ -1,0 +1,25 @@
+body{
+	font-size: 14px;
+	padding: 5px 20px;
+	background:#D8D8D8;	
+}
+.contenedor{
+	text-align: center;
+}
+
+.foto{
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	box-shadow: 10px 10px 10px rgba(100,100,100,0.5);
+	margin: 5px 50px;
+	max-width: 150px;
+	padding: 10px;
+	text-align: center;
+	height: 212px;
+	width: 100%;
+}
+
+.foto img{
+	border: 1px solid #000;
+	min-width: 70px;
+}
