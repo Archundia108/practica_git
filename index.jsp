@@ -2,7 +2,7 @@
 
 <% 
     session.setAttribute("usuario","Gabriel");
-    session.setAttribute("cve_usuario", "59");
+    session.setAttribute("clave_usuario", "59");
     session.setMaxInactiveInterval(1600);
     response.sendRedirect("menuDual.jsp");
 

@@ -13,7 +13,7 @@
         ResultSet rs;
 
         String usuario = String.valueOf(session.getAttribute("usuario"));
-        int cve_usuario = Integer.parseInt(String.valueOf(session.getAttribute("cve_usuario")));
+        int cve_usuario = Integer.parseInt(String.valueOf(session.getAttribute("clave_usuario")));
         
         String consultas = "", error = "", nombre_competencia = "";
         int cve_competencia = 0;
