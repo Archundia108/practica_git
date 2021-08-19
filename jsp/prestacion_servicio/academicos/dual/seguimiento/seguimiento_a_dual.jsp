@@ -244,108 +244,31 @@ if (session.getAttribute("usuario") != null)
                         <tbody>
                                 <tr>
                                     <th class="align-middle text-center" scope="col">UTSJR</th>
-                                        <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" type="checkbox" onclick="">
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" type="checkbox" onclick="">
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                        </td>
-                                        <td class="align-middle text-center">
-                                            <input id="sem_UT<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                        </td>
-                                            </tr>
-                                        </tbody>
-                                        <tbody>
-                                            <tr>
-                                                <th class="align-middle text-center" scope="col">Empresa</th>
-                                                <td class="align-middle text-center">
-                                                   <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                                </td>
-                                                <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                                </td>
-                                                <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                                </td>
-                                                <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                                </td>
-                                                <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                                </td>
-                                                <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                                </td>
-                                                <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                                </td>
-                                                <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                                </td>
-
-                                                <td class="align-middle text-center">
-                                                    <input id="sem_9<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                                </td>
-                                                <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                                </td>
-                                                <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                                </td>
-                                                <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                                </td>
-                                                <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                                </td>
-                                                <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                                </td>
-                                                <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                                </td>
-                                                <td class="align-middle text-center">
-                                                    <input id="sem_<%=num_sem%><%=cve_alumno%>" class="mx-auto" onclick="" type="checkbox">
-                                                </td>
+                                        
+                                        <%
+                                            for( num_sem=1;num_sem<=16;num_sem++)
+                                            {
+                                                %>
+                                                    <td class="align-middle text-center">
+                                                        <input id="sem_UT<%=num_sem%>" class="mx-auto" type="checkbox" onclick="FGuardarSemanas(1,<%=num_sem%>);">
+                                                    </td>
+                                                <%
+                                            }
+                                        %>
+                                </tr>
+                                <tr>
+                                    <th class="align-middle text-center" scope="col">Empresa</th>
+                                        
+                                        <%
+                                            for( num_sem=1;num_sem<=16;num_sem++)
+                                            {
+                                                %>
+                                                    <td class="align-middle text-center">
+                                                        <input id="sem_<%=num_sem%>" class="mx-auto" type="checkbox" onclick="FGuardarSemanas(2,<%=num_sem%>);">
+                                                    </td>
+                                                <%
+                                            }
+                                        %>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -744,29 +667,35 @@ if (session.getAttribute("usuario") != null)
           $('#gif_espera').html('<img src="../../../../../imagenes/ajax-loader.gif" width="50">');  
         }
 
-    function FGuardarSemanas(cve_alumno,cve_periodo,cve_competencia,cve_institucion,num_sem)
+    function FGuardarSemanas(cve_institucion,num_sem)
     {
         var valida=0;
+        var valor=0;
 
             if(cve_institucion=1)
             {
-                valida=$('#sem_UT'+num_sem+cve_alumno).val()
+                if($('#sem_UT'+num_sem).prop('checked')==true)
+                {
+                    valor=1;
+                }
             }
             else
             {
-                valida=$('#sem_'+num_sem+cve_alumno).val()
+                if($('#sem_'+num_sem).prop('checked')==true)
+                {
+                    valor=1;
+                }
             }
 
             FCargando();
             var par=
             {
-                "p_cve_alumno"                :cve_alumno,
-                "p_cve_periodo"               :cve_periodo,
-                "p_cve_competencia"           :cve_competencia,
+                "p_cve_alumno"                :<%=cve_alumno%>,
+                "p_cve_periodo"               :<%=cve_periodo%>,
+                "p_cve_competencia"           :<%=cve_competencia%>,
                 "p_cve_institucion"           :cve_institucion,
                 "p_num_sem"                   :num_sem,
-                "p_sem_"+num_sem+cve_alumno   :$('#sem_'+num_sem+cve_alumno).val(),
-                "p_sem_UT"+num_sem+cve_alumno :$('#sem_UT'+num_sem+cve_alumno).val(),
+                "p_valor"                     :valor,
                 "action" :3
             };
 

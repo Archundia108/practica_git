@@ -40,8 +40,9 @@ try
 		ebd.cve_alumno=Integer.parseInt(request.getParameter("p_cve_alumno"));
         ebd.cve_periodo=Integer.parseInt(request.getParameter("p_cve_periodo"));
     	ebd.cve_competencia=Integer.parseInt(request.getParameter("p_cve_competencia"));
-    	ebd.sem_=Integer.parseInt(request.getParameter("p_sem_"));
-    	ebd.sem_UT=Integer.parseInt(request.getParameter("p_sem_UT"));
+    	ebd.cve_institucion=Integer.parseInt(request.getParameter("p_cve_institucion"));
+    	ebd.sem_=Integer.parseInt(request.getParameter("p_num_sem"));
+    	ebd.valor=Integer.parseInt(request.getParameter("p_valor"));
     	
 		ebd.FGuardarSemanas();
 		json.put("error",String.valueOf(ebd.error));

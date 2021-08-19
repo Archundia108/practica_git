@@ -92,7 +92,7 @@ consultas="SELECT ISNULL(direc_empresas.nombre,'Pendiente') AS Empresa, personas
                 </div>
             </td>
             <td class="align-middle text-center">
-                <button type="button" class="btn btn-outline-info btn-sm" target="popup" onClick="abrirVenSeguimiento();">Ver</button>
+                <button type="button" class="btn btn-outline-info btn-sm" target="popup" onClick="abrirVenSeguimiento(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia%>);">Ver</button>
             </td>
             <td class="align-middle text-center"><%=nombre_empresa%></td>
         </tr>
@@ -104,10 +104,12 @@ consultas="SELECT ISNULL(direc_empresas.nombre,'Pendiente') AS Empresa, personas
 </table>
 
 <script type="text/javascript">
-    function abrirVenSeguimiento() 
+    
+    function abrirVenSeguimiento(cve_alumno,cve_periodo,cve_competencia) 
     {
-    seguimientoVentana=window.open("http://localhost:8080/dual/jsp/prestacion_servicio/academicos/dual/seguimiento/seguimiento_a_dual.jsp?cve_periodo=<%=cve_periodo%>&cve_alumno=<%=cve_alumno%>&cve_competencia=<%=cve_competencia%>","seguimientoVentana","width=800,height=800");  
+    seguimientoVentana=window.open("http://localhost:8080/dual/jsp/prestacion_servicio/academicos/dual/seguimiento/seguimiento_a_dual.jsp?cve_periodo="+cve_periodo+"&cve_alumno="+cve_alumno+"&cve_competencia="+cve_competencia,"seguimientoVentana","width=800,height=800");  
     }
+    
     function cerrarVenSeguimiento(){
         seguimientoVentana.close();
     }
