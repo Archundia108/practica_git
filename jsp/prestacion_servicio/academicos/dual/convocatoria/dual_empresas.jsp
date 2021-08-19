@@ -33,10 +33,16 @@
             <html>
                 <head>
                     <title>Selección de empresas</title>
+                    
                     <link rel="stylesheet" href="../../../../../estilos/sic.css">
-                    <link rel="stylesheet" href="../../../../../estilos/bootstrap4.2.1.min.css"> 
-                    <script type="text/javascript" src="../../../../../js/jquery-2.2.4.min.js"></script>
-                    <script type="text/javascript" src="../../../../../js/bootstrap4.1.3.min.js"></script>
+                    <link rel="stylesheet" href="../../../../../estilos/normalize.css">
+                    <link rel="stylesheet" href="../../../../../estilos/estilos.css">
+                    <link rel="stylesheet" href="../../../../../estilos/bootstrap.min.css">
+
+                    <script type="text/javascript" language="JavaScript1.2" src="../../../../../jsp/menu/stmenu.js"></script>
+                    <script type="text/javascript" language="JavaScript1.2" src="../../../../../js/jquery-2.2.4.min.js"></script>
+                    <script type="text/javascript" language="JavaScript1.2" src="../../../../../js/popcalendar.js"></script>
+                    <script type="text/javascript" language="JavaScript1.2" src="../../../../../js/bootstrap.min.js"></script>
                 </head>
 
                 <body>
