@@ -20,7 +20,7 @@
         consultas = "SELECT CONCAT(p.nombre, ' ', p.apellido_pat, ' ', p.apellido_mat) as nombre "
                   + "FROM personas p "
                   + "INNER JOIN alumnos al ON al.cve_alumno = p.cve_persona "
-                  + "WHERE al.expediente = '"+expediente+"' ";
+                  + "WHERE (al.expediente = '"+expediente+"') ";
         rs = SMBD.SQLBD(consultas);
         while (rs.next()) 
         {

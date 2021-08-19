@@ -27,6 +27,7 @@
                     <link rel="stylesheet" href="../../../../../estilos/normalize.css">
                     <link rel="stylesheet" href="../../../../../estilos/estilos.css">
                     <link rel="stylesheet" href="../../../../../estilos/bootstrap.min.css">
+                    <link rel="stylesheet" href="../../../../../estilos/bootstrap4.2.1.min.css">
 
                     <script type="text/javascript" language="JavaScript1.2" src="../../../../../jsp/menu/stmenu.js"></script>
                     <script type="text/javascript" language="JavaScript1.2" src="../../../../../js/jquery-2.2.4.min.js"></script>
@@ -72,7 +73,7 @@
                                     consultas = "SELECT p.nombre_competencia, p.cve_competencia "
                                               + "FROM dual_competencias p "
                                               + "INNER JOIN carreras_universidad c ON c.cve_carrera = p.cve_carrera "
-                                              + "WHERE c.cve_director = "+cve_usuario+"";
+                                              + "WHERE (c.cve_director = "+cve_usuario+")";
                                     rs = SMBD.SQLBD(consultas);
                                     while (rs.next()) 
                                     {
@@ -115,7 +116,6 @@
                         </tr>
                     </table>
                         
-
                     <br>
                     <div class="row SoloTexto2">
                         <div class="col-md-2">&nbsp;</div>
@@ -211,9 +211,33 @@
                     <br>
                     <div class="row">
                         <div class="col-md-1">&nbsp;</div>
-                        <div class="col-md-10">
-                            <table class="table table-hover table-sm border border-info SoloTexto2" cellpading="0" cellspacing="0" id="TblPuestosAprendizaje">
-                                <!--Tabla-->
+                        <div class="col-md-10" id="TblPuestosAprendizaje">
+                            <table class="table-hover table-bordered" width="100%">
+                                <thead class="table-dark SoloTexto2">
+                                    <tr class="bg-info">
+                                        <th class="align-middle text-center" colspan="7" scope="col">Puestos de aprendizaje registrados</th>
+                                    </tr>
+                                    <tr class="bg-secondary align-middle text-center">
+                                        <th scope="col">Folio</th>
+                                        <th scope="col">Puesto de aprendizaje</th>
+                                        <th scope="col">Competencia</th>
+                                        <th scope="col">Objetivo general</th>
+                                        <th scope="col">Requerimientos generales</th>
+                                        <th scope="col">Fecha de registro</th>
+                                        <th scope="col">Vigente</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th class="align-middle text-center" scope="col">--</th>
+                                        <td class="align-middle text-center">--</td>
+                                        <td class="align-middle text-center">--</td>
+                                        <td class="align-middle text-center">--</td>
+                                        <td class="align-middle text-center">--</td>
+                                        <td class="align-middle text-center">--</td>
+                                        <td class="align-middle text-center">--</td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
                         <div class="col-md-1">&nbsp;</div>
@@ -318,7 +342,7 @@
                             w = (w / 8) * 6;
                             h = (h / 8) * 5;
                             
-                            var URL = "impresion_puesto_aprendizaje.jsp?cve_puesto_aprendizaje="+$('#TCvePuestoAprendizaje').val()+"&anio="+$('#TAnio').val();
+                            var URL = "impresion_competencia.jsp?cve_competencia="+$('#SCveCompetencia').val();
                             
                             window.open(URL,'titulo_ventana','width='+w+',height='+h+',menubar=no,scrollbars=yes,toolbar=no,locatio n=no,directories=no,resizable=no,top='+top+',left='+left);
                         }
@@ -350,7 +374,7 @@
                         var par = 
                         {
                             "p_cve_usuario" : <%=cve_usuario%>
-                        }
+                        };
 
                         $.post
                         (
@@ -377,7 +401,7 @@
                         var valida = 0;
                         if ($('#SCveCompetencia').val() == -1 || $('#SCveCompetencia').val() == null) 
                         {
-                            alert("Favor de seleccionar el puesto de aprendizaje");
+                            alert("Favor de seleccionar la competencia");
                             valida++;
                             $('#SCveCompetencia').focus();
                         }
@@ -478,7 +502,7 @@
                                 "p_Vigente"              : $('#SVigente').val(),
                                 "p_CveCompetencia"       : $('#SCveCompetencia').val(),
                                 "p_cve_usuario"          : <%=cve_usuario%>
-                            }
+                            };
 
                             $.ajax
                             (
@@ -523,7 +547,7 @@
                         var par = 
                         {
                             "p_TCvePuestoAprendizaje" : cve_puesto_aprendizaje
-                        }
+                        };
 
                         $.ajax
                         (
@@ -567,7 +591,7 @@
                             "p_Vigente"              : $('#SVigente').val(),
                             "p_CveCompetencia"       : $('#SCveCompetencia').val(),
                             "p_cve_usuario"          : <%=cve_usuario%>
-                        }
+                        };
 
                         $.ajax
                         (
@@ -598,7 +622,8 @@
                             var par = 
                             {
                                 "p_CvePuestoAprendizaje" : $('#TCvePuestoAprendizaje').val()
-                            }
+                            };
+
                             $.ajax
                             (
                                 {
@@ -614,7 +639,7 @@
                                                     FTabla_puestos_aprendizaje();
                                                 }
                                 }
-                            )
+                            );
                         }
                     }
 
@@ -624,7 +649,7 @@
                         var par =
                         {
                             "p_cve_usuario" : <%=cve_usuario%>
-                        }
+                        };
 
                         $.post
                         (

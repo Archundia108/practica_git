@@ -24,9 +24,9 @@
                 <option value="-1">...selecciona...</option>
                 <%
                     consultas = "SELECT p.nombre_competencia, p.cve_competencia "
-                                + "FROM dual_competencias p "
-                                + "INNER JOIN carreras_universidad c ON c.cve_carrera = p.cve_carrera "
-                                + "WHERE c.cve_director = "+cve_usuario+"";
+                              + "FROM dual_competencias p "
+                              + "INNER JOIN carreras_universidad c ON c.cve_carrera = p.cve_carrera "
+                              + "WHERE (c.cve_director = "+cve_usuario+")";
                     rs = SMBD.SQLBD(consultas);
                     while (rs.next()) 
                     {
@@ -39,6 +39,10 @@
                     SMBD.desconectarBD();
                 %>
             </select>
+            <br>
+            <img src="../../../../../imagenes/ikonoz/impresion.png" class="iconsButtons" title="Impresión de competencia" onclick="FVentana_impresion()">
+            <br>
+            Impresión de competencia
         <%
     }
     catch (Exception e)

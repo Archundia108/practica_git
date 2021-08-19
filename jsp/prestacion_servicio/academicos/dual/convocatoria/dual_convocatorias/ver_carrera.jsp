@@ -20,7 +20,7 @@
         consultas = "SELECT c.descripcion "
                   + "FROM carreras_universidad c "
                   + "INNER JOIN dual_competencias pu ON pu.cve_carrera = c.cve_carrera "
-                  + "WHERE pu.cve_competencia = "+cve_competencia+"";
+                  + "WHERE (pu.cve_competencia = "+cve_competencia+")";
         rs = SMBD.SQLBD(consultas);
         while (rs.next()) 
         {
