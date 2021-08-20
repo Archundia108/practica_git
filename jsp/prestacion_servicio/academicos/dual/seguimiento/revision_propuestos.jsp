@@ -199,6 +199,7 @@ function FGuardarAsesor(cve_alumno,cve_periodo,cve_competencia)
                 type:"POST",
                 success:function(res)
                 {
+                    //data = JSON.parse(res);
                     data = JSON.parse(res);
                     alert(data.error);
                     FTerminaCarga();
