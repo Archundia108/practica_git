@@ -188,7 +188,7 @@ function FGuardarAsesor(cve_alumno,cve_periodo,cve_competencia)
                 "p_SAsesor" : $('#SAsesor_'+cve_alumno).val(),
                 "p_cve_alumno" : cve_alumno,
                 "p_cve_periodo": cve_periodo,
-                "p_cve_competencia": cve_competencia,
+                "p_cve_competencia": cve_competencia
                 
             };
 
@@ -216,20 +216,19 @@ function FGuardarAsesor(cve_alumno,cve_periodo,cve_competencia)
                     "p_cve_alumno" : cve_alumno,
                     "p_cve_periodo": cve_periodo,
                     "p_cve_competencia": cve_competencia
-                    
                 };
                 //alert("revision_propuestos/notificacion.jsp?p_cve_periodo="+par.p_cve_periodo+"&p_cve_competencia="+par.p_cve_cve_competencia+"&p_cve_alumno="+par.p_cve_alumno);
                 $.ajax({
-                data :par,
-                url  :"revision_propuestos/notificacion.jsp",
-                type:"POST",
-                success:function(res)
-                {
-                    data = JSON.parse(res);
-                    alert(data.error);
-                    FTerminaCarga();
-                }
-            });
+                        data :par,
+                        url  :"revision_propuestos/notificacion.jsp",
+                        type:"POST",
+                        success:function(res)
+                        {
+                            data = JSON.parse(res);
+                            alert(data.error);
+                            FTerminaCarga();
+                        }
+                    });
      }
 
 
