@@ -45,6 +45,7 @@ if (session.getAttribute("usuario") != null)
                 </table>
                 <br>
                 <div class="col-md-2" id="gif_espera">&nbsp;</div>
+        
         <div class="col-md-10" align="center">
             <br>Cuatrimestre
                 <select type="text" onChange="FCargarCuatri();" id="TCuatri" name="TCuatri" class="captura_obligada combo100">
@@ -65,8 +66,7 @@ if (session.getAttribute("usuario") != null)
                 </select>
         </div>
         <br>
-    <div id="ListadoAlumnos" class="col-md-12">
-        <div class="col-md-2">&nbsp;</div>
+    <div id="ListadoAlumnos" >
         <table width="80%"  cellspacing="1" cellpadding="1" align="center" class="table-hover border border-info">
                         <thead class="table-dark SoloTexto2">
                             <tr class="bg-info">
@@ -91,7 +91,6 @@ if (session.getAttribute("usuario") != null)
                             
                         </tbody>
                     </table>
-                    <div class="col-md-2">&nbsp;</div>
                 </div>
                 <br>
 
