@@ -46,8 +46,10 @@ if (session.getAttribute("usuario") != null)
         <br>
 
         <div class="col-md-2" id="gif_espera">&nbsp;</div>
-        <div class="col-md-10" align="center">
-            <br>Cuatrimestre
+        
+        <div class="row ">
+            <div class="col-md-10" align="center">
+                <br>Cuatrimestre
                 <select type="text" onChange="FCargarCuatri();" id="TCuatri" name="TCuatri" class="captura_obligada combo100">
                     <option value="0">...Seleccionar...</option>
                     <%
@@ -63,14 +65,15 @@ if (session.getAttribute("usuario") != null)
                                  }
                                  SMBD.desconectarBD();
                                 %>
-                    
                 </select>
+            </div>
         </div>
         
+        
         <br>
-    <div class="col-md-1">&nbsp;</div>
-    <div id="ListadoAlumnos" class="width:80%;">
-            <table width="80%" cellspacing="0" cellpadding="0" align="center" class="table-hover border border-info">
+    
+    <div id="ListadoAlumnos" >
+            <table style="margin: auto" width="80%" cellspacing="0" cellpadding="0" align="center" class="table-hover border border-info">
               <thead class="table-dark SoloTexto2">
                  <tr class="bg-info">
                       <th class="align-middle text-center" colspan="10" scope="col">Listado de alumnos en formacion dual</th>
@@ -99,13 +102,17 @@ if (session.getAttribute("usuario") != null)
                     </tbody>
                 </table>
         </div>
-        <div class="col-md-1">&nbsp;</div>
+        
             
-
-        <div class="col-md-12" align="center">
+        <div class="row SoloTexto2">
+            <div class="col-md-5">&nbsp;</div>
+            <div class="col-md-2" align="center">
                 <img src="../../../../../imagenes/ikonoz/inicio.png" class="iconsButtons" title="Salir" onclick="FSalir();">
                 <br>Salir
             </div>
+            <div class="col-md-5">&nbsp;</div>
+        </div>
+        
         
         <br>
 

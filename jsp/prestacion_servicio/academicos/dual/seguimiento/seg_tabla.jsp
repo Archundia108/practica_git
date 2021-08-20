@@ -67,10 +67,9 @@ if (session.getAttribute("usuario") != null)
                     %>
                 </select>
             </div>
-        <br>
-    <div id="ListadoAlumnos" class="col-md-12">
-        <div class="col-md-2">&nbsp;</div>
-        <table width="80%"  cellspacing="0" cellpadding="0" align="center" class="table-hover border border-info">
+
+    <div id="ListadoAlumnos" >
+        <table style="margin:auto;" width="80%" cellspacing="0" cellpadding="0" align="center" class="table-hover border border-info">
             <thead class="table-dark SoloTexto2">
                 <tr class="bg-info">
                     <th class="align-middle text-center" colspan="9" scope="col">Seguimiento</th>
@@ -95,13 +94,19 @@ if (session.getAttribute("usuario") != null)
                 
             </tbody>
         </table>
-                    <div class="col-md-2">&nbsp;</div>
-                </div>
+    </div>
                 <br>
-        <div class="col-md-12" align="center">
+            
+            <div class="row SoloTexto2">
+                <div class="col-md-5">&nbsp;</div>
+            <div class="col-md-2">
+
                 <img src="../../../../../imagenes/ikonoz/inicio.png" class="iconsButtons" title="Salir" onclick="FSalir();">
                 <br>Salir
             </div>
+            <div class="col-md-5">&nbsp;</div>
+            </div>
+        
         <br>
         <div class="row SoloTexto2">    
             <div class="col-md-12">
