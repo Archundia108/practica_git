@@ -178,9 +178,10 @@ if (session.getAttribute("usuario") != null)
                 data:par,
                 url:"registro_pedagogico/guardar_calif_pedagogica.jsp",
                 type:"POST",
+                dataType:"JSON",
                 success:function(res)
                 {
-                    data = JSON.parse(res);
+                    //data = JSON.parse(res);
                     alert(data.error);
                     FTerminaCarga();
                 }

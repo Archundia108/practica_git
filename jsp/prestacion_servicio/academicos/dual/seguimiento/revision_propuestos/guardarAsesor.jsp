@@ -13,7 +13,7 @@ try
 	
 	
 	JSONObject json=new JSONObject();
-	json.put("error",String.valueOf(EBD.error));
+	json.put("error",EBD.error);
 	//json.put("cve_asesor_dual_utsjr",String.valueOf(EBD.cve_asesor_dual_utsjr));
 
 	out.print(json);
