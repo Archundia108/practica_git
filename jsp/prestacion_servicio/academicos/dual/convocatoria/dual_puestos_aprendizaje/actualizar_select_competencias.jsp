@@ -40,7 +40,7 @@
                 %>
             </select>
             <br>
-            <img src="../../../../../imagenes/ikonoz/impresion.png" class="iconsButtons" title="Impresión de competencia" onclick="FVentana_impresion()">
+            <img src="../../../../../imagenes/ikonoz/impresion.png" class="iconsButtons" title="Impresión de competencia" onclick="FVentana_impresion_competencia()">
             <br>
             Impresión de competencia
         <%

@@ -16,7 +16,7 @@
         int cve_usuario = Integer.parseInt(String.valueOf(session.getAttribute("clave_usuario")));
         int cve_competencia = Integer.parseInt(request.getParameter("cve_competencia"));
 
-        String consultas = "", error = "", nombre_puesto_aprendizaje = "", objetivo_gral = "", requerimientos_gral = "", 
+        String consultas = "", error = "", nombre_puesto_aprendizaje = "", objetivo_gral = "", requerimientos_gral = "", nombre_carrera = "",
                nombre_competencia = "", con_teoricos = "", con_procedimentales = "", con_actitudinales = "", actvd_desarrollo = "", nombre_empresa = "";
 
         consultas = "SELECT nombre_competencia "
@@ -58,6 +58,33 @@
                         <div class="col-md-10">
                             <table class="table table-bordered">
                                 <tbody>
+                                    <%
+                                        consultas = "SELECT c.descripcion "
+                                                  + "FROM carreras_universidad c "
+                                                  + "INNER JOIN dual_competencias pu ON pu.cve_carrera = c.cve_carrera "
+                                                  + "WHERE (pu.cve_competencia = "+cve_competencia+")";
+                                        rs = SMBD.SQLBD(consultas);
+                                        while (rs.next()) 
+                                        {
+                                            nombre_carrera = rs.getString(1);
+                                        }
+                                    %>
+                                    <tr>
+                                        <td class="SoloTexto">Carrera</td>
+                                        <td class="SoloTexto2"><%=nombre_carrera%></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-1">&nbsp;</div>
+                    </div>
+                        
+                    <br>
+                    <div class="row">
+                        <div class="col-md-1">&nbsp;</div>
+                        <div class="col-md-10">
+                            <table class="table table-bordered">
+                                <tbody>
                                     <tr>
                                         <td class="SoloTexto">Nombre de las empresas disponibles</td>
                                         <%
@@ -90,7 +117,7 @@
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th class="SoloTexto" colspan="7" scope="col">Puestos de <%=nombre_competencia%></th>
+                                        <th class="SoloTexto" colspan="7" scope="col">Puestos de aprendizaje de <%=nombre_competencia%></th>
                                     </tr>
                                     <tr class="SoloTexto">
                                         <th>Puesto de aprendizaje</th>

@@ -87,7 +87,7 @@
                                 %>
                             </select>
                             <br>
-                            <img src="../../../../../imagenes/ikonoz/impresion.png" class="iconsButtons" title="Impresión de competencia" onclick="FVentana_impresion()">
+                            <img src="../../../../../imagenes/ikonoz/impresion.png" class="iconsButtons" title="Impresión de competencia" onclick="FVentana_impresion_competencia()">
                             <br>
                             Impresión de competencia
                         </div>
@@ -165,7 +165,7 @@
                             Objetivos de aprendizaje
                         </div>
                         <div class="col-md-2">
-                            <img src="../../../../../imagenes/ikonoz/impresion.png" class="iconsButtons" title="Impresión de puesto" onclick="FVentana_impresion()">
+                            <img src="../../../../../imagenes/ikonoz/impresion.png" class="iconsButtons" title="Impresión de puesto" onclick="FVentana_impresion_puesto_aprendizaje()">
                             <br>
                             Impresión del puesto de aprendizaje
                         </div>
@@ -327,11 +327,32 @@
                         }
                     }
 
-                    function FVentana_impresion()
+                    function FVentana_impresion_puesto_aprendizaje()
                     {
                         if ($('#TCvePuestoAprendizaje').val() == 0) 
                         {
-                            alert("Selecciona un puesto de aprendizaje o registralo");
+                            alert("Selecciona un puesto de aprendizaje o regístralo");
+                        }
+                        else
+                        {
+                            var w = screen.width;
+                            var h = screen.height;
+                            var left = w / 8;
+                            var top =  h / 8;
+                            w = (w / 8) * 6;
+                            h = (h / 8) * 5;
+                            
+                            var URL = "impresion_puesto_aprendizaje.jsp?cve_puesto_aprendizaje="+$('#TCvePuestoAprendizaje').val()+"&anio="+$('#TAnio').val();
+                            
+                            window.open(URL,'titulo_ventana','width='+w+',height='+h+',menubar=no,scrollbars=yes,toolbar=no,locatio n=no,directories=no,resizable=no,top='+top+',left='+left);
+                        }
+                    }
+
+                    function FVentana_impresion_competencia()
+                    {
+                        if ($('#SCveCompetencia').val() == 0) 
+                        {
+                            alert("Selecciona una competencia");
                         }
                         else
                         {
