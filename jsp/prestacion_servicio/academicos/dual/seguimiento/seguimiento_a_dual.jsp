@@ -273,10 +273,10 @@ if (session.getAttribute("usuario") != null)
                                         </tbody>
                                     </table>
                                     <br>
-                                    <div class="col-md-12" align="center">
+                                    <!--<div class="col-md-12" align="center">
                                         <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar semanas" onClick="FGuardarSemanas(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia%>);">
                                         <br>Guardar semanas
-                                    </div>
+                                    </div>-->
                                 </div>
                                 <br>
 
@@ -416,14 +416,15 @@ if (session.getAttribute("usuario") != null)
                     </div>
                     <br>
 
-                    <table width="80%" cellpadding="0" cellspacing="0" border="0" align="center">
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0" align="center">
                         <tr align="center">
                             <td class="encabezado">Evaluacion para el alumno</td>
                         </tr>
                     </table>
 <!-----------------Tabla Evaluaciones--------------------------------------------------> 
-                    <div class="col-md-12">  
-                        <table style="margin:auto;" width="70%" class="table table-hover table-sm border border-info" cellpadding="0" cellspacing="0" id="">
+                    
+                    <div class="">  
+                        <table style="margin:auto;"  class="table table-hover table-sm border border-info" cellpadding="0" cellspacing="0" id="">
                             <thead class="table-dark SoloTexto2">
                                 <tr class="bg-info">
                                     <th class="align-middle text-center" colspan="9" scope="col">
@@ -554,9 +555,10 @@ if (session.getAttribute("usuario") != null)
                             </table>
                             <!--<div class="col-md-3">&nbsp;</div>-->
                         </div>
-                        <div class="col-md-3">&nbsp;</div>
+                        
                         <!--botones de pie-------------------------------------------------->   
-                        <div class="row SoloTexto2 ">
+                       
+                            <div class="row SoloTexto2 ">
                             <div class="col-md-2">&nbsp;</div>
                             <div class="col-md-3">
                                 <img onClick="" src="../../../../../imagenes/ikonoz/nuevo.png" class="iconsButtons" title="Limpiar">
@@ -572,6 +574,8 @@ if (session.getAttribute("usuario") != null)
                             </div>
                             <div class="col-md-1">&nbsp;</div>
                         </div>
+                        
+                        
                         <br>
 
                         <div class="row SoloTexto2">    
@@ -667,6 +671,50 @@ if (session.getAttribute("usuario") != null)
           $('#gif_espera').html('<img src="../../../../../imagenes/ajax-loader.gif" width="50">');  
         }
 
+    FCargarSemanas();
+    function FCargarSemanas()
+    {
+        
+        $.ajax
+            ({
+                //data:par,
+                url:"seguimiento_a_dual/cargarHorario.jsp",
+                type:"POST",
+                dataType:"JSON",
+                success:function(res)
+                {
+                    var S1=res[0];
+                    var S2=res[1];
+                    
+                    for(i=1;i<=16;i++)
+                    {
+                        if(S1["s"+i]==1)
+                        {
+                            $('#sem_UT'+i)[0].checked=true
+                        }
+                        else
+                        {
+                            $('#sem_UT'+i)[0].checked=false
+                        }
+
+                        if(S2["s"+i]==1)
+                        {
+                            $('#sem_'+i)[0].checked=true
+                        }
+                        else
+                        {
+                            $('#sem_'+i)[0].checked=false
+                        }
+                    }
+                    //alert("Respuesta?");
+                    //data = JSON.parse(res);
+                    console.log(res);
+                    //alert(res.error);
+                    //FTerminaCarga();
+                }
+            });
+    }
+    
     function FGuardarSemanas(cve_institucion,num_sem)
     {
         var valida=0;
