@@ -21,7 +21,7 @@
 
         consultas = "SELECT nombre_competencia "
                   + "FROM dual_competencias  "
-                  + "WHERE cve_competencia = "+cve_competencia+" ";
+                  + "WHERE (cve_competencia = "+cve_competencia+")";
         rs = SMBD.SQLBD(consultas);
         while (rs.next())
         {
@@ -38,6 +38,7 @@
                     <link rel="stylesheet" href="../../../../../estilos/normalize.css">
                     <link rel="stylesheet" href="../../../../../estilos/estilos.css">
                     <link rel="stylesheet" href="../../../../../estilos/bootstrap.min.css">
+                    <link rel="stylesheet" href="../../../../../estilos/bootstrap4.2.1.min.css">
 
                     <script type="text/javascript" language="JavaScript1.2" src="../../../../../jsp/menu/stmenu.js"></script>
                     <script type="text/javascript" language="JavaScript1.2" src="../../../../../js/jquery-2.2.4.min.js"></script>
@@ -94,10 +95,32 @@
                     </div>
 
                     <br>
-                    <div class="col-md-12">
-                        <table class="table table-hover table-sm border border-info SoloTexto2" cellpading="0" cellspacing="0" id="TblEmpresas">
-                            <!--Tabla-->
-                        </table>
+                    <div class="row">
+                        <div class="col-md-1">&nbsp;</div>
+                        <div class="col-md-10" id="TblEmpresas">
+                            <table class="table-hover table-bordered" width="100%">
+                                <thead class="table-dark SoloTexto2">
+                                    <tr class="bg-info">
+                                        <th class="align-middle text-center" colspan="4" scope="col">Listado de empresas</th>
+                                    </tr>
+                                    <tr class="bg-secondary align-middle text-center">
+                                        <th scope="col">Folio</th>
+                                        <th scope="col">Nombre de la empresa</th>
+                                        <th scope="col">Giro de la empresa</th>
+                                        <th scope="col">Quitar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="align-middle text-center">--</td>
+                                        <td class="align-middle text-center">--</td>
+                                        <td class="align-middle text-center">--</td>
+                                        <td class="align-middle text-center"><img src="../../../../../imagenes/ikonoz/nuevo.png" class="iconsButtons" title="Quitar"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-1">&nbsp;</div>
                     </div>
 
                     <br>
@@ -140,7 +163,7 @@
                         var par =
                         {
                             "p_cve_competencia" : "<%=cve_competencia%>"
-                        }
+                        };
 
                         $.post
                         (
@@ -168,7 +191,7 @@
                             {
                                 "p_SEmpresa"         : $('#SEmpresa').val(),
                                 "p_cve_competencia"  : <%=cve_competencia%>
-                            }
+                            };
 
                             $.ajax
                             (
@@ -195,7 +218,7 @@
                         {
                             "p_cve_empresa"      : cve_empresa,
                             "p_cve_competencia"  : <%=cve_competencia%>
-                        }
+                        };
 
                         $.ajax
                         (

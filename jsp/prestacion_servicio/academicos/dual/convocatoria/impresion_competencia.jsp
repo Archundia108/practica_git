@@ -17,33 +17,38 @@
         int cve_competencia = Integer.parseInt(request.getParameter("cve_competencia"));
 
         String consultas = "", error = "", nombre_puesto_aprendizaje = "", objetivo_gral = "", requerimientos_gral = "", 
-               nombre_competencia = "", con_teoricos = "", con_procedimentales = "", con_actitudinales = "", actvd_desarrollo = "";
+               nombre_competencia = "", con_teoricos = "", con_procedimentales = "", con_actitudinales = "", actvd_desarrollo = "", nombre_empresa = "";
 
         consultas = "SELECT nombre_competencia "
                   + "FROM dual_competencias "
-                  + "WHERE cve_competencia = "+cve_competencia+" ";
+                  + "WHERE (cve_competencia = "+cve_competencia+") ";
         rs = SMBD.SQLBD(consultas);
         while (rs.next()) 
         {
             nombre_competencia = rs.getString(1);
         }
+
         %>            
             <html>
                 <head>
                     <title>Puesto de aprendizaje</title>
+                    
                     <link rel="stylesheet" href="../../../../../estilos/sic.css">
-                    <link rel="stylesheet" href="../../../../../estilos/bootstrap4.2.1.min.css"> 
-                    <script type="text/javascript" src="../../../../../js/jquery-2.2.4.min.js"></script>
-                    <script type="text/javascript" src="../../../../../js/bootstrap4.1.3.min.js"></script>
+                    <link rel="stylesheet" href="../../../../../estilos/normalize.css">
+                    <link rel="stylesheet" href="../../../../../estilos/estilos.css">
+                    <link rel="stylesheet" href="../../../../../estilos/bootstrap.min.css">
+                    <link rel="stylesheet" href="../../../../../estilos/bootstrap4.2.1.min.css">
+
+                    <script type="text/javascript" language="JavaScript1.2" src="../../../../../jsp/menu/stmenu.js"></script>
+                    <script type="text/javascript" language="JavaScript1.2" src="../../../../../js/jquery-2.2.4.min.js"></script>
+                    <script type="text/javascript" language="JavaScript1.2" src="../../../../../js/popcalendar.js"></script>
+                    <script type="text/javascript" language="JavaScript1.2" src="../../../../../js/bootstrap.min.js"></script>
                 </head>
 
                 <body>
                     <table width="80%" cellpadding="0" cellspacing="0" border="0" align="center">
                         <tr align="center">
-                            <td class="titulo">Competencia: <%=nombre_competencia%></td>
-                        </tr>
-                        <tr align="center">
-                            <td class="usuario"><%=usuario%></td>
+                            <td class="titulo">Definición de competencia: <%=nombre_competencia%></td>
                         </tr>
                     </table>
 
@@ -51,19 +56,50 @@
                     <div class="row">
                         <div class="col-md-1">&nbsp;</div>
                         <div class="col-md-10">
-                            <table class="table table-hover table-sm border border-info SoloTexto2" cellpading="0" cellspacing="0">
-                                <thead class="table-dark">
-                                    <tr class="bg-info">
-                                        <th class="aling-middle text-center" colspan="7" scope="col">Puestos de <%=nombre_competencia%></th>
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <td class="SoloTexto">Nombre de las empresas disponibles</td>
+                                        <%
+                                            consultas = "SELECT emp.nombre "
+                                                      + "FROM direc_empresas emp "
+                                                      + "INNER JOIN dual_empresas demp ON emp.cve_empresa = demp.cve_empresa "
+                                                      + "WHERE (demp.cve_competencia = "+cve_competencia+") ";
+                                            rs = SMBD.SQLBD(consultas);
+                                            while (rs.next()) 
+                                            {
+                                                nombre_empresa = rs.getString(1);
+                                                %>
+                                                    <tr class="SoloTexto2">
+                                                        <td><%=nombre_empresa%></td>
+                                                    </tr>
+                                                <%
+                                            }
+                                        %>
                                     </tr>
-                                    <tr class="bg-secondary">
-                                        <th class="aling-middle text-center" scope="col">Puesto de aprendizaje</th>
-                                        <th class="aling-middle text-center" scope="col">Objetivos generales</th>
-                                        <th class="aling-middle text-center" scope="col">Requerimientos</th>
-                                        <th class="aling-middle text-center" scope="col">Conocimientos teóricos</th>
-                                        <th class="aling-middle text-center" scope="col">Conocimientos procedimentales</th>
-                                        <th class="aling-middle text-center" scope="col">Conocimientos actitudinales</th>
-                                        <th class="aling-middle text-center" scope="col">Actividades a desarrollar</th>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-1">&nbsp;</div>
+                    </div>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-md-1">&nbsp;</div>
+                        <div class="col-md-10">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="SoloTexto" colspan="7" scope="col">Puestos de <%=nombre_competencia%></th>
+                                    </tr>
+                                    <tr class="SoloTexto">
+                                        <th>Puesto de aprendizaje</th>
+                                        <th>Objetivos generales</th>
+                                        <th>Requerimientos</th>
+                                        <th>Conocimientos teóricos</th>
+                                        <th>Conocimientos procedimentales</th>
+                                        <th>Conocimientos actitudinales</th>
+                                        <th>Actividades a desarrollar</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -71,7 +107,7 @@
                                         consultas = "SELECT pu.nombre_puesto_aprendizaje, pu.objetivo_gral, pu.requerimientos_gral, pu.con_teoricos, pu.con_procedimentales, pu.con_actitudinales, pu.actvd_desarrollo "
                                                   + "FROM dual_puestos_aprendizaje pu "
                                                   + "INNER JOIN dual_competencias pa ON pa.cve_competencia = pu.cve_competencia "
-                                                  + "WHERE pa.cve_competencia = "+cve_competencia+" "
+                                                  + "WHERE (pa.cve_competencia = "+cve_competencia+") "
                                                   + "ORDER BY pu.cve_puesto_aprendizaje ASC";
                                         rs = SMBD.SQLBD(consultas);
                                         while (rs.next()) 
@@ -84,14 +120,14 @@
                                             con_actitudinales = rs.getString(6);
                                             actvd_desarrollo = rs.getString(7);
                                             %>
-                                                <tr>
-                                                    <td class="aling-middle text-center"><%=nombre_puesto_aprendizaje%></td>
-                                                    <td class="aling-middle text-center"><%=objetivo_gral%></td>
-                                                    <td class="aling-middle text-center"><%=requerimientos_gral%></td>
-                                                    <td class="aling-middle text-center"><%=con_teoricos%></td>
-                                                    <td class="aling-middle text-center"><%=con_procedimentales%></td>
-                                                    <td class="aling-middle text-center"><%=con_actitudinales%></td>
-                                                    <td class="aling-middle text-center"><%=actvd_desarrollo%></td>
+                                                <tr class="SoloTexto2">
+                                                    <td><%=nombre_puesto_aprendizaje%></td>
+                                                    <td><%=objetivo_gral%></td>
+                                                    <td><%=requerimientos_gral%></td>
+                                                    <td><%=con_teoricos%></td>
+                                                    <td><%=con_procedimentales%></td>
+                                                    <td><%=con_actitudinales%></td>
+                                                    <td><%=actvd_desarrollo%></td>
                                                 </tr>
                                             <%
                                         }

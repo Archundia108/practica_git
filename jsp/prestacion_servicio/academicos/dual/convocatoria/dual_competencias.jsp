@@ -27,6 +27,7 @@
                     <link rel="stylesheet" href="../../../../../estilos/normalize.css">
                     <link rel="stylesheet" href="../../../../../estilos/estilos.css">
                     <link rel="stylesheet" href="../../../../../estilos/bootstrap.min.css">
+                    <link rel="stylesheet" href="../../../../../estilos/bootstrap4.2.1.min.css">
 
                     <script type="text/javascript" language="JavaScript1.2" src="../../../../../jsp/menu/stmenu.js"></script>
                     <script type="text/javascript" language="JavaScript1.2" src="../../../../../js/jquery-2.2.4.min.js"></script>
@@ -65,7 +66,7 @@
                                 <%
                                     consultas = "SELECT c.cve_carrera, c.descripcion, u.nombre "
                                               + "FROM carreras_universidad c INNER JOIN unidades_academicas u ON c.cve_unidad_academica = u.cve_unidad_academica "
-                                              + "WHERE (c.activo = 1) AND c.cve_director = "+cve_usuario+" "
+                                              + "WHERE (c.activo = 1) AND (c.cve_director = "+cve_usuario+") "
                                               + "ORDER BY c.cve_unidad_academica, c.continuidad ASC";
                                     rs = SMBD.SQLBD(consultas);
                                     while (rs.next())
@@ -108,9 +109,27 @@
                     <br>
                     <div class="row">
                         <div class="col-md-1">&nbsp;</div>
-                        <div class="col-md-10">
-                            <table class="table table-hover table-sm border border-info SoloTexto2" cellpading="0" cellspacing="0" id="TblCompetencias">
-                                <!--Tabla-->
+                        <div class="col-md-10" id="TblCompetencias">
+                            <table class="table-hover table-bordered" width="100%">
+                                <thead class="table-dark SoloTexto2">
+                                    <tr class="bg-info">
+                                        <th class="align-middle text-center" colspan="4" scope="col">Listado de competencias</th>
+                                    </tr>
+                                    <tr class="bg-secondary align-middle text-center">
+                                        <th scope="col">Folio</th>
+                                        <th scope="col">Competencia</th>
+                                        <th scope="col">Carrera</th>
+                                        <th scope="col">Fecha</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th class="align-middle text-center" scope="col">--</th>
+                                        <td class="align-middle text-center">--</td>
+                                        <td class="align-middle text-center">--</td>
+                                        <td class="align-middle text-center">--</td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
                         <div class="col-md-1">&nbsp;</div>
@@ -143,7 +162,7 @@
                     {
                         var key = (event.keyCode || event.which);
                         var tecla = String.fromCharCode(key).toString();
-                        var letras = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyzáéíóú 1234567890";
+                        var letras = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyzÁÉÍÓÚáéíóú 1234567890";
 
                         if (letras.indexOf(tecla) == -1) 
                         {
@@ -157,7 +176,7 @@
                         var par = 
                         {
                             "p_cve_usuario" : <%=cve_usuario%>
-                        }
+                        };
 
                         $.post
                         (
@@ -207,7 +226,7 @@
                                 "p_TNombreCompetencia" : $('#TNombreCompetencia').val(),
                                 "p_SCarrera"           : $('#SCarrera').val(),
                                 "p_cve_usuario"        : <%=cve_usuario%>
-                            }
+                            };
 
                             $.ajax
                             (
@@ -241,7 +260,7 @@
                         var par = 
                         {
                             "p_TCveCompetencia" : cve_competencia
-                        }
+                        };
 
                         $.ajax
                         (
@@ -270,7 +289,7 @@
                             "p_TNombreCompetencia" : $('#TNombreCompetencia').val(),
                             "p_SCarrera"           : $('#SCarrera').val(),
                             "p_cve_usuario"        : <%=cve_usuario%> 
-                        }
+                        };
 
                         $.ajax
                         (

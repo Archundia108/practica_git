@@ -30,6 +30,7 @@
                     <link rel="stylesheet" href="../../../../../estilos/normalize.css">
                     <link rel="stylesheet" href="../../../../../estilos/estilos.css">
                     <link rel="stylesheet" href="../../../../../estilos/bootstrap.min.css">
+                    <link rel="stylesheet" href="../../../../../estilos/bootstrap4.2.1.min.css">
 
                     <script type="text/javascript" language="JavaScript1.2" src="../../../../../jsp/menu/stmenu.js"></script>
                     <script type="text/javascript" language="JavaScript1.2" src="../../../../../js/jquery-2.2.4.min.js"></script>
@@ -48,7 +49,7 @@
                     <div class="row">
                         <div class="col-md-1">&nbsp;</div>
                         <div class="col-md-10">
-                            <table class="table" cellpading = "0" cellspacing = "0" border="1">
+                            <table class="table table-bordered">
                                 <tbody>
                                     <tr>
                                         <td class="SoloTexto">Nombre de las empresas disponibles</td>
@@ -57,7 +58,7 @@
                                                       + "FROM direc_empresas emp "
                                                       + "INNER JOIN dual_empresas demp ON emp.cve_empresa = demp.cve_empresa "
                                                       + "INNER JOIN dual_puestos_aprendizaje dpa ON dpa.cve_competencia = demp.cve_competencia "
-                                                      + "WHERE dpa.cve_puesto_aprendizaje = "+cve_puesto_aprendizaje+" ";
+                                                      + "WHERE (dpa.cve_puesto_aprendizaje = "+cve_puesto_aprendizaje+") ";
                                             rs = SMBD.SQLBD(consultas);
                                             while (rs.next()) 
                                             {
@@ -80,7 +81,7 @@
                     <div class="row">
                         <div class="col-md-1">&nbsp;</div>
                         <div class="col-md-10">
-                            <table class="table" cellpading = "0" cellspacing = "0" border="1">
+                            <table class="table table-bordered">
                                 <thead>
                                     <tr class="SoloTexto">
                                         <th colspan="4">Puesto de aprendizaje</th>
@@ -93,7 +94,7 @@
                                                   +        "dcom.nombre_competencia "
                                                   + "FROM dual_puestos_aprendizaje dap "
                                                   + "INNER JOIN dual_competencias dcom ON dcom.cve_competencia = dap.cve_competencia "
-                                                  + "WHERE dap.cve_puesto_aprendizaje = "+cve_puesto_aprendizaje+" ";
+                                                  + "WHERE (dap.cve_puesto_aprendizaje = "+cve_puesto_aprendizaje+") ";
                                         rs = SMBD.SQLBD(consultas);
                                         while (rs.next()) 
                                         {
@@ -129,10 +130,10 @@
                     <div class="row">
                         <div class="col-md-1">&nbsp;</div>
                         <div class="col-md-10">
-                            <table class="table" cellpading = "0" cellspacing = "0" border="1">
+                            <table class="table table-bordered">
                                 <thead>
                                     <tr class="SoloTexto">
-                                        <th colspan="4">Conocimientos previos necesarios para el puesto de aprendizaje</th>
+                                        <th align="center" colspan="4">Conocimientos previos necesarios para el puesto de aprendizaje</th>
                                     </tr>
                                     <tr class="SoloTexto">
                                         <th>Teóricos</th>
@@ -157,7 +158,7 @@
                     <div class="row">
                         <div class="col-md-1">&nbsp;</div>
                         <div class="col-md-10">
-                            <table class="table" cellpading = "0" cellspacing = "0" border="1">
+                            <table class="table table-bordered">
                                 <thead>
                                     <tr class="SoloTexto">
                                         <th>Objetivos de aprendizaje</th>
@@ -168,7 +169,7 @@
                                     <%
                                         consultas = "SELECT objetivo, resultado "
                                                   + "FROM dual_objetivos_aprendizaje "
-                                                  + "WHERE cve_puesto_aprendizaje = "+cve_puesto_aprendizaje+" ";
+                                                  + "WHERE (cve_puesto_aprendizaje = "+cve_puesto_aprendizaje+") ";
                                         rs = SMBD.SQLBD(consultas);
                                         while (rs.next()) 
                                         {

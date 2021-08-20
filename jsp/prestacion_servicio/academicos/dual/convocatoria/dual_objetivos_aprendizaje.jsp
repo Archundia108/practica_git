@@ -30,6 +30,7 @@
                     <link rel="stylesheet" href="../../../../../estilos/normalize.css">
                     <link rel="stylesheet" href="../../../../../estilos/estilos.css">
                     <link rel="stylesheet" href="../../../../../estilos/bootstrap.min.css">
+                    <link rel="stylesheet" href="../../../../../estilos/bootstrap4.2.1.min.css">
 
                     <script type="text/javascript" language="JavaScript1.2" src="../../../../../jsp/menu/stmenu.js"></script>
                     <script type="text/javascript" language="JavaScript1.2" src="../../../../../js/jquery-2.2.4.min.js"></script>
@@ -95,10 +96,30 @@
                     </div>
 
                     <br>
-                    <div class="col-md-12">
-                        <table class="table table-hover table-sm border border-info SoloTexto2" cellpadding="0" cellspacing="0" id="TblObjetivos">
-                            <!--Tabla-->
-                        </table>
+                    <div class="row">
+                        <div class="col-md-1">&nbsp;</div>
+                        <div class="col-md-10" id="TblObjetivos">
+                            <table class="table-hover table-bordered" width="100%">        
+                                <thead class="table-dark SoloTexto2">
+                                    <tr>
+                                        <th class="align-middle text-center" colspan="3" scope="col">Objetivos de aprendizaje</th>
+                                    </tr>
+                                    <tr class="bg-secondary align-middle text-center">
+                                        <th scope="col">Folio</th>
+                                        <th scope="col">Objetivo</th>
+                                        <th scope="col">Resutado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="align-middle text-center" scope="col">--</td>
+                                        <td class="align-middle text-center">--</td>
+                                        <td class="align-middle text-center">--</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-1">&nbsp;</div>
                     </div>
 
                     <br>
@@ -146,7 +167,7 @@
                         {
                             "p_cve_usuario"             : <%=cve_usuario%>,
                             "p_cve_puesto_aprendizaje"  : <%=cve_puesto_aprendizaje%>
-                        }
+                        };
 
                         $.post
                         (
@@ -197,7 +218,7 @@
                                 "p_cve_puesto_aprendizaje"  : <%=cve_puesto_aprendizaje%>,
                                 "p_anio"                    : <%=anio%>,
                                 "p_cve_usuario"             : <%=cve_usuario%>
-                            }
+                            };
 
                             $.ajax
                             (
@@ -224,7 +245,7 @@
                         var par =
                         {
                             "p_numero" : numero
-                        }
+                        };
 
                         $.ajax
                         (
@@ -264,7 +285,7 @@
                             "p_cve_puesto_aprendizaje"  : <%=cve_puesto_aprendizaje%>,
                             "p_anio"                    : <%=anio%>,
                             "p_cve_usuario"             : <%=cve_usuario%>
-                        }
+                        };
 
                         $.ajax
                         (

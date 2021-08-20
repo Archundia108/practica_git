@@ -22,6 +22,7 @@
                     <link rel="stylesheet" href="../../../../../estilos/normalize.css">
                     <link rel="stylesheet" href="../../../../../estilos/estilos.css">
                     <link rel="stylesheet" href="../../../../../estilos/bootstrap.min.css">
+                    <link rel="stylesheet" href="../../../../../estilos/bootstrap4.2.1.min.css">
 
                     <script type="text/javascript" language="JavaScript1.2" src="../../../../../jsp/menu/stmenu.js"></script>
                     <script type="text/javascript" language="JavaScript1.2" src="../../../../../js/jquery-2.2.4.min.js"></script>
@@ -46,9 +47,64 @@
                     </table>
                     
                     <br>
-                    <table class="table table-hover table-sm border border-info SoloTexto2" cellpading="0" cellspacing="0" id="TblPropuestos">
-                        <!--Tabla-->
-                    </table>
+                    <div class="row">
+                        <div class="col-md-12" id="TblPropuestos">
+                            <table class="table-hover table-bordered" width="100%">
+                                <thead class="table-dark SoloTexto2">
+                                    <tr class="bg-secondary align-middle text-center">
+                                        <th scope="col" colspan="2">Fecha de convocatoria</th>
+                                        <th scope="col" rowspan="2">Descripción de convocatoria</th>
+                                        <th scope="col" rowspan="2">Competencia</th>
+                                        <th scope="col" colspan="5">Asignación de alumnos</th>
+                                    </tr>
+                                    <tr class="bg-secondary align-middle text-center">
+                                        <th scope="col">Fecha de inicio</th>
+                                        <th scope="col">Fecha de término</th>
+                                        <th scope="col">Agregar (alumnos inscritos)</th>
+                                        <th scope="col" colspan="4">Información de alumnos</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="align-middle text-center">--</td>
+                                        <td class="align-middle text-center">--</td>
+                                        <td class="align-middle text-center">--</td>
+                                        <td class="align-middle text-center">--</td>
+                                        <td class="align-middle text-center">
+                                            <input type="text" class="captura_obligada combo200">
+                                            <img src="../../../../../imagenes/ikonoz/agregar_persona.png" class="iconsButtons" title="Agregar">
+                                        </td>
+                                        <td class="align-middle text-center" colspan="5">
+                                            <table class="table-hover table-bordered" width="100%">
+                                                <thead class="table-dark SoloTexto2">
+                                                    <tr class="bg-secondary align-middle text-center">
+                                                        <th scope="col">Expediente</th>
+                                                        <th scope="col">Nombre</th>
+                                                        <th scope="col">Fecha de notificación</th>
+                                                        <th scope="col">Notificar</th>
+                                                        <th scope="col">Quitar</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="align-middle text-center">--</td>
+                                                        <td class="align-middle text-center">--</td>
+                                                        <td class="align-middle text-center">--</td>
+                                                        <td class="align-middle text-center">
+                                                            <img src="../../../../../imagenes/ikonoz/notificar.png" class="iconsButtons" title="Notificar">   
+                                                        </td>
+                                                        <td class="align-middle text-center">
+                                                            <img src="../../../../../imagenes/ikonoz/nuevo.png" class="iconsButtons" title="Quitar">
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
                     <br>
                     <div class="row SoloTexto2">
@@ -110,7 +166,7 @@
                         w = (w / 8) * 6;
                         h = (h / 8) * 5;
                         
-                        var URL = "ver_competencia.jsp?cve_competencia="+cve_competencia;
+                        var URL = "impresion_competencia.jsp?cve_competencia="+cve_competencia;
                         
                         window.open(URL,'titulo_ventana','width='+w+',height='+h+',menubar=no,scrollbars=yes,toolbar=no,locatio n=no,directories=no,resizable=no,top='+top+',left='+left);
                     }
@@ -121,7 +177,7 @@
                         var par =
                         {
                             "p_cve_usuario" : <%=cve_usuario%>
-                        }
+                        };
 
                         $.post
                         (
@@ -151,7 +207,7 @@
                             var par = 
                             {
                                 "p_expediente" : $('#TAgregar'+v).val()
-                            }
+                            };
 
                             $.ajax
                             (
@@ -172,7 +228,7 @@
                                                             "p_exp_alumno"       : $('#TAgregar'+v).val(),
                                                             "p_cve_usuario"      : cve_usuario,
                                                             "p_cve_convocatoria" : cve_convocatoria
-                                                        }
+                                                        };
 
                                                         $.ajax
                                                         (
@@ -208,7 +264,7 @@
                         var par =
                         {
                             "p_cve_alumno" : cve_alumno
-                        }
+                        };
 
                         $.ajax
                         (
@@ -233,7 +289,7 @@
                         var par = 
                         {
                             "p_cve_alumno" : cve_alumno
-                        }
+                        };
 
                         $.ajax
                         (
