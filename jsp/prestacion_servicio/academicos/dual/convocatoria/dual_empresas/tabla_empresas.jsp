@@ -36,10 +36,10 @@
                         int numero = 0;
 
                         consultas = "SELECT emp.nombre, emp.giro_empresa, emp.cve_empresa "
-                                + "FROM dual_empresas pe "
-                                + "INNER JOIN direc_empresas emp ON emp.cve_empresa = pe.cve_empresa "
-                                + "INNER JOIN dual_competencias pl ON pl.cve_competencia = pe.cve_competencia "
-                                + "WHERE (pl.cve_competencia = "+cve_competencia+")";
+                                  + "FROM dual_empresas pe "
+                                  + "INNER JOIN direc_empresas emp ON emp.cve_empresa = pe.cve_empresa "
+                                  + "INNER JOIN dual_competencias pl ON pl.cve_competencia = pe.cve_competencia "
+                                  + "WHERE (pl.cve_competencia = "+cve_competencia+")";
                         rs = SMBD.SQLBD(consultas);
                         while (rs.next()) 
                         {
