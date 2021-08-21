@@ -197,11 +197,12 @@ function FGuardarAsesor(cve_alumno,cve_periodo,cve_competencia)
                 data :par,
                 url  :"revision_propuestos/guardarAsesor.jsp",
                 type:"POST",
+                dataType: "JSON",
                 success:function(res)
                 {
                     //data = JSON.parse(res);
-                    data = JSON.parse(res);
-                    alert(data.error);
+                    //data = JSON.parse(res);
+                    alert(res.error);
                     FTerminaCarga();
                 }
             });
@@ -223,9 +224,10 @@ function FGuardarAsesor(cve_alumno,cve_periodo,cve_competencia)
                         data :par,
                         url  :"revision_propuestos/notificacion.jsp",
                         type:"POST",
+                        dataType:"JSON",
                         success:function(res)
                         {
-                            data = JSON.parse(res);
+                            //data = JSON.parse(res);
                             alert(data.error);
                             FTerminaCarga();
                         }
