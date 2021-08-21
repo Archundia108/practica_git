@@ -350,7 +350,7 @@
 
                     function FVentana_impresion_competencia()
                     {
-                        if ($('#SCveCompetencia').val() == 0) 
+                        if ($('#SCveCompetencia').val() == -1) 
                         {
                             alert("Selecciona una competencia");
                         }
