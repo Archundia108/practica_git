@@ -37,12 +37,12 @@
                 <tbody>
                     <%
                         consultas = "SELECT TOP(50) pu.cve_puesto_aprendizaje, pu.nombre_puesto_aprendizaje, pl.nombre_competencia, pu.objetivo_gral, pu.requerimientos_gral, "
-                                + "CONVERT(VARCHAR(24), pu.fecha, 103) AS fecha, pu.vigente "
-                                + "FROM dual_puestos_aprendizaje pu "
-                                + "INNER JOIN dual_competencias pl ON pu.cve_competencia = pl.cve_competencia "
-                                + "INNER JOIN carreras_universidad c ON pl.cve_carrera = c.cve_carrera "
-                                + "WHERE (c.cve_director = "+cve_usuario+") "
-                                + "ORDER BY pu.cve_puesto_aprendizaje DESC";
+                                  + "CONVERT(VARCHAR(24), pu.fecha, 103) AS fecha, pu.vigente "
+                                  + "FROM dual_puestos_aprendizaje pu "
+                                  + "INNER JOIN dual_competencias pl ON pu.cve_competencia = pl.cve_competencia "
+                                  + "INNER JOIN carreras_universidad c ON pl.cve_carrera = c.cve_carrera "
+                                  + "WHERE (c.cve_director = "+cve_usuario+") "
+                                  + "ORDER BY pu.cve_puesto_aprendizaje DESC";
                         rs = SMBD.SQLBD(consultas);
                         while (rs.next())
                         {
