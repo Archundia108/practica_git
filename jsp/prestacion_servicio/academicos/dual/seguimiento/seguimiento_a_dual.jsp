@@ -674,10 +674,15 @@ if (session.getAttribute("usuario") != null)
     FCargarSemanas();
     function FCargarSemanas()
     {
-        
+        var par=
+        {
+                "p_cve_alumno"                :<%=cve_alumno%>,
+                "p_cve_periodo"               :<%=cve_periodo%>,
+                "p_cve_competencia"           :<%=cve_competencia%>,
+        };
         $.ajax
             ({
-                //data:par,
+                data:par,
                 url:"seguimiento_a_dual/cargarHorario.jsp",
                 type:"POST",
                 dataType:"JSON",
@@ -755,7 +760,7 @@ if (session.getAttribute("usuario") != null)
                 dataType:"JSON",
                 success:function(res)
                 {
-                    //alert("Respuesta?");
+                    alert("Respuesta?");
                     //data = JSON.parse(res);
                     console.log(res);
                     alert(res.error);

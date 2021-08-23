@@ -3,9 +3,10 @@
 try
 {
 	seguimiento_a_dual ebd=new seguimiento_a_dual();
-	ebd.cve_alumno=34395;
-    ebd.cve_periodo=69;
-    ebd.cve_competencia=1;
+	
+	ebd.cve_alumno=Integer.parseInt(request.getParameter("p_cve_alumno"));
+    ebd.cve_periodo=Integer.parseInt(request.getParameter("p_cve_periodo"));
+    ebd.cve_competencia=Integer.parseInt(request.getParameter("p_cve_competencia"));
 	JSONArray arreglo=new JSONArray();
 	JSONObject json=new JSONObject();
 	JSONObject json2=new JSONObject();

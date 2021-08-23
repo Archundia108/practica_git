@@ -181,7 +181,7 @@ if (session.getAttribute("usuario") != null)
                 success:function(res)
                 {
                     //data = JSON.parse(res);
-                    alert(data.error);
+                    alert(res.error);
                     FTerminaCarga();
                 }
             });

@@ -159,7 +159,7 @@ if (session.getAttribute("usuario") != null)
                 "revision_propuestos/alumnos_cuatri.jsp",par,function(htmlExterno)
                 {
                     $('#ListadoAlumnos').html(htmlExterno);
-                    console.log(htmlExterno);
+                    //console.log(htmlExterno);
                     FTerminaCarga();
                 }
             );
@@ -228,7 +228,7 @@ function FGuardarAsesor(cve_alumno,cve_periodo,cve_competencia)
                         success:function(res)
                         {
                             //data = JSON.parse(res);
-                            alert(data.error);
+                            alert(res.error);
                             FTerminaCarga();
                         }
                     });
