@@ -16,6 +16,7 @@ try
     	ebd.cve_periodo=Integer.parseInt(request.getParameter("p_cve_periodo"));
     	ebd.cve_competencia=Integer.parseInt(request.getParameter("p_cve_competencia"));
 
+
     	ebd.FGuardarHorario();
     	json.put("error",String.valueOf(ebd.error));
 		break;
@@ -44,20 +45,39 @@ try
     	ebd.sem_=Integer.parseInt(request.getParameter("p_num_sem"));
     	ebd.valor=Integer.parseInt(request.getParameter("p_valor"));
     	
-		ebd.FGuardarSemanas();
-		json.put("error",String.valueOf(ebd.error));
-		break;
+    	//out.println(request.getParameter("p_cve_alumno")+"-"+request.getParameter("p_cve_periodo")+"-"+request.getParameter("p_cve_competencia")+"-"+request.getParameter("p_cve_institucion")+"-"+request.getParameter("p_num_sem")+"-"+request.getParameter("p_valor"));
+    	ebd.FGuardarSemanas();
+    	json.put("error",String.valueOf(ebd.error));
+    	break;
+
+    	case 4:
+
+    	ebd.cve_alumno=Integer.parseInt(request.getParameter("p_cve_alumno"));
+        ebd.cve_periodo=Integer.parseInt(request.getParameter("p_cve_periodo"));
+    	ebd.cve_competencia=Integer.parseInt(request.getParameter("p_cve_competencia"));
+    	ebd.l=Integer.parseInt(request.getParameter("p_dia_l"));
+        ebd.m=Integer.parseInt(request.getParameter("p_dia_m"));
+        ebd.i=Integer.parseInt(request.getParameter("p_dia_i"));
+        ebd.j=Integer.parseInt(request.getParameter("p_dia_j"));
+        ebd.v=Integer.parseInt(request.getParameter("p_dia_v"));
+
+    	ebd.FGuardarDias();
+
+    	//json.put("error","p_cve_alumno:"+ebd.cve_alumno+" ,p_cve_periodo:"+ebd.cve_periodo+", p_cve_competencia:"+ebd.cve_competencia+", p_dia_l:"+ebd.l+", p_dia_m:"+ebd.mes_2+", p_dia_i:"+ebd.mes_3+", p_dia_j:"+ebd.mes_4+", p_dia_v:"+ebd.v);
+    	json.put("error",String.valueOf(ebd.error));
+
+    	break;
+	
 	}
-		/*ebd.l=Integer.parseInt(request.getParameter("p_l"));;
-        ebd.m=Integer.parseInt(request.getParameter("p_m"));
-        ebd.i=Integer.parseInt(request.getParameter("p_i"));
-        ebd.j=Integer.parseInt(request.getParameter("p_j"));
-        ebd.v=Integer.parseInt(request.getParameter("p_v"));*/
     	out.print(json);
 		out.flush();
 }
 catch(Exception e)
 {
-	out.print("error: "+e);
+	//out.print("error: "+e);
+	
+	out.print("error: "+e+" "+request.getParameter("p_cve_alumno")+" "+request.getParameter("p_cve_periodo")+" "+request.getParameter("p_cve_competencia")+" "+request.getParameter("p_dia_l")+" "+request.getParameter("p_dia_m")+" "+request.getParameter("p_dia_i")+" "+request.getParameter("p_dia_j")+" "+request.getParameter("p_dia_v"));
+
+	//out.print("error: "+e+" "+request.getParameter("p_cve_alumno")+"-"+request.getParameter("p_cve_periodo")+"-"+request.getParameter("p_cve_competencia")+"-"+request.getParameter("p_cve_institucion")+"-"+request.getParameter("p_num_sem")+"-"+request.getParameter("p_valor"))
 }
 %>

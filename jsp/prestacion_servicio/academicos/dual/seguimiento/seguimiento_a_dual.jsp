@@ -6,7 +6,7 @@ if (session.getAttribute("usuario") != null)
         int cve_usuario = Integer.parseInt(String.valueOf(session.getAttribute("clave_usuario")));
 
         BD SMBD = new BD();
-        ResultSet rs, rs2;
+        ResultSet rs, rs2,rs3;
         String consultas="",nombre_periodo="",mes1="",mes2="",mes3="",mes4="",nombre_empresa="";
         int meses=0,numero_periodo=0,cve_empresa=0,cve_institucion=0,num_sem=0;     
         int cve_periodo=Integer.parseInt(request.getParameter("cve_periodo"));
@@ -197,19 +197,19 @@ if (session.getAttribute("usuario") != null)
                             <td class="align-middle text-center">
                                <input id="dia_l" class="mx-auto" type="checkbox"></td>
                             <td class="align-middle text-center">
-                                <input id="dia_l" class="mx-auto" type="checkbox"></td>
+                                <input id="dia_m" class="mx-auto" type="checkbox"></td>
                             <td class="align-middle text-center">
-                                <input id="dia_l" class="mx-auto" type="checkbox"></td>
+                                <input id="dia_i" class="mx-auto" type="checkbox"></td>
                             <td class="align-middle text-center">
-                                <input id="dia_l" class="mx-auto" type="checkbox"></td>
+                                <input id="dia_j" class="mx-auto" type="checkbox"></td>
                             <td class="align-middle text-center">
-                                <input id="dia_l" class="mx-auto" type="checkbox"></td>
+                                <input id="dia_v" class="mx-auto" type="checkbox"></td>
                         </tr>
                     </tbody>
                 </table>   
                         <br>
                         <div class="col-md-12" align="center">
-                            <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar dias" onClick="">
+                            <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar dias" onClick="FGuardarDias(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia%>);">
                                 <br>Guardar dias
                         </div> 
                         <br>
@@ -421,6 +421,29 @@ if (session.getAttribute("usuario") != null)
                             <td class="encabezado">Evaluacion para el alumno</td>
                         </tr>
                     </table>
+
+<%/*
+consultas="SELECT  dual_dias.L, dual_dias.M, dual_dias.I, dual_dias.J, dual_dias.V, dual_alumnos.horario, dual_alumnos.tel_inst_empresa, "
+                         +"dual_alumnos.nom_inst_empresa + '  ' + dual_alumnos.ape_pat_inst_empresa + '  ' + dual_alumnos.ape_mat_inst_empresa AS nombre, dual_alumnos.correo_inst_empresa, dual_alumnos.nom_plan_rotacion, "
+                         +"dual_puestos_aprendizaje.nombre_puesto_aprendizaje, dual_puestos_aprendizaje.objetivo_gral, dual_meses.mes_1, dual_meses.mes_2, dual_meses.mes_3, dual_meses.mes_4, dual_semanas.semana_1, "
+                         +"dual_semanas.semana_2, dual_semanas.semana_3, dual_semanas.semana_4, dual_semanas.semana_5, dual_semanas.semana_6, dual_semanas.semana_7, dual_semanas.semana_8, dual_semanas.semana_9, "
+                        +"dual_semanas.semana_10, dual_semanas.semana_11, dual_semanas.semana_16, dual_semanas.semana_15, dual_semanas.semana_14, dual_semanas.semana_13, dual_semanas.semana_12, "
+                         +"dual_semanas.cve_institucion "
+            +"FROM dual_dias INNER JOIN "
+                         +"dual_alumnos ON dual_dias.cve_alumno = dual_alumnos.cve_alumno INNER JOIN "
+                         +"dual_meses ON dual_alumnos.cve_alumno = dual_meses.cve_alumno INNER JOIN "
+                         +"dual_puestos_aprendizaje ON dual_alumnos.cve_competencia = dual_puestos_aprendizaje.cve_competencia INNER JOIN "
+                         +"dual_semanas ON dual_alumnos.cve_alumno = dual_semanas.cve_alumno "
+            +"WHERE (dual_alumnos.cve_alumno = 34401)";
+            rs3=SMBD.SQLBD(consultas);
+    while(rs.next())
+    {
+
+    }
+    SMBD.desconectarBD();
+
+*/%>
+
 <!-----------------Tabla Evaluaciones--------------------------------------------------> 
                     
                     <div class="">  
@@ -650,7 +673,7 @@ if (session.getAttribute("usuario") != null)
     var myWindow;
     function abrirObservaciones() 
     {
-    observacionesVentana=window.open("seguimiento_a_dual/observaciones.jsp","observacionesVentana","width=800,height=500");  
+        observacionesVentana=window.open("seguimiento_a_dual/observaciones.jsp","observacionesVentana","width=800,height=500");  
     }
     function cerrarObservaciones(){
         observacionesVentana.close();
@@ -713,19 +736,54 @@ if (session.getAttribute("usuario") != null)
                     }
                     //alert("Respuesta?");
                     //data = JSON.parse(res);
-                    console.log(res);
+                    //console.log(res);
                     //alert(res.error);
                     //FTerminaCarga();
                 }
             });
     }
+
+    function FGuardarDias(cve_alumno,cve_periodo,cve_competencia)
+    {
+
+        FCargando();
+        var par=
+        {
+                "p_cve_alumno"                :cve_alumno,
+                "p_cve_periodo"               :cve_periodo,
+                "p_cve_competencia"           :cve_competencia,
+                "p_dia_l"                     :$('#dia_l')[0].checked ? 1 : 0,
+                "p_dia_m"                     :$('#dia_m')[0].checked ? 1 : 0,
+                "p_dia_i"                     :$('#dia_i')[0].checked ? 1 : 0,
+                "p_dia_j"                     :$('#dia_j')[0].checked ? 1 : 0,
+                "p_dia_v"                     :$('#dia_v')[0].checked ? 1 : 0,
+                "action"                      :4
+        };
+        console.log(JSON.stringify(par));
+        alert("seguimiento_a_dual/guardarHorario.jsp?p_cve_alumno="+par.p_cve_alumno+"&p_cve_periodo="+par.p_cve_periodo+"&p_cve_competencia="+par.p_cve_competencia+"&p_dia_l="+par.p_dia_l+"&p_dia_m="+par.p_dia_m+"&p_dia_i="+par.p_dia_i+"&p_dia_j="+par.p_dia_j+"&p_dia_v="+par.p_dia_v);
+        $.ajax
+            ({
+                data:par,
+                url:"seguimiento_a_dual/guardarHorario.jsp",
+                type:"POST",
+                dataType:"JSON",
+                success:function(res)
+                {
+                    //console.log(res);
+                    alert(res.error);
+                    FTerminaCarga();
+                }
+
+            });        
+    }
     
     function FGuardarSemanas(cve_institucion,num_sem)
     {
+        //alert("valor de inst. "+cve_institucion);
         var valida=0;
         var valor=0;
 
-            if(cve_institucion=1)
+            if(cve_institucion==1)
             {
                 if($('#sem_UT'+num_sem).prop('checked')==true)
                 {
@@ -751,7 +809,8 @@ if (session.getAttribute("usuario") != null)
                 "p_valor"                     :valor,
                 "action" :3
             };
-
+            //console.log(JSON.stringify(par));
+            //alert("seguimiento_a_dual/guardarHorario.jsp?p_cve_alumno="+par.p_cve_alumno+"&p_cve_periodo="+par.p_cve_periodo+"&p_cve_competencia="+par.p_cve_competencia+"&p_valor="+valor+"&p_num_sem="+num_sem+"&p_cve_institucion="+cve_institucion);
             $.ajax
             ({
                 data:par,
@@ -760,7 +819,7 @@ if (session.getAttribute("usuario") != null)
                 dataType:"JSON",
                 success:function(res)
                 {
-                    alert("Respuesta?");
+                    //alert("Respuesta?");
                     //data = JSON.parse(res);
                     console.log(res);
                     alert(res.error);
@@ -826,7 +885,7 @@ if (session.getAttribute("usuario") != null)
                 "action" : 2
             };
 
-            console.log(par);
+            //console.log(par);
 
             $.ajax
             ({
@@ -959,7 +1018,6 @@ if (session.getAttribute("usuario") != null)
             });
         }
     }
-//Actualizacon.................................................
 </script>
 </html>
 <%
