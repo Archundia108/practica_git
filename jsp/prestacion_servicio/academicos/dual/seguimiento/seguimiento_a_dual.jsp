@@ -273,18 +273,10 @@ if (session.getAttribute("usuario") != null)
                                         </tbody>
                                     </table>
                                     <br>
-                                    <!--<div class="col-md-12" align="center">
-                                        <img type="" src="../../../../../imagenes/ikonoz/guardar.png" class="iconsButtons" title="Guardar semanas" onClick="FGuardarSemanas(<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia%>);">
-                                        <br>Guardar semanas
-                                    </div>-->
                                 </div>
                                 <br>
 
-                                <%
-    /*consultas="SELECT periodos.cve_periodo, periodos.numero_periodo "
-             +"FROM periodos INNER JOIN "
-             +"dual_alumnos ON periodos.cve_periodo = dual_alumnos.cve_periodo "
-             +"WHERE (periodos.cve_periodo >= 68) AND (dual_alumnos.cve_alumno = "+cve_alumno+") AND (dual_alumnos.cve_competencia = "+cve_competencia+")";*/
+    <%
            consultas="SELECT numero_periodo "
                     +"FROM periodos "
                     +"WHERE (cve_periodo = "+cve_periodo+")";
@@ -354,7 +346,7 @@ if (session.getAttribute("usuario") != null)
                             <input id="mes_3" class="mx-auto" type="checkbox">
                         </td>
                         <td class="align-middle text-center">
-                            <input id="mes_4" class="mx-auto" type="checkbox">
+                            <input id="mes_4" class="mx-auto" type="checkbox" checked>
                         </td>
                     </tr>
                 </tbody>
