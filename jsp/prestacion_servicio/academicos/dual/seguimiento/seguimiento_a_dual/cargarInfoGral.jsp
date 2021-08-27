@@ -4,6 +4,8 @@ try
 {
     seguimiento_a_dual ebd=new seguimiento_a_dual();
     ebd.cve_alumno= Integer.parseInt(request.getParameter("p_cve_alumno"));
+    ebd.FBuscarInfoCompleta();
+    //ebd.i= Integer.parseInt(request.getParaneter("p_dia_i"));
     JSONObject json = new JSONObject();
     json.put("dia_l", ebd.l);
     json.put("dia_m", ebd.m);
@@ -24,12 +26,13 @@ try
     json.put("mes_3", ebd.mes_3);
     json.put("mes_4", ebd.mes_4);
     
-    ebd.FBuscarInfoCompleta();
+    
     out.print(json);
     out.flush();
 }
 catch(Exception e)
 {
     out.print("error: " +e);
+        //out.print("error: "+e+" "+request.getParameter("p_cve_alumno")+" "+json.put("dia_l")+" "+json.put("dia_m")+" "+json.put("dia_i")+" "+json.put("dia_j")+" "+json.put("dia_v"));
 }
 %>

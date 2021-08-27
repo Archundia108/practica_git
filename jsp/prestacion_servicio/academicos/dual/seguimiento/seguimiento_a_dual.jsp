@@ -7,7 +7,7 @@ if (session.getAttribute("usuario") != null)
 
         BD SMBD = new BD();
         seguimiento_a_dual ebd=new seguimiento_a_dual();
-        ResultSet rs, rs2,rs3;
+        ResultSet rs,rs3;
         String consultas="",nombre_periodo="",mes1="",mes2="",mes3="",mes4="",nombre_empresa="";
         int meses=0,numero_periodo=0,cve_empresa=0,cve_institucion=0,num_sem=0;
         int cve_parcial=0;    
@@ -102,13 +102,13 @@ if (session.getAttribute("usuario") != null)
                 Nombre de la empresa
                 <br>
                 <select id="SEmpresa" name="SEmpresa" class="captura_obligada combo200">
-                    <option value="">Selecciona</option>
+                    <option value="<%=ebd.cve_empresa%>"><%=ebd.nombre_empresa%></option>
                     <%
                         consultas="SELECT direc_empresas.nombre,direc_empresas.cve_empresa "
                                  +"FROM direc_empresas INNER JOIN "
                                  +"dual_empresas ON direc_empresas.cve_empresa = dual_empresas.cve_empresa "
                                  +"WHERE  (dual_empresas.cve_competencia = 1)";
-                        rs2=SMBD.SQLBD(consultas);
+                        ResultSet rs2=SMBD.SQLBD(consultas);
                         while(rs2.next())
                         {
                         nombre_empresa=rs2.getString(1);
@@ -382,8 +382,8 @@ if (session.getAttribute("usuario") != null)
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="align-middle text-center" id="puesto_ap">Programador</td>
-                        <td class="align-middle text-center" id="objetivo_gral">Desarrollar competencias</td>
+                        <td class="align-middle text-center" id="puesto_ap"></td>
+                        <td class="align-middle text-center" id="objetivo_gral"></td>
                     </tr>
                 </tbody>
             </table>
@@ -792,11 +792,16 @@ consultas="SELECT  dual_dias.L, dual_dias.M, dual_dias.I, dual_dias.J, dual_dias
     FCargarInfo(<%=cve_alumno%>);
     function FCargarInfo(cve_alumno)
     {
+        //alert(cve_alumno);
         FCargando();
                         var par = 
                         {
                             "p_cve_alumno" : cve_alumno
                         };
+
+                        //alert(cve_alumno);
+                        console.log(JSON.stringify(par));
+
                         $.ajax
                         ({
                             data        : par,
@@ -805,25 +810,27 @@ consultas="SELECT  dual_dias.L, dual_dias.M, dual_dias.I, dual_dias.J, dual_dias
                             dataType    : "JSON",
                             success     : function (res)
                             {
-                                $('dia_l').val(res.l);
-                                $('dia_m').val(res.m);
-                                $('dia_i').val(res.i);
-                                $('dia_j').val(res.j);
-                                $('dia_v').val(res.v);
-                                $('THorario').val(res.horario);
-                                $('TNomRotacion').val(res.nom_plan_rotacion);
-                                $('TNomInst').val(res.nom_inst_empresa);
-                                $('TPatInst').val(res.ape_pat_inst_empresa);
-                                $('TMatInst').val(res.ape_mat_inst_empresa);
-                                $('TNumeroInst').val(res.tel_inst_empresa);
-                                $('TCorreoInst').val(res.correo_inst_empresa);
-                                $('puesto_ap').val(res.nombre_puesto);
-                                $('objetivo_gral').val(res.obvj_gral);
-                                $('mes_1').val(res.mes_1);
-                                $('mes_2').val(res.mes_2);
-                                $('mes_3').val(res.mes_3);
-                                $('mes_4').val(res.mes_4);
+                                //$('#dia_l').val(res.l);
+                                res.l == 1 ? $('#dia_l').prop('checked','true') : $('#dia_l').prop('checked','false');
+                               res.m ==1 ? $('#dia_m').prop('checked','true') : $('#dia_m').prop('checked','false');
+                               res.i ==1 ? $('#dia_i').prop('checked','true') : $('#dia_i').prop('checked','false');
+                               res.j ==1 ? $('#dia_j').prop('checked','true') : $('#dia_j').prop('checked','false');
+                               res.v ==1 ? $('#dia_v').prop('checked','true') : $('#dia_v').prop('checked','false');
+                                $('#THorario').val(res.horario);
+                                $('#TNomRotacion').val(res.nom_plan_rotacion);
+                                $('#TNomInst').val(res.nom_inst_empresa);
+                                $('#TPatInst').val(res.ape_pat_inst_empresa);
+                                $('#TMatInst').val(res.ape_mat_inst_empresa);
+                                $('#TNumeroInst').val(res.tel_inst_empresa);
+                                $('#TCorreoInst').val(res.correo_inst_empresa);
+                                $('#puesto_ap').val(res.nombre_puesto);
+                                $('#objetivo_gral').val(res.obvj_gral);
+                               res.mes_1 ==1 ? $('#mes_1').prop('checked','true') : $('#mes_1').prop('checked','false');
+                               res.mes_2 ==1 ? $('#mes_2').prop('checked','true') : $('#mes_2').prop('checked','false');
+                               res.mes_3 ==1 ? $('#mes_2').prop('checked','true') : $('#mes_3').prop('checked','false');
+                               res.mes_4 ==1 ? $('#mes_4').prop('checked','true') : $('#mes_4').prop('checked','false');
                                 FTerminaCarga();
+                                console.log(res);
                             }
                         });
     }
@@ -980,8 +987,8 @@ consultas="SELECT  dual_dias.L, dual_dias.M, dual_dias.I, dual_dias.J, dual_dias
                 "p_dia_v"                     :$('#dia_v')[0].checked ? 1 : 0,
                 "action"                      :4
         };
-        console.log(JSON.stringify(par));
-        alert("seguimiento_a_dual/guardarHorario.jsp?p_cve_alumno="+par.p_cve_alumno+"&p_cve_periodo="+par.p_cve_periodo+"&p_cve_competencia="+par.p_cve_competencia+"&p_dia_l="+par.p_dia_l+"&p_dia_m="+par.p_dia_m+"&p_dia_i="+par.p_dia_i+"&p_dia_j="+par.p_dia_j+"&p_dia_v="+par.p_dia_v);
+        //console.log(JSON.stringify(par));
+        //alert("seguimiento_a_dual/guardarHorario.jsp?p_cve_alumno="+par.p_cve_alumno+"&p_cve_periodo="+par.p_cve_periodo+"&p_cve_competencia="+par.p_cve_competencia+"&p_dia_l="+par.p_dia_l+"&p_dia_m="+par.p_dia_m+"&p_dia_i="+par.p_dia_i+"&p_dia_j="+par.p_dia_j+"&p_dia_v="+par.p_dia_v);
         $.ajax
             ({
                 data:par,
