@@ -102,7 +102,7 @@ if (session.getAttribute("usuario") != null)
                 Nombre de la empresa
                 <br>
                 <select id="SEmpresa" name="SEmpresa" class="captura_obligada combo200">
-                    <option value="<%=ebd.cve_empresa%>"><%=ebd.nombre_empresa%></option>
+                    <option value="<%=ebd.cve_empresa%>"></option>
                     <%
                         consultas="SELECT direc_empresas.nombre,direc_empresas.cve_empresa "
                                  +"FROM direc_empresas INNER JOIN "
