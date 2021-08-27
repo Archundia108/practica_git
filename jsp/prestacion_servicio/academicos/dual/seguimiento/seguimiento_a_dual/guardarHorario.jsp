@@ -67,16 +67,38 @@ try
     	json.put("error",String.valueOf(ebd.error));
 
     	break;
-	
+		
+		case 5:
+		ebd.cve_alumno=Integer.parseInt(request.getParameter("p_cve_alumno"));
+        ebd.cve_periodo=Integer.parseInt(request.getParameter("p_cve_periodo"));
+    	ebd.cve_competencia=Integer.parseInt(request.getParameter("p_cve_competencia"));
+    	ebd.cve_parcial=Integer.parseInt(request.getParameter("p_cve_parcial"));
+    	ebd.sa=Integer.parseInt(request.getParameter("p_SEvaluacionSa"));
+        ebd.se=Integer.parseInt(request.getParameter("p_SEvaluacionS"));
+        ebd.sh=Integer.parseInt(request.getParameter("p_SEvaluacionSh"));
+
+    	ebd.FGuardarCalificaciones();
+    	json.put("error",String.valueOf(ebd.error));
+    	break;
+
+    	case 6:
+    	ebd.cve_alumno=Integer.parseInt(request.getParameter("p_cve_alumno"));
+        ebd.cve_periodo=Integer.parseInt(request.getParameter("p_cve_periodo"));
+    	ebd.cve_competencia=Integer.parseInt(request.getParameter("p_cve_competencia"));
+    	ebd.cve_parcial=Integer.parseInt(request.getParameter("p_cve_parcial"));
+    	
+    	ebd.FCalifNotif();
+    	json.put("error",String.valueOf(ebd.error));
+    	break;
 	}
     	out.print(json);
 		out.flush();
 }
 catch(Exception e)
 {
-	//out.print("error: "+e);
+	out.print("error: "+e);
 	
-	out.print("error: "+e+" "+request.getParameter("p_cve_alumno")+" "+request.getParameter("p_cve_periodo")+" "+request.getParameter("p_cve_competencia")+" "+request.getParameter("p_dia_l")+" "+request.getParameter("p_dia_m")+" "+request.getParameter("p_dia_i")+" "+request.getParameter("p_dia_j")+" "+request.getParameter("p_dia_v"));
+	//out.print("error: "+e+" "+request.getParameter("p_cve_alumno")+" "+request.getParameter("p_cve_periodo")+" "+request.getParameter("p_cve_competencia")+" "+request.getParameter("p_dia_l")+" "+request.getParameter("p_dia_m")+" "+request.getParameter("p_dia_i")+" "+request.getParameter("p_dia_j")+" "+request.getParameter("p_dia_v"));
 
 	//out.print("error: "+e+" "+request.getParameter("p_cve_alumno")+"-"+request.getParameter("p_cve_periodo")+"-"+request.getParameter("p_cve_competencia")+"-"+request.getParameter("p_cve_institucion")+"-"+request.getParameter("p_num_sem")+"-"+request.getParameter("p_valor"))
 }

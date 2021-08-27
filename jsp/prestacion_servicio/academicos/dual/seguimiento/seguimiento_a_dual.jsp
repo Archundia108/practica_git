@@ -6,12 +6,18 @@ if (session.getAttribute("usuario") != null)
         int cve_usuario = Integer.parseInt(String.valueOf(session.getAttribute("clave_usuario")));
 
         BD SMBD = new BD();
+        seguimiento_a_dual ebd=new seguimiento_a_dual();
         ResultSet rs, rs2,rs3;
         String consultas="",nombre_periodo="",mes1="",mes2="",mes3="",mes4="",nombre_empresa="";
-        int meses=0,numero_periodo=0,cve_empresa=0,cve_institucion=0,num_sem=0;     
+        int meses=0,numero_periodo=0,cve_empresa=0,cve_institucion=0,num_sem=0;
+        int cve_parcial=0;    
         int cve_periodo=Integer.parseInt(request.getParameter("cve_periodo"));
         int cve_competencia=Integer.parseInt(request.getParameter("cve_competencia"));
         int cve_alumno=Integer.parseInt(request.getParameter("cve_alumno"));
+        ebd.cve_alumno = cve_alumno;
+        ebd.cve_periodo = cve_periodo;
+        ebd.cve_competencia = cve_competencia;
+
 
         
     %>
@@ -96,7 +102,7 @@ if (session.getAttribute("usuario") != null)
                 Nombre de la empresa
                 <br>
                 <select id="SEmpresa" name="SEmpresa" class="captura_obligada combo200">
-                    <option value=""></option>
+                    <option value="">Selecciona</option>
                     <%
                         consultas="SELECT direc_empresas.nombre,direc_empresas.cve_empresa "
                                  +"FROM direc_empresas INNER JOIN "
@@ -108,7 +114,7 @@ if (session.getAttribute("usuario") != null)
                         nombre_empresa=rs2.getString(1);
                         cve_empresa=rs2.getInt(2);        
                     %>
-                    <option value="<%=cve_empresa%>"><%=nombre_empresa%> <%=cve_empresa%></option>
+                    <option value="<%=cve_empresa%>"><%=nombre_empresa%></option>
                     <%
                         }
                         SMBD.desconectarBD();
@@ -116,6 +122,9 @@ if (session.getAttribute("usuario") != null)
                 </select>     
             </div>
         
+        <%
+            ebd.FBuscarInfoCompleta();
+        %>
         <div class="col-md-3">
             Nombre de Plan de rotación
             <br>
@@ -373,8 +382,8 @@ if (session.getAttribute("usuario") != null)
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="align-middle text-center">Programador</td>
-                        <td class="align-middle text-center">Desarrollar competencias</td>
+                        <td class="align-middle text-center" id="puesto_ap">Programador</td>
+                        <td class="align-middle text-center" id="objetivo_gral">Desarrollar competencias</td>
                     </tr>
                 </tbody>
             </table>
@@ -459,111 +468,205 @@ consultas="SELECT  dual_dias.L, dual_dias.M, dual_dias.I, dual_dias.J, dual_dias
                                 </tr>
                         </thead>
                         <tbody>
+<%
+%>
                             <tr>
+                                <%
+                                    ebd.cve_parcial = 1;
+                                    ebd.FBuscarCalificaciones();
+                                %>
                                 <td class="align-middle text-center" scope="">1</td>
-                                <td class="align-middle text-center">_/_/_</td>
+                                <td class="align-middle text-center"><%=ebd.fecha_evaluacion%></td>
                                 <td class="align-middle text-center">
-                                    <select id="SEvaluacionS" class="captura_obligada">
-                                        <option value="">SA</option>
-                                        <option value="">SE</option>
-                                        <option value="">SH</option>
+                                    <select id="SEvaluacionS1" name="SEvaluacionS1" class="captura_obligada">
+
+                                        <option value="<%=ebd.se%>"><%=ebd.se%></option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
                                     </select>
                                 </td>
                                 <td class="align-middle text-center">
-                                    <select id="SEvaluacionSa" class="captura_obligada">
-                                        <option value="">SA</option>
-                                        <option value="">SE</option>
-                                        <option value="">SH</option>
+                                    <select id="SEvaluacionSa1"name="SEvaluacionSa1" class="captura_obligada">
+                                        <option value="<%=ebd.sa%>"><%=ebd.sa%></option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
                                     </select>
                                 </td>
                                 <td class="align-middle text-center">
-                                    <select id="SEvaluacionSh" class="captura_obligada">
-                                        <option value="">SA</option>
-                                        <option value="">SE</option>
-                                        <option value="">SH</option>
+                                    <select id="SEvaluacionSh1" name="SEvaluacionSh1" class="captura_obligada">
+                                        <option value="<%=ebd.sh%>"><%=ebd.sh%></option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
                                     </select>
                                 </td>
                                 <td class="align-middle text-center">
-                                    <input class="btn btn-info btn-sm" value="Guardar" title="Guardar" type="button" name="Guardar">
+                                    <input class="btn btn-info btn-sm" value="Guardar" title="Guardar" type="button" name="Guardar" onclick="FGuardarCalifParcial(1,<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia%>);">
                                 </td>
                                 <td class="align-middle text-center">
-                                    <input class="btn btn-info btn-sm" value="Notificar" title="Notificar" type="button" name="Notificar">
+                                    <input class="btn btn-info btn-sm" value="Notificar" title="Notificar" type="button" name="Notificar" onclick="FNotificarC(1,<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia%>);">
                                 </td>
                                 <td rowspan="3" class="align-middle text-center">
                                    <input class="btn btn-outline-info btn-sm" value="Horario" title="BHorario" type="button" target="popup" onclick="openVen();" name="Horario"> 
                                 </td>
-                                <td class="align-middle text-center">_/_/_</td>
+                                <td class="align-middle text-center"><%=ebd.fecha_notif%></td>
                             </tr>
                             <tr>
+                                <%
+                                    
+                                    ebd.cve_parcial = 2;
+                                    ebd.FBuscarCalificaciones();
+                                
+                                %>
                                 <td class="align-middle text-center" scope="">2</td>
-                                <td class="align-middle text-center" >_/_/_</td>
+                                <td class="align-middle text-center" ><%=ebd.fecha_evaluacion%></td>
                                 <td class="align-middle text-center">
-                                    <select id="SEvaluacionS2" class="captura_obligada">
-                                        <option value="">NA</option>
-                                        <option value="">SA</option>
-                                        <option value="">DE</option>
-                                        <option value="">AU</option>
+                                    <select id="SEvaluacionS2" name="SEvaluacionS2" class="captura_obligada">
+                                        <option value="<%=ebd.se%>"><%=ebd.se%></option>
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
                                     </select></td>
                                     <td class="align-middle text-center">
-                                        <select id="SEvaluacionSa2" class="captura_obligada">
-                                            <option value="">NA</option>
-                                            <option value="">SA</option>
-                                            <option value="">DE</option>
-                                            <option value="">AU</option>
+                                        <select id="SEvaluacionSa2" name="SEvaluacionSa2" class="captura_obligada">
+                                            <option value="<%=ebd.sa%>"><%=ebd.sa%></option>
+                                            <option value="0">0</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
                                         </select></td>
                                         <td class="align-middle text-center">
-                                            <select id="SEvaluacionSH2" class="captura_obligada">
-                                                <option value="">NA</option>
-                                                <option value="">SA</option>
-                                                <option value="">DE</option>
-                                                <option value="">AU</option>
+                                            <select id="SEvaluacionSh2" name="SEvaluacionSh2" class="captura_obligada">
+                                                <option value="<%=ebd.sh%>"><%=ebd.sh%></option>
+                                                <option value="0">0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
                                             </select>
                                         </td>
                                         <td class="align-middle text-center">
-                                            <input class="btn btn-info btn-sm" value="Guardar" title="Guardar" type="button" name="Guardar">
+                                            <input class="btn btn-info btn-sm" value="Guardar" title="Guardar" type="button" name="Guardar" onclick="FGuardarCalifParcial(2,<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia%>);">
                                         </td>
                                         <td class="align-middle text-center">
-                                            <input class="btn btn-info btn-sm" value="Notificar" title="Notificar" type="button" name="Notificar">
+                                            <input class="btn btn-info btn-sm" value="Notificar" title="Notificar" type="button" name="Notificar" onclick="FNotificarC(2,<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia%>);">
                                         </td>
                                         
-                                        <td class="align-middle text-center">_/_/_</td>
+                                        <td class="align-middle text-center"><%=ebd.fecha_notif%></td>
                                     </tr>
                                     <tr>
+                                        <%
+                                    
+                                            ebd.cve_parcial = 3;
+                                            ebd.FBuscarCalificaciones();
+                                
+                                        %>
                                         <td class="align-middle text-center" scope="">3</td>
-                                        <td class="align-middle text-center" >_/_/_</td>
+                                        <td class="align-middle text-center" ><%=ebd.fecha_evaluacion%></td>
                                         <td class="align-middle text-center">
-                                            <select id="SEvaluacionS3" class="captura_obligada">
-                                                <option value="">NA</option>
-                                                <option value="">SA</option>
-                                                <option value="">DE</option>
-                                                <option value="">AU</option>
+                                            <select id="SEvaluacionS3" name="SEvaluacionS3" class="captura_obligada">
+                                                <option value="<%=ebd.se%>"><%=ebd.se%></option>
+                                                <option value="0">0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
                                             </select>
                                         </td>
                                         <td class="align-middle text-center">
-                                            <select id="SEvaluacionSa3" class="captura_obligada">
-                                                <option value="">NA</option>
-                                                <option value="">SA</option>
-                                                <option value="">DE</option>
-                                                <option value="">AU</option>
+                                            <select id="SEvaluacionSa3" name="SEvaluacionSa3" class="captura_obligada">
+                                                <option value="<%=ebd.sa%>"><%=ebd.sa%></option>
+                                                <option value="0">0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
                                             </select>
                                         </td>
                                         <td class="align-middle text-center">
-                                            <select id="SEvaluacionSH3" class="captura_obligada">
-                                                <option value="">NA</option>
-                                                <option value="">SA</option>
-                                                <option value="">DE</option>
-                                                <option value="">AU</option>
+                                            <select id="SEvaluacionSh3" name="SEvaluacionSh3" class="captura_obligada">
+                                                <option value="<%=ebd.sh%>"><%=ebd.sh%></option>
+                                                <option value="0">0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
                                             </select>
                                         </td>
                                         <td class="align-middle text-center">
-                                            <input class="btn btn-info btn-sm" value="Guardar" title="Guardar" type="button" name="Guardar">
+                                            <input class="btn btn-info btn-sm" value="Guardar" title="Guardar" type="button" name="Guardar" onclick="FGuardarCalifParcial(3,<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia%>);">
                                         </td>
                                         <td class="align-middle text-center">
-                                            <input class="btn btn-info btn-sm" value="Notificar" title="Notificar" type="button" name="Notificar">
+                                            <input class="btn btn-info btn-sm" value="Notificar" title="Notificar" type="button" name="Notificar" onclick="FNotificarC(3,<%=cve_alumno%>,<%=cve_periodo%>,<%=cve_competencia%>);">
                                         </td>
                                          
                                         </td>
-                                        <td class="align-middle text-center">_/_/_</td>
+                                        <td class="align-middle text-center"><%=ebd.fecha_notif%></td>
                                     </tr>
                                     
                                 </tbody>
@@ -685,6 +788,132 @@ consultas="SELECT  dual_dias.L, dual_dias.M, dual_dias.I, dual_dias.J, dual_dias
         {
           $('#gif_espera').html('<img src="../../../../../imagenes/ajax-loader.gif" width="50">');  
         }
+
+    FCargarInfo(<%=cve_alumno%>);
+    function FCargarInfo(cve_alumno)
+    {
+        FCargando();
+                        var par = 
+                        {
+                            "p_cve_alumno" : cve_alumno
+                        };
+                        $.ajax
+                        ({
+                            data        : par,
+                            url         : "seguimiento_a_dual/cargarInfoGral.jsp",
+                            type        : "POST",
+                            dataType    : "JSON",
+                            success     : function (res)
+                            {
+                                $('dia_l').val(res.l);
+                                $('dia_m').val(res.m);
+                                $('dia_i').val(res.i);
+                                $('dia_j').val(res.j);
+                                $('dia_v').val(res.v);
+                                $('THorario').val(res.horario);
+                                $('TNomRotacion').val(res.nom_plan_rotacion);
+                                $('TNomInst').val(res.nom_inst_empresa);
+                                $('TPatInst').val(res.ape_pat_inst_empresa);
+                                $('TMatInst').val(res.ape_mat_inst_empresa);
+                                $('TNumeroInst').val(res.tel_inst_empresa);
+                                $('TCorreoInst').val(res.correo_inst_empresa);
+                                $('puesto_ap').val(res.nombre_puesto);
+                                $('objetivo_gral').val(res.obvj_gral);
+                                $('mes_1').val(res.mes_1);
+                                $('mes_2').val(res.mes_2);
+                                $('mes_3').val(res.mes_3);
+                                $('mes_4').val(res.mes_4);
+                                FTerminaCarga();
+                            }
+                        });
+    }
+
+    function FGuardarCalifParcial(cve_parcial,cve_alumno,cve_periodo,cve_competencia)
+    {
+        var valida=0;
+
+        if($('#SEvaluacionS'+cve_parcial).val()<1)
+        {
+            
+            $('#SEvaluacionS'+cve_parcial).focus();valida++;
+        }
+        else
+        {
+            //alert('Asigne calificacion del ser.');
+            if($('#SEvaluacionSa'+cve_parcial).val()<1)
+            {
+                $('#SEvaluacionSa'+cve_parcial).focus();valida++;
+            }
+            else
+            {
+                if ($('#SEvaluacionSh'+cve_parcial).val()<1) 
+                {
+                    $('#SEvaluacionSh'+cve_parcial).focus();valida++;
+                }
+                else
+                {
+                    //alert('Introduzca calificaciones primero');
+                }
+            }
+        }
+
+        if(valida>=0)
+        {
+            FCargando();
+            var par=
+            {   
+                "p_cve_alumno":<%=cve_alumno%>,
+                "p_cve_periodo":<%=cve_periodo%>,
+                "p_cve_competencia":<%=cve_competencia%>,
+                "p_cve_parcial":cve_parcial,
+                "p_SEvaluacionS":$('#SEvaluacionS'+cve_parcial).val(),
+                "p_SEvaluacionSa":$('#SEvaluacionSa'+cve_parcial).val(),
+                "p_SEvaluacionSh":$('#SEvaluacionSh'+cve_parcial).val(),
+                "action":5
+            };
+            $.ajax({
+                data:par,
+                url:"seguimiento_a_dual/guardarHorario.jsp",
+                type:"POST",
+                dataType:"JSON",
+                success:function(res)
+                {
+                    //alert("Respuesta?");
+                    //data = JSON.parse(res);
+                    console.log(res);
+                    alert(res.error);
+                    FTerminaCarga();
+                }
+            });
+
+        }
+    }
+
+    
+    function FNotificarC(cve_parcial,cve_alumno,cve_periodo,cve_competencia)
+    {
+        FCargando();
+            var par=
+                {
+                    "p_cve_alumno" : cve_alumno,
+                    "p_cve_periodo": cve_periodo,
+                    "p_cve_competencia": cve_competencia,
+                    "p_cve_parcial": cve_parcial,
+                    "action":6
+                };
+                $.ajax({
+                        data :par,
+                        url  :"seguimiento_a_dual/guardarHorario.jsp",
+                        type:"POST",
+                        dataType:"JSON",
+                        success:function(res)
+                        {
+                            //data = JSON.parse(res);
+                            alert(res.error);
+                            FTerminaCarga();
+                        }
+                    });
+    }
 
     FCargarSemanas();
     function FCargarSemanas()
