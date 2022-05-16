@@ -4,6 +4,8 @@ if (session.getAttribute("usuario") != null)
 {
     String usuario = String.valueOf(session.getAttribute("usuario"));
     int cve_usuario = Integer.parseInt(String.valueOf(session.getAttribute("clave_usuario")));
+    
+    //Cambio 3 de practica git
 
 %>
 
