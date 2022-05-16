@@ -12,6 +12,8 @@
 
 <I><%= exception %></I>. 
 <PRE><% exception.printStackTrace(new java.io.PrintWriter(out)); %></PRE>
+	
+	<!-- Cambio 2 de práctica git -->
 
 </body>
 </html>
