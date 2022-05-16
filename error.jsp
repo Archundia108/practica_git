@@ -14,6 +14,7 @@
 <PRE><% exception.printStackTrace(new java.io.PrintWriter(out)); %></PRE>
 	
 	<!-- Cambio 2 de práctica git -->
+	<!-- Otro cambio 2 de práctica git -->
 
 </body>
 </html>
